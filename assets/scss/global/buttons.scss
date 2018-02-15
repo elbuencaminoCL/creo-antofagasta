@@ -1,0 +1,14 @@
+
+.button {
+	background-color: #837db7;
+	border-radius: 3px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 16px 30px;
+	text-transform: uppercase;
+	&:hover,
+	&:focus {
+		background-color: #837db7;
+		color: white;
+	}
+}

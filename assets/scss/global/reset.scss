@@ -1,0 +1,83 @@
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+article,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+textarea {
+  -webkit-appearance: none;
+}
+
+img,
+object,
+video {
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+button,
+input[type="checkbox"] {
+  outline: none;
+}
+
+ol {
+  list-style-type: decimal;
+  li {
+    margin-bottom: 10px;
+    list-style: decimal;
+  }
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  transition: all .2s cubic-bezier( .4,0,.2,1 );
+}
+
+body {
+  background-color: #dededd;
+  color: white;
+}
+
+html {
+  font-size: initial;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  &.objFitFigure {
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+
+
