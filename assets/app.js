@@ -12,9 +12,21 @@
 =            Importación estilos de componentes            =
 ==========================================================*/
 
-
+	import './scss/components/header.scss';
+	import './scss/components/banner.scss';
 
 
 /*==========================================================
 =            Importación de archivos javaScript            =
 ==========================================================*/
+
+	import './js/header.js';
+
+
+
+/*Librerías*/
+import $ from 'jquery';
+import 'foundation-sites';
+
+
+$(document).foundation();

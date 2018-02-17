@@ -1,0 +1,13 @@
+
+.chip-proyect-banner-figure {
+	position: relative;
+	img {
+		opacity: 0.5;
+		width: 100%;
+		object-fit: cover;
+		max-height: 300px;
+	}
+	h2 {
+		position: absolute;
+	}
+}

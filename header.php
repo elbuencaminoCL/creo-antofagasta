@@ -1,13 +1,47 @@
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>De La Ostia</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Josefin+Sans|Rammetto+One" rel="stylesheet">
-  </head>
+<?php
+    /**
+    * Template Name: Header
+    */
+?>
 
-  <body>
-		<p class="end-xs f button">webpack</p>
+<!doctype html>
+  <html <?php language_attributes(); ?>>
+    <head>
+      <meta charset="<?php bloginfo( 'charset' ); ?>">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />
+      <?php wp_head(); ?>
+    </head>
+
+    <body>
+      <section id="header">
+        <div class="container">
+          <div class="row row-md-2">
+            <div class="col-md-2 center-xs">
+              <figure>
+                <a href="/"><img src="<?php the_field( 'header_logo' ); ?>" alt="Logo Creo Antofagasta"></a>
+              </figure>
+            </div>
+
+            <div class="col-md-10 around-xs">
+              <?php
+                $args = array(
+                  'theme_location' => 'header',
+                  'container' => 'nav',
+                  'container_class' => 'header-nav hide-xs show-md',
+                  'menu_class' => 'header-nav-items row dropdown menu',
+                );
+                wp_nav_menu( $args );
+              ?>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
