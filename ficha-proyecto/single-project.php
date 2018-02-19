@@ -1,30 +1,32 @@
 
 <?php
-    /**
-    * Template Name: Ficha Proyecto
-    */
   get_header();
 
-  $hex = get_field('clone_chip_project_image_color');
+  $hex = get_field('clone_image_color');
   list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 ?>
 
 <style type="text/css">
 
-	.chip-proyect-banner-figure:before {
+	.banner-figure:before {
 		background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );
 	}
 
 </style>
 
+	<!--============================
+	=            Banner            =
+	=============================-->
 	<section>
 		<div class="container">
-			<figure class="chip-proyect-banner-figure row middle-xs center-xs">
-				<img src="<?php the_field( 'clone_chip_project_banner_image' ); ?>">
-				<h2><?php the_field( 'clone_chip_project_banner_title' ); ?></h2>
+			<figure class="banner-figure row middle-xs center-xs">
+				<img src="<?php the_field( 'clone_banner_image' ); ?>">
+				<h2><?php the_field( 'clone_banner_title' ); ?></h2>
 			</figure>
 		</div>
 	</section>
+	<!--====  End of Banner  ====-->
+
 
 	<!--================================
 	=            Breadcrumb            =
@@ -32,7 +34,7 @@
 
 	<!--====  End of Breadcrumb  ====-->
 
-	<section class="chipProyectContent">
+	<section>
     <div class="container">
    	  <div class="row row-xs-1 row-md-2">
 
@@ -118,6 +120,10 @@
  	  				<?php endif; ?>
  	  			<?php endwhile; ?>
    	  	<?php endif; ?>
+   	  </div>
+
+   	  <div class="row">
+			<?php echo do_shortcode("[hslide id=1]"); ?>
    	  </div>
     </div>
 	</section>

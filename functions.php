@@ -197,3 +197,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+function get_custom_cat_template($single_template) {
+  global $post;
+
+  if( has_term( 'chip-project', 'category_projects' ) ) {
+      $single_template = dirname( __FILE__ ) . '/ficha-proyecto/single-project.php';
+  }
+  return $single_template;
+}
+
+add_filter( "single_template", "get_custom_cat_template" ) ;
+
+
