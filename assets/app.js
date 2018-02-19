@@ -13,6 +13,7 @@
 ==========================================================*/
 
 	import './scss/components/header.scss';
+	import './scss/components/footer.scss';
 	import './scss/components/banner.scss';
 
 
@@ -30,3 +31,6 @@ import 'foundation-sites';
 
 
 $(document).foundation();
+
+
+

@@ -83,6 +83,9 @@ if ( ! function_exists( 'svhen_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'header' => esc_html__( 'Primary', 'svhen' ),
+			'about' => esc_html__( 'Nosotros', 'svhen' ),
+			'iniciatives' => esc_html__( 'Iniciativas', 'svhen' ),
+			'library' => esc_html__( 'Biblioteca', 'svhen' )
 		) );
 
 		/*

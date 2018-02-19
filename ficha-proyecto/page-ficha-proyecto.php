@@ -5,29 +5,23 @@
     */
   get_header();
 
+  $hex = get_field('clone_chip_project_image_color');
+  list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 ?>
+
 <style type="text/css">
-.abajo {
-	position: relative;
-}
-.abajo:before {
-	content: '';
-	position: absolute;
-background-color: rgba(200, 0, 0, 0.7 );
-}
+
+	.chip-proyect-banner-figure:before {
+		background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );
+	}
 
 </style>
 
-	<section id="chipProyectBanner">
+	<section>
 		<div class="container">
-			<figure style="background-color: rgba( <?= hexdec('ffffff'); ?>, <?= hexdec('aa'); ?>, <?= hexdec('ff'); ?>, 0.75 ) )" class="chip-proyect-banner-figure row middle-xs center-xs">
-				<img src="<?php the_field( 'clone_banner_image' ); ?>">
-				<h2><?php the_field( 'clone_banner_title' ); ?></h2>
-			</figure>
-
-			<figure class="chip-proyect-banner-figure row middle-xs center-xs abajo"<?php the_field('clone_image_color') ?> >
-				<img src="<?php the_field( 'clone_banner_image' ); ?>">
-				<h2><?php the_field( 'clone_banner_title' ); ?></h2>
+			<figure class="chip-proyect-banner-figure row middle-xs center-xs">
+				<img src="<?php the_field( 'clone_chip_project_banner_image' ); ?>">
+				<h2><?php the_field( 'clone_chip_project_banner_title' ); ?></h2>
 			</figure>
 		</div>
 	</section>
@@ -47,12 +41,12 @@ background-color: rgba(200, 0, 0, 0.7 );
    	  	========================================================-->
 				<div class="col-xs-12 col-md-8">
 					<section><!-- ¿De qué se trata este proyecto? -->
-						<div><?php the_field( 'clone_chip_project_title_desc' );?></div>
+						<div><?php the_field( 'clone_project_desc_title_desc' ); ?></div>
 					</section><!-- /¿De qué se trata este proyecto? -->
 
 					<section><!-- Card proyecto en cifras -->
-						<div><?php if ( have_rows( 'clone_chip_project' ) ) : ?>
-							<?php while ( have_rows( 'clone_chip_project' ) ) : the_row(); ?>
+						<div><?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
+							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
 								<h2><?php the_sub_field( 'title' ); ?></h2>
 
 								<?php if ( have_rows( 'content_repeater' ) ) : ?>
@@ -64,6 +58,41 @@ background-color: rgba(200, 0, 0, 0.7 );
 							<?php endwhile; ?>
 						<?php endif; ?></div>
 					</section><!-- /Card proyecto en cifras -->
+
+					<section><!-- Acordeón Sectores a Intervenir -->
+						<div>
+							<?php if ( have_rows( 'clone_accordion' ) ) : ?>
+								<?php while ( have_rows( 'clone_accordion' ) ) : the_row(); ?>
+									<h2><?php the_sub_field( 'title' ); ?></h2>
+
+									<?php if ( have_rows( 'accordion_repeater' ) ) : ?>
+										<?php while ( have_rows( 'accordion_repeater' ) ) : the_row(); ?>
+											<p><?php the_sub_field( 'accordion_title' ); ?></p>
+										<?php endwhile; ?>
+									<?php endif; ?>
+
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+					</section><!-- /Acordeón Sectores a Intervenir -->
+
+					<section><!-- Logotipo patrocinadores -->
+						<div>
+							<?php if ( have_rows( 'clone_sponsor' ) ) : ?>
+								<?php while ( have_rows( 'clone_sponsor' ) ) : the_row(); ?>
+
+									<?php if ( have_rows( 'gallery_repeater' ) ) : ?>
+										<?php while ( have_rows( 'gallery_repeater' ) ) : the_row(); ?>
+											<p><?php the_sub_field( 'gallery_desc' ); ?></p>
+											<img src="<?php the_sub_field( 'gallery_image' ); ?>">
+										<?php endwhile; ?>
+									<?php endif; ?>
+
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+					</section><!-- /Logotipo patrocinadores -->
+
 				</div>
    	  	<!--====  End of Contenido de la columna izquierda  ====-->
 
@@ -75,6 +104,20 @@ background-color: rgba(200, 0, 0, 0.7 );
 				</div>
 				<!--====  End of Contenido de la columna derecha  ====-->
 
+   	  </div>
+
+   	  <div class="row">
+   	  	<h2><?php the_field( 'clone_project_relation_title' ); ?></h2>
+   	  	<?php if ( have_rows( 'clone_project_relation' ) ) : ?>
+ 	  			<?php while ( have_rows( 'clone_project_relation' ) ) : the_row(); ?>
+ 	  				<?php if ( have_rows( 'gallery_repeater' ) ) : ?>
+  						<?php while ( have_rows( 'gallery_repeater' ) ) : the_row(); ?>
+  							<img src="<?php the_sub_field( 'gallery_image' ); ?>">
+  							<p><?php the_sub_field( 'gallery_desc' ); ?></p>
+  						<?php endwhile; ?>
+ 	  				<?php endif; ?>
+ 	  			<?php endwhile; ?>
+   	  	<?php endif; ?>
    	  </div>
     </div>
 	</section>
