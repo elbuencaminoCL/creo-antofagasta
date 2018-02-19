@@ -202,7 +202,11 @@ function get_custom_cat_template($single_template) {
   global $post;
 
   if( has_term( 'chip-project', 'category_projects' ) ) {
-      $single_template = dirname( __FILE__ ) . '/ficha-proyecto/single-project.php';
+      $single_template = dirname( __FILE__ ) . '/template-projects/single-project.php';
+  }
+
+  else if( has_term( 'chip-project', 'category_projects' ) ) {
+      $single_template = dirname( __FILE__ ) . '/template-projects/single-multi-project.php';
   }
   return $single_template;
 }

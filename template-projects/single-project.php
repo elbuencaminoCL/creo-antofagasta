@@ -48,6 +48,7 @@
 						<div><?php the_field( 'clone_project_desc_title_desc' ); ?></div>
 					</section><!-- /¿De qué se trata este proyecto? -->
 
+
 					<section><!-- Card proyecto en cifras -->
 						<div><?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
 							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
@@ -63,32 +64,51 @@
 						<?php endif; ?></div>
 					</section><!-- /Card proyecto en cifras -->
 
-					<section><!-- Acordeón Sectores a Intervenir -->
-						<div>
-							<?php if ( have_rows( 'clone_accordion' ) ) : ?>
-								<?php while ( have_rows( 'clone_accordion' ) ) : the_row(); ?>
-									<h2><?php the_sub_field( 'title' ); ?></h2>
 
+					<section><!-- Carrusel -->
+						<?php echo do_shortcode("[hslide id=1]"); ?>
+					</section>
+					<!--====  End of Carrusel  ====-->
+
+
+					<section><!-- Acordeón Sectores a Intervenir -->
+						<div class="accordion" data-accordion>
+							<?php if ( have_rows( 'clone_accordion' ) ) : ?>
+								<?php $count = 1; ?>
+								<?php while ( have_rows( 'clone_accordion' ) ) : the_row(); ?>
 									<?php if ( have_rows( 'accordion_repeater' ) ) : ?>
 										<?php while ( have_rows( 'accordion_repeater' ) ) : the_row(); ?>
-											<p><?php the_sub_field( 'accordion_title' ); ?></p>
+
+											<li class="accordion-item <?= ($count == 1) ? 'is-active' : ''; ?>" data-accordion-item>
+											  <!-- Accordion tab title -->
+											  <a href="#" class="accordion-title"><?php the_sub_field( 'accordion_title' ); ?></a>
+
+											  <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
+											  <div class="accordion-content" data-tab-content>
+													<p><?php the_sub_field( 'accordion_desc' ); ?></p>
+											  </div>
+											</li>
+
+										<?php $count ++; ?>
 										<?php endwhile; ?>
 									<?php endif; ?>
-
 								<?php endwhile; ?>
 							<?php endif; ?>
 						</div>
 					</section><!-- /Acordeón Sectores a Intervenir -->
 
+
 					<section><!-- Logotipo patrocinadores -->
-						<div>
+						<div class="row row-xs-1 row-md-3">
 							<?php if ( have_rows( 'clone_sponsor' ) ) : ?>
 								<?php while ( have_rows( 'clone_sponsor' ) ) : the_row(); ?>
 
 									<?php if ( have_rows( 'gallery_repeater' ) ) : ?>
 										<?php while ( have_rows( 'gallery_repeater' ) ) : the_row(); ?>
-											<p><?php the_sub_field( 'gallery_desc' ); ?></p>
-											<img src="<?php the_sub_field( 'gallery_image' ); ?>">
+											<div class="col-xs-12 col-md-4">
+												<p><?php the_sub_field( 'gallery_desc' ); ?></p>
+												<img src="<?php the_sub_field( 'gallery_image' ); ?>">
+											</div>
 										<?php endwhile; ?>
 									<?php endif; ?>
 
@@ -96,6 +116,7 @@
 							<?php endif; ?>
 						</div>
 					</section><!-- /Logotipo patrocinadores -->
+
 
 				</div>
    	  	<!--====  End of Contenido de la columna izquierda  ====-->
@@ -124,9 +145,8 @@
    	  	<?php endif; ?>
    	  </div>
 
-   	  <div class="row">
-			<?php echo do_shortcode("[hslide id=1]"); ?>
-   	  </div>
+
+
     </div>
 	</section>
 
