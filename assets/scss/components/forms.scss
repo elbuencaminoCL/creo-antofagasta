@@ -1,0 +1,11 @@
+
+	input {
+		height: 46px !important;
+	}
+
+	.wpcf7 .ajax-loader {
+		display: none !important;
+		&.is-active {
+			display: inline-block !important;
+		}
+	}

@@ -18,10 +18,12 @@
 	=            Banner            =
 	=============================-->
 	<section>
-		<div class="container">
+		<div>
 			<figure class="banner-figure row middle-xs center-xs">
 				<img src="<?php the_field( 'clone_banner_image' ); ?>">
-				<h2><?php the_field( 'clone_banner_title' ); ?></h2>
+				<div class="banner-content container">
+					<h2><?php the_field( 'clone_banner_title' ); ?></h2>
+				</div>
 			</figure>
 		</div>
 	</section>

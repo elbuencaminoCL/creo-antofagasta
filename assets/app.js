@@ -15,13 +15,7 @@
 	import './scss/components/header.scss';
 	import './scss/components/footer.scss';
 	import './scss/components/banner.scss';
-
-
-/*==========================================================
-=            Importación de archivos javaScript            =
-==========================================================*/
-
-	import './js/header.js';
+	import './scss/components/forms.scss';
 
 
 
@@ -33,4 +27,8 @@ import 'foundation-sites';
 $(document).foundation();
 
 
+/*==========================================================
+=            Importación de archivos javaScript            =
+==========================================================*/
 
+	import './js/header.js';

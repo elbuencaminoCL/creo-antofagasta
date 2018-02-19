@@ -20,7 +20,7 @@
 							<ul class="accordion row row-xs-1 row-md-3" data-accordion>
 							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md">Accordion 1</a>
-							    <h3>Nosotros</h3>
+							    <h5 class="footer-title space-bottom">Nosotros</h5>
 							    <div class="accordion-content" data-tab-content>
 							      <?php
 							        $args = array(
@@ -35,7 +35,7 @@
 							  </li>
 							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md">Accordion 2, you can't open me.</a>
-							    <h3>Iniciativas</h3>
+							    <h5 class="footer-title space-bottom">Iniciativas</h5>
 							    <div class="accordion-content" data-tab-content>
 							      <?php
 							        $args = array(
@@ -50,7 +50,7 @@
 							  </li>
 							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md">Accordion 3, you can't open me.</a>
-							    <h3>Biblioteca</h3>
+							    <h5 class="footer-title space-bottom">Biblioteca</h5>
 							    <div class="accordion-content" data-tab-content>
 							      <?php
 							        $args = array(
@@ -67,12 +67,12 @@
 						</div>
 
 						<div class="col-xs-12 col-md-6">
-							<div>
-								<h3>Mantente Enterado con las últimas noticias</h3>
+							<div class="footer-newsletter space-bottom">
+								<h5 class="footer-title space-bottom">Mantente Enterado con las últimas noticias</h5>
 								<?= do_shortcode( '[contact-form-7 id="4" title="Newsletter"]' ); ?>
 							</div>
 							<div>
-								<h3>Encuentranos también en:</h3>
+								<h5 class="footer-title space-bottom">Encuentranos también en:</h5>
 								<?php if ( have_rows( 'footer_partners', 'option' ) ) : ?>
 									<div class="row">
 										<?php while ( have_rows( 'footer_partners', 'option' ) ) : the_row(); ?>
@@ -90,13 +90,14 @@
 				</div>
 			</footer>
 
-			<section>
+
+			<section class="section footer-partners">
 				<div class="container">
-					<p>Una iniciativa:</p>
+					<p class="center-xs">Una Iniciativa de:</p>
 					<?php if ( have_rows( 'footer_partners', 'option' ) ) : ?>
-						<div class="row">
+						<div class="row middle-xs center-xs">
 							<?php while ( have_rows( 'footer_partners', 'option' ) ) : the_row(); ?>
-								<figure>
+								<figure class="footer-partners_image">
 									<a href="<?php the_sub_field( 'footer_partner_link', 'option' ); ?>" target="_blank">
 										<img src="<?php the_sub_field( 'footer_partner_image', 'option' ); ?>">
 									</a>
