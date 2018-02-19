@@ -73,12 +73,12 @@
 							</div>
 							<div>
 								<h5 class="footer-title space-bottom">Encuentranos también en:</h5>
-								<?php if ( have_rows( 'footer_partners', 'option' ) ) : ?>
+								<?php if ( have_rows( 'footer_social', 'option' ) ) : ?>
 									<div class="row">
-										<?php while ( have_rows( 'footer_partners', 'option' ) ) : the_row(); ?>
+										<?php while ( have_rows( 'footer_social', 'option' ) ) : the_row(); ?>
 											<figure>
-												<a href="<?php the_sub_field( 'footer_partner_link', 'option' ); ?>" target="_blank">
-													<img width="200px" src="<?php the_sub_field( 'footer_partner_image', 'option' ); ?>">
+												<a href="<?php the_sub_field( 'footer_social_link', 'option' ); ?>" target="_blank">
+													<img width="200px" src="<?php the_sub_field( 'footer_social_image', 'option' ); ?>">
 												</a>
 											</figure>
 										<?php endwhile; ?>
