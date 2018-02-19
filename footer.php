@@ -13,9 +13,10 @@
 
 		?>
 
-
-		<?php wp_footer(); ?>
+		</div><!-- /Off canvas content -->
 
 		<script src="<?= get_template_directory_uri(); ?>/dist/bundle.js"></script>
+		<?php wp_footer(); ?>
+
 	</body>
 </html>
