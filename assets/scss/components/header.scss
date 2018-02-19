@@ -1,10 +1,46 @@
 
 #header {
-	.container {
-		background-color: white;
-	}
+	background-color: white;
 	#menu-header {
 		justify-content: space-around;
 	}
+	.menu-item {
+		a {
+			color: black;
+			font-size: 14px;
+			font-weight: bolder;
+			text-transform: uppercase;
+			&:after {
+				content: none;
+			}
+		}
+		&.opens-right {
+			transition: all .2s cubic-bezier( .4,0,.2,1 );
+		}
+		&.opens-right.is-active {
+			width: 168px;
+		}
+		.sub-menu {
+			border-top: 0;
+			margin-left: 0;
+			min-width: initial;
+			width: 168px;
+			a {
+				text-transform: capitalize;
+			}
+		}
+	}
+
+	.menu-item-has-children {
+		border: 1px solid transparent;
+		&:hover {
+			border-left: 1px solid #cacaca;
+			border-right: 1px solid #cacaca;
+			border-top: 1px solid #cacaca;
+		}
+	}
 }
 
+.dropdown.menu>li.opens-right>.is-dropdown-submenu {
+	left: -1px;
+}

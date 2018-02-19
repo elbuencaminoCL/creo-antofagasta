@@ -18,10 +18,12 @@
     <body>
       <section id="header">
         <div class="container">
-          <div class="row row-md-2">
+          <div class="row row-md-2 bottom-md">
             <div class="col-md-2 center-xs">
               <figure>
-                <a href="/"><img src="<?php the_field( 'header_logo' ); ?>" alt="Logo Creo Antofagasta"></a>
+                <a href="<?= home_url(); ?>">
+                  <img width="100" src="<?php the_field( 'header_logo', 'option' ); ?>" alt="Logo Creo Antofagasta">
+                </a>
               </figure>
             </div>
 
@@ -39,9 +41,3 @@
           </div>
         </div>
       </section>
-
-
-
-
-
-
