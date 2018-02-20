@@ -208,6 +208,11 @@ function get_custom_cat_template($single_template) {
   else if( has_term( 'chip-multiproject', 'category_projects' ) ) {
       $single_template = dirname( __FILE__ ) . '/template-projects/single-multiproject.php';
   }
+
+  else if( has_term( 'chip-project-simple', 'category_projects' ) ) {
+      $single_template = dirname( __FILE__ ) . '/template-projects/single-project-simple.php';
+  }
+
   return $single_template;
 }
 

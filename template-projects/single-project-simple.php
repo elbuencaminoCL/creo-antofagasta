@@ -71,17 +71,6 @@
 					</section><!-- /Card proyecto en cifras -->
 
 
-					<section><!-- Carrusel -->
-						<?php echo do_shortcode("[hslide id=2]"); ?>
-					</section>
-					<!--====  End of Carrusel  ====-->
-
-
-					<section><!-- ¿Construcción e Infraestructura? -->
-						<div><?php the_field( 'clone_project_build_title_desc' ); ?></div>
-					</section><!-- /¿Construcción e Infraestructura? -->
-
-
 					<section><!-- Logotipo patrocinadores -->
 						<?php if ( have_rows( 'clone_sponsor' ) ) : ?>
 							<?php while ( have_rows( 'clone_sponsor' ) ) : the_row(); ?>
