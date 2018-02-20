@@ -37,31 +37,41 @@
 	<!--====  End of Breadcrumb  ====-->
 
 	<section>
+		<div class="container">
+			<p class="space-top f-small">Inicio / Iniciativas / Ciudad de Mar / Parque Metropolitano Borde Costero</p>
+		</div>
+	</section>
+
+	<section>
     <div class="container">
    	  <div class="row row-xs-1 row-md-2">
 
    	  	<!--=======================================================
    	  	=            Contenido de la columna izquierda            =
    	  	========================================================-->
-				<div class="col-xs-12 col-md-8">
-					<section><!-- ¿De qué se trata este proyecto? -->
-						<div><?php the_field( 'clone_project_desc_title_desc' ); ?></div>
-					</section><!-- /¿De qué se trata este proyecto? -->
+				<div class="card col-xs-12 col-md-8">
+					<section>
+						<div>
+							<?php the_field( 'clone_project_desc_title_desc' ); ?>
+						</div>
+					</section>
 
 
-					<section><!-- Card proyecto en cifras -->
-						<div><?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
+					<section class="project-data"><!-- Card proyecto en cifras -->
+						<?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
 							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-								<h2><?php the_sub_field( 'title' ); ?></h2>
+								<h4 class="project-data_title white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h4>
+								<div class="project-data_content">
 
-								<?php if ( have_rows( 'content_repeater' ) ) : ?>
-									<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
-										<p><?php the_sub_field( 'desc' ); ?></p>
-									<?php endwhile; ?>
-								<?php endif; ?>
+									<?php if ( have_rows( 'content_repeater' ) ) : ?>
+										<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
+											<p><?php the_sub_field( 'desc' ); ?></p>
+										<?php endwhile; ?>
+									<?php endif; ?>
 
+								</div>
 							<?php endwhile; ?>
-						<?php endif; ?></div>
+						<?php endif; ?>
 					</section><!-- /Card proyecto en cifras -->
 
 
