@@ -6,6 +6,7 @@
 	import './scss/global/reset.scss';
 	import './scss/global/grid.scss';
 	import './scss/global/buttons.scss';
+	import './scss/global/colors.scss';
 
 
 /*==========================================================
@@ -16,6 +17,8 @@
 	import './scss/components/footer.scss';
 	import './scss/components/banner.scss';
 	import './scss/components/forms.scss';
+	import './scss/components/cards.scss';
+	import './scss/components/projects.scss';
 
 
 
