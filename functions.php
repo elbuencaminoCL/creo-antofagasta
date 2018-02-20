@@ -205,8 +205,8 @@ function get_custom_cat_template($single_template) {
       $single_template = dirname( __FILE__ ) . '/template-projects/single-project.php';
   }
 
-  else if( has_term( 'chip-project', 'category_projects' ) ) {
-      $single_template = dirname( __FILE__ ) . '/template-projects/single-multi-project.php';
+  else if( has_term( 'chip-multiproject', 'category_projects' ) ) {
+      $single_template = dirname( __FILE__ ) . '/template-projects/single-multiproject.php';
   }
   return $single_template;
 }

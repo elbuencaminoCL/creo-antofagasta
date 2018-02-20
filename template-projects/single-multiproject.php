@@ -21,7 +21,9 @@
 		<div class="container">
 			<figure class="banner-figure row middle-xs center-xs">
 				<img src="<?php the_field( 'clone_banner_image' ); ?>">
-				<h2><?php the_field( 'clone_banner_title' ); ?></h2>
+				<div class="banner-content container">
+					<h2><?php the_field( 'clone_banner_title' ); ?></h2>
+				</div>
 			</figure>
 		</div>
 	</section>
@@ -53,9 +55,14 @@
 								<h2><?php the_sub_field( 'title' ); ?></h2>
 
 								<?php if ( have_rows( 'content_repeater' ) ) : ?>
+									<div class="row row-xs-1 row-md-2">
 									<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
-										<p><?php the_sub_field( 'desc' ); ?></p>
+										<div class="col-xs-12 col-md-6">
+											<p><?php the_sub_field( 'subtitle' ); ?></p>
+											<h5><?php the_sub_field( 'desc' ); ?></h5>
+										</div>
 									<?php endwhile; ?>
+									</div>
 								<?php endif; ?>
 
 							<?php endwhile; ?>
