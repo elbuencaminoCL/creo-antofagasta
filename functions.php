@@ -198,24 +198,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
-function get_custom_cat_template($single_template) {
-  global $post;
-
-  if( has_term( 'chip-project', 'category_projects' ) ) {
-      $single_template = dirname( __FILE__ ) . '/template-projects/single-project.php';
-  }
-
-  else if( has_term( 'chip-multiproject', 'category_projects' ) ) {
-      $single_template = dirname( __FILE__ ) . '/template-projects/single-multiproject.php';
-  }
-
-  else if( has_term( 'chip-project-simple', 'category_projects' ) ) {
-      $single_template = dirname( __FILE__ ) . '/template-projects/single-project-simple.php';
-  }
-
-  return $single_template;
-}
-
-add_filter( "single_template", "get_custom_cat_template" ) ;
-
 
