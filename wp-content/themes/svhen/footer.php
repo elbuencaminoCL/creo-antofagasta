@@ -33,6 +33,7 @@
 							      ?>
 							    </div>
 							  </li>
+
 							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md">Accordion 2, you can't open me.</a>
 							    <h5 class="footer-title space-bottom">Iniciativas</h5>
@@ -48,6 +49,7 @@
 							      ?>
 							    </div>
 							  </li>
+
 							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md">Accordion 3, you can't open me.</a>
 							    <h5 class="footer-title space-bottom">Biblioteca</h5>
