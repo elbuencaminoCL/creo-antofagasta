@@ -31,25 +31,16 @@
 	object-fit: cover;
 }
 
-.infoMember {
-	left: 0;
-	right: 0;
-	position: absolute;
-	padding: 10px;
-	color: white;
-}
 
-.memberImage-1, .memberImage-2 {
+.expert-figure, .member-figure {
+	position: relative;
 	img {
 		width: 100%;
 	}
 }
 
-.expert-figure {
-	position: relative;
-}
-
-.infoExpert {
+.expert-info, .member-info {
+	opacity: 0;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -57,18 +48,11 @@
 	right: 0;
 	padding: 10px;
 	color: white;
+	&:hover {
+		opacity: 1;
+	}
 }
 
-
-/* .col-parent {
-	.infoExpert {
-		&:hover {
-			&:nth-child(2n+1) {
-			  border-left-color: #0A3C6E;
-			}
-		}
-	}
-} */
 
 
 
