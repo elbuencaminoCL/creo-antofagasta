@@ -6,6 +6,3 @@ $('.header-nav-items')
 	.attr( 'dropdownmenu-arrows', 'false' )
 	.attr( 'data-hover-delay', 0 )
 	.attr( 'data-closing-time', 50 )
-
-
-

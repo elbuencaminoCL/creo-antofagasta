@@ -14,11 +14,24 @@ input[type="submit"] {
 	padding: 16px 30px;
 	text-transform: uppercase;
 	transition: all .2s cubic-bezier( .4, 0, .2, 1 );
-	width: 100%;
+	&.button-full-xs {
+		width: 100%;
+	}
 	&:hover,
 	&:focus {
 		background-color: #837db7;
 		color: white;
 		opacity: .8;
 	}
+}
+
+
+@media only screen and (min-width: 960px) {
+
+	.button {
+		&.button-full-xs {
+			width: auto;
+		}
+	}
+
 }

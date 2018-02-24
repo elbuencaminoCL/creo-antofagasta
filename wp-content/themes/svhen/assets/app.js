@@ -7,6 +7,8 @@
 	import './scss/global/grid.scss';
 	import './scss/global/buttons.scss';
 	import './scss/global/colors.scss';
+	import './scss/global/fonts.scss';
+	import './scss/global/utilities.scss';
 
 
 /*==========================================================
@@ -35,4 +37,3 @@ $(document).foundation();
 ==========================================================*/
 
 	import './js/header.js';
-	import './js/creo.js';
