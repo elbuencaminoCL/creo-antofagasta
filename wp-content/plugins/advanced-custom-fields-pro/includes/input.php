@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if( ! class_exists('acf_input') ) :
 
 class acf_input {
-	
-	
+
+
 	/*
 	*  __construct
 	*
@@ -19,23 +19,23 @@ class acf_input {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function __construct() {
-		
+
 		// vars
 		$this->admin_enqueue_scripts = 'admin_enqueue_scripts';
 		$this->admin_head = 'admin_head';
 		$this->admin_footer = 'admin_footer';
 		$this->enqueued = false;
 		$this->data = array();
-		
-		
+
+
 		// actions
 		add_action('acf/save_post', array($this, 'save_post'), 10, 1);
-		
+
 	}
-	
-	
+
+
 	/*
 	*  get_data
 	*
@@ -48,27 +48,27 @@ class acf_input {
 	*  @param	$key (mixed)
 	*  @return	(mixed)
 	*/
-	
+
 	function get_data( $key = false ) {
-		
+
 		// vars
 		$data = $this->data;
-		
-		
+
+
 		// key
 		if( $key && isset($data[ $key ]) ) {
-			
+
 			$data = $data[ $key ];
-			
+
 		}
-		
-		
+
+
 		// return
 		return $data;
-		
+
 	}
-	
-	
+
+
 	/*
 	*  set_data
 	*
@@ -81,12 +81,11 @@ class acf_input {
 	*  @param	$data (array)
 	*  @return	(array)
 	*/
-	
+
 	function set_data( $data ) {
-		
+
 		// defaults
 		$data = acf_parse_args($data, array(
-<<<<<<< HEAD
 			'screen'		=> 'post',	// Current screen loaded (post, user, taxonomy, etc)
 			'post_id'		=> 0,		// ID of current post being edited
 			'nonce'			=> '',		// nonce used for $_POST validation (defaults to screen)
@@ -94,51 +93,26 @@ class acf_input {
 			'ajax'			=> 0,		// if screen uses ajax to append new HTML (enqueue all assets)
 			'changed'		=> 0,		// used to detect change and prompt unload
 		));
-		
+
 		// nonce
 		if( !$data['nonce'] ) {
 			$data['nonce'] = $data['screen'];
 		}
-		
+
 		// enqueue uploader if page allows AJAX fields to appear
 		// priority must be less than 10 to allow WP to enqueue
 		if( $data['ajax'] ) {
 			add_action($this->admin_footer, 'acf_enqueue_uploader', 5);
 		}
-		
+
 		// update
 		$this->data = $data;
-		
-		// return 
+
+		// return
 		return $data;
-=======
-			'post_id'		=> 0,		// ID of current post
-			'nonce'			=> 'post',	// nonce used for $_POST validation
-			'validation'	=> 1,		// runs AJAX validation
-			'ajax'			=> 0,		// fetches new field groups via AJAX
-			'changed'		=> 0,
-		));
-		
-		
-		// update
-		$this->data = $data;
-		
-		
-		// enqueue uploader if page allows AJAX fields to appear
-		if( $data['ajax'] ) {
-			
-			add_action($this->admin_footer, 'acf_enqueue_uploader', 1);
-			
-		}
-		
-		
-		// return 
-		return $data;
-		
->>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 	}
-	
-	
+
+
 	/*
 	*  enqueue
 	*
@@ -151,50 +125,50 @@ class acf_input {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function enqueue() {
-		
+
 		// bail ealry if already enqueued
 		if( $this->enqueued ) return;
-		
-		
+
+
 		// update setting
 		$this->enqueued = true;
-		
-		
+
+
 		// global
 		global $pagenow;
-		
-		
+
+
 		// determine action hooks
 		if( $pagenow == 'customize.php' ) {
-			
+
 			$this->admin_head = 'customize_controls_print_scripts';
 			$this->admin_footer = 'customize_controls_print_footer_scripts';
-			
-		} elseif( $pagenow == 'wp-login.php' ) { 
-			
+
+		} elseif( $pagenow == 'wp-login.php' ) {
+
 			$this->admin_enqueue_scripts = 'login_enqueue_scripts';
 			$this->admin_head = 'login_head';
 			$this->admin_footer = 'login_footer';
-			
+
 		} elseif( !is_admin() ) {
-			
+
 			$this->admin_enqueue_scripts = 'wp_enqueue_scripts';
 			$this->admin_head = 'wp_head';
 			$this->admin_footer = 'wp_footer';
-			
+
 		}
-		
-		
+
+
 		// actions
 		acf_maybe_add_action($this->admin_enqueue_scripts, 	array($this, 'admin_enqueue_scripts'), 20 );
 		acf_maybe_add_action($this->admin_head, 			array($this, 'admin_head'), 20 );
 		acf_maybe_add_action($this->admin_footer, 			array($this, 'admin_footer'), 20 );
-				
+
 	}
-	
-	
+
+
 	/*
 	*  admin_enqueue_scripts
 	*
@@ -207,23 +181,23 @@ class acf_input {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function admin_enqueue_scripts() {
-		
+
 		// scripts
 		wp_enqueue_script('acf-input');
-		
-		
+
+
 		// styles
 		wp_enqueue_style('acf-input');
-		
-		
+
+
 		// do action
 		do_action('acf/input/admin_enqueue_scripts');
-		
+
 	}
-	
-	
+
+
 	/*
 	*  admin_head
 	*
@@ -236,15 +210,15 @@ class acf_input {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function admin_head() {
-		
+
 		// do action
 		do_action('acf/input/admin_head');
-		
+
 	}
-	
-	
+
+
 	/*
 	*  admin_footer
 	*
@@ -257,19 +231,16 @@ class acf_input {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function admin_footer() {
-		
+
 		// global
 		global $wp_version;
-		
-		
+
+
 		// options
 		$o = array(
-<<<<<<< HEAD
 			'screen'		=> acf_get_form_data('screen'),
-=======
->>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 			'post_id'		=> acf_get_form_data('post_id'),
 			'nonce'			=> wp_create_nonce( 'acf_nonce' ),
 			'admin_url'		=> admin_url(),
@@ -282,8 +253,8 @@ class acf_input {
 			'locale'		=> get_locale(),
 			'rtl'			=> is_rtl()
 		);
-		
-		
+
+
 		// l10n
 		$l10n = apply_filters( 'acf/input/admin_l10n', array(
 			'unload'				=> __('The changes you made will be lost if you navigate away from this page','acf'),
@@ -300,13 +271,13 @@ class acf_input {
 			'remove'				=> __('Remove','acf'),
 			'cancel'				=> __('Cancel','acf')
 		));
-		
-		
+
+
 ?>
 <script type="text/javascript">
 var acf = acf || null;
 if( acf ) {
-	
+
 	acf.o = <?php echo json_encode($o); ?>;
 	acf.l10n = <?php echo json_encode($l10n); ?>;
 	<?php do_action('acf/input/admin_footer_js'); ?>
@@ -316,16 +287,16 @@ if( acf ) {
 <?php
 
 do_action('acf/input/admin_footer');
-	
+
 ?>
 <script type="text/javascript">
 	if( acf ) acf.do_action('prepare');
 </script>
 <?php
-		
+
 	}
-	
-	
+
+
 	/*
 	*  save_post
 	*
@@ -338,32 +309,32 @@ do_action('acf/input/admin_footer');
 	*  @param	$post_id (int)
 	*  @return	n/a
 	*/
-	
+
 	function save_post( $post_id ) {
-		
+
 		// bail early if empty
 		// - post data may have be modified
 		if( empty($_POST['acf']) ) return;
-		
-		
+
+
 		// loop
 		foreach( $_POST['acf'] as $k => $v ) {
-			
+
 			// get field
 			$field = acf_get_field( $k );
-			
-			
+
+
 			// continue if no field
 			if( !$field ) continue;
-			
-			
+
+
 			// update
 			acf_update_value( $v, $post_id, $field );
-			
+
 		}
-	
+
 	}
-	
+
 }
 
 // initialize
@@ -387,9 +358,9 @@ endif; // class_exists check
 */
 
 function acf_enqueue_scripts() {
-	
+
 	return acf()->input->enqueue();
-	
+
 }
 
 
@@ -407,7 +378,7 @@ function acf_enqueue_scripts() {
 */
 
 function acf_get_form_data( $key = false ) {
-	
+
 	return acf()->input->get_data( $key );
 
 }
@@ -427,7 +398,7 @@ function acf_get_form_data( $key = false ) {
 */
 
 function acf_set_form_data( $data = array() ) {
-	
+
 	return acf()->input->set_data( $data );
 
 }
@@ -447,26 +418,26 @@ function acf_set_form_data( $data = array() ) {
 */
 
 function acf_enqueue_uploader() {
-	
+
 	// bail early if doing ajax
 	if( acf_is_ajax() ) return;
-	
-	
+
+
 	// bail ealry if already run
 	if( acf_has_done('enqueue_uploader') ) return;
-	
-	
+
+
 	// enqueue media if user can upload
 	if( current_user_can('upload_files') ) {
-		
+
 		wp_enqueue_media();
-		
+
 	}
-	
-	
+
+
 	// create dummy editor
 	?><div id="acf-hidden-wp-editor" class="acf-hidden"><?php wp_editor( '', 'acf_content' ); ?></div><?php
-	
+
 }
 
 
@@ -484,20 +455,20 @@ function acf_enqueue_uploader() {
 */
 
 function acf_form_data( $args = array() ) {
-	
+
 	// make sure scripts and styles have been included
 	// case: front end bbPress edit user
 	acf_enqueue_scripts();
-	
-	
+
+
 	// set form data
 	$args = acf_set_form_data( $args );
-	
-	
+
+
 	// hidden inputs
 	$inputs = $args;
 	$inputs['nonce'] = wp_create_nonce($inputs['nonce']);
-	
+
 	?>
 	<div id="acf-form-data" class="acf-hidden">
 		<?php foreach( $inputs as $k => $v ): ?>
@@ -506,7 +477,7 @@ function acf_form_data( $args = array() ) {
 		<?php do_action('acf/input/form_data', $args); ?>
 	</div>
 	<?php
-	
+
 }
 
 
@@ -524,27 +495,27 @@ function acf_form_data( $args = array() ) {
 */
 
 function acf_save_post( $post_id = 0, $values = null ) {
-	
+
 	// override $_POST
 	if( $values !== null ) {
 		$_POST['acf'] = $values;
 	}
-	
-		
+
+
 	// bail early if no values
 	if( empty($_POST['acf']) ) return false;
-	
-	
+
+
 	// set form data
 	acf_set_form_data(array(
 		'post_id'	=> $post_id
 	));
-	
-	
+
+
 	// hook for 3rd party customization
 	do_action('acf/save_post', $post_id);
-	
-	
+
+
 	// return
 	return true;
 
