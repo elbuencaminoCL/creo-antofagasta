@@ -81,15 +81,25 @@
 				)
 			);
 			$query = new WP_Query( $args );
-			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-		?>
-	    	<h5><?php the_title(); ?></h5>
+			if ( $query->have_posts() ) :
+				while ( $query->have_posts() ) : $query->the_post();
 
-	    	<?php endwhile; ?>
-	    	<!-- post navigation -->
-	    	<?php else: ?>
-	    	<!-- no posts found -->
-	    	<?php endif; ?>
+				$color = get_field('clone_image_color');
+		?>
+
+				<figure <?= ($color) ? 'style="background-color: ' . $color . '"' : ''; ?> class="figure-project row middle-xs center-xs">
+					<?php if( get_field( 'clone_banner_image' ) ) : ?>
+						<img src="<?php the_field( 'clone_banner_image' ); ?>">
+					<?php endif; ?>
+
+					<div class="<?= ( get_field( 'clone_banner_image' ) ? 'banner-content' : '' ); ?> container">
+						<h2><?php the_title(); ?></h2>
+					</div>
+				</figure>
+
+
+  			<?php endwhile; ?>
+  		<?php endif; ?>
 
 		 <?php endforeach; ?>
 	</li>

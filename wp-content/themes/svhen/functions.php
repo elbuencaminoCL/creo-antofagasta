@@ -168,10 +168,6 @@ add_action( 'widgets_init', 'svhen_widgets_init' );
 function svhen_scripts() {
 	wp_enqueue_style( 'svhen-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'svhen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'svhen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -206,64 +202,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
+/**
+ * Project Axis
+ */
+require get_template_directory() . '/inc/template-project-axis.php';
 
-add_action( 'wp_ajax_nopriv_post_project_axis', 'post_project_axis' );
-add_action( 'wp_ajax_post_project_axis', 'post_project_axis' );
-
-function post_project_axis() {
-		 $args = array(
-			'post_type' => 'project',
-			'posts_per_page' => -1,
-			    'taxonomy' => 'category_projects',
-			    'parent' => 418
-		);
-		$categories = get_categories( $args );
-	   echo '<li class="project-content" data-project-item="projectAxis">';
-		foreach($categories as $category) :
-	    echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
-	    echo '<p> Description:'. $category->description . '</p>';
-	    echo '<p> Post Count: '. $category->count . '</p>';
-	    	$args = array(
-	    	'post_type' => 'project',
-	    	'posts_per_page' => -1,
-	    	'tax_query' => array(
-	    	    array(
-	    	    'taxonomy' => 'category_projects',
-	    	    'field' => 'term_id',
-	    	    'terms' => $category->term_id
-	    	    )
-	    	  )
-	    	);
-	    	$query = new WP_Query( $args );
-	    	if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-	    	echo '<h5>' . the_title() . '</h5>';
-
-	    	 endwhile;
-	    	 else:
-	    	 endif;
-
-		  endforeach;
-	    echo '</li>';
-	die();
-}
-
-add_action( 'wp_ajax_nopriv_post_project_random', 'post_project_random' );
-add_action( 'wp_ajax_post_project_random', 'post_project_random' );
-
-function post_project_random() {
-		 $args = array(
-		 	'post_type' => 'project',
-		 	'posts_per_page' => -1,
-		 	'orderby' => 'rand'
-		 	);
-		 	$query = new WP_Query( $args );
-		 	if ( $query->have_posts() ) :
-		 		echo '<li class="project-content" data-project-item="projectRandom">';
-	 			while ( $query->have_posts() ) : $query->the_post();
-	 				echo '<h5>' . the_title() . '</h5>';
-	 			endwhile;
-		 	else:
-	    	echo '</li>';
-		 	endif;
-	die();
-}
+/**
+ * Project Random
+ */
+require get_template_directory() . '/inc/template-project-random.php';

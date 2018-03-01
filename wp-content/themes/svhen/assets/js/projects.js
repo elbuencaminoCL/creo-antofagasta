@@ -22,7 +22,6 @@
 					action : 'post_project_axis'
 				},
 				success : function( response ) {
-					console.log(response)
 					$projectWrap.append(response)
 					axisLoad = true
 					projectActiveFn( e.currentTarget )
@@ -46,7 +45,6 @@
 				},
 				success : function( response ) {
 					$projectWrap.append(response)
-					console.log(response)
 					randomLoad = true
 					projectActiveFn( e.currentTarget )
 				}
