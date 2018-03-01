@@ -59,11 +59,11 @@
 
 	function projectActiveFn( el ) {
 		const getData = $( el ).data('project-select')
-		const $findContentData = $projectWrap.find(`[data-project-item="${getData}"]`)
+		const $findContentData = $projectWrap.find(`[data-project-content="${getData}"]`)
 
-		$findContentData.addClass('project-item-is-active')
-		$findContentData.siblings().removeClass('project-item-is-active')
+		$findContentData.addClass('project-content-is-active')
+		$findContentData.siblings().removeClass('project-content-is-active')
 
-		$( el ).addClass('project-is-active')
-		$( el ).siblings().removeClass('project-is-active')
+		$( el ).addClass('project-item-is-active')
+		$( el ).siblings().removeClass('project-item-is-active')
 	}

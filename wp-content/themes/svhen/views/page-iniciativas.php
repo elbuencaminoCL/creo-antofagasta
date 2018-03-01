@@ -33,7 +33,7 @@
 
 
 <ul class="row">
-	<li class="projectCity project-item project-is-active" data-project-select="projectCity">
+	<li class="projectCity project-item project-item-is-active" data-project-select="projectCity">
 		<p>Ciudades</p>
 	</li>
 	<li class="projectAxis project-item" data-project-select="projectAxis">
@@ -45,7 +45,7 @@
 </ul>
 
 <ul id="projectWrap">
-	<li class="project-content project-item-is-active" data-project-item="projectCity">
+	<li class="project-content project-content-is-active" data-project-content="projectCity">
 		<?php $args = array(
 			'post_type' => 'project',
 			'posts_per_page' => -1,

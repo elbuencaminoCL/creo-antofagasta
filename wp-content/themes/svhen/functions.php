@@ -211,3 +211,8 @@ require get_template_directory() . '/inc/template-project-axis.php';
  * Project Random
  */
 require get_template_directory() . '/inc/template-project-random.php';
+
+/**
+ * Documents Post
+ */
+require get_template_directory() . '/inc/template-documents.php';

@@ -22,6 +22,7 @@
 	import './scss/components/cards.scss';
 	import './scss/components/projects.scss';
 	import './scss/components/carousel.scss';
+	import './scss/components/documents.scss';
 
 
 
@@ -39,3 +40,4 @@ $(document).foundation();
 
 	import './js/header.js';
 	import './js/projects.js';
+	import './js/documents.js';

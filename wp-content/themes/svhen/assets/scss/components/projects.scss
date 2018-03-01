@@ -19,6 +19,10 @@
 		display: none;
 	}
 
-	.project-content.project-item-is-active {
-		display: inline-block;
+	.project-content.project-content-is-active {
+		display: block;
+	}
+
+	.project-item.project-item-is-active {
+		color: red;
 	}

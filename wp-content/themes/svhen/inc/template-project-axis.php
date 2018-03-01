@@ -16,7 +16,7 @@
 
 	?>
 
-		<li class="project-content" data-project-item="projectAxis">
+		<li class="project-content" data-project-content="projectAxis">
 
 			<?php foreach($categories as $category) : ?>
 

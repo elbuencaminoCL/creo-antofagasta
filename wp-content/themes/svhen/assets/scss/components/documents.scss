@@ -1,0 +1,12 @@
+
+	.documentContent {
+		display: none;
+	}
+
+	.documentContent.document-content-is-active {
+		display: block;
+	}
+
+	.documentItem.document-item-is-active {
+		color: red;
+	}

@@ -16,7 +16,7 @@
 
 	?>
 
-			<li class="project-content" data-project-item="projectRandom">
+			<li class="project-content" data-project-content="projectRandom">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				<?php $color = get_field('clone_image_color'); ?>
 
