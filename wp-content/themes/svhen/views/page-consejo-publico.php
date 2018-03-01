@@ -23,7 +23,6 @@
 </section>
 
 
-<<<<<<< HEAD
 <section class="container bg-color-azure pd-30">
 	<div class="center-xs space-bottom">
 		<h3><?php the_field( 'committe_title' ); ?></h3>

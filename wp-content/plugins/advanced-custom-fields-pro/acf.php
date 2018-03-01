@@ -3,11 +3,7 @@
 Plugin Name: Advanced Custom Fields PRO
 Plugin URI: https://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields.
-<<<<<<< HEAD
 Version: 5.6.9
-=======
-Version: 5.6.8
->>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
