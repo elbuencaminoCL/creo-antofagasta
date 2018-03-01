@@ -218,9 +218,16 @@ class acf_admin_field_group {
 		
 		
 		// render post data
+<<<<<<< HEAD
 		acf_form_data(array(
 			'screen'		=> 'field_group',
 			'post_id'		=> $post->ID,
+=======
+		acf_form_data(array( 
+			'post_id'		=> $post->ID, 
+			'nonce'			=> 'field_group',
+			'ajax'			=> 0,
+>>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 			'delete_fields'	=> 0
 		));
 

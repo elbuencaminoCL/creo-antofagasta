@@ -13,10 +13,10 @@
 if( ! class_exists('acf_form_user') ) :
 
 class acf_form_user {
-	
+
 	var $form = '#createuser';
-	
-	
+
+
 	/*
 	*  __construct
 	*
@@ -29,28 +29,28 @@ class acf_form_user {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function __construct() {
-		
+
 		// actions
 		add_action('admin_enqueue_scripts',			array($this, 'admin_enqueue_scripts'));
 		add_action('login_form_register', 			array($this, 'admin_enqueue_scripts'));
-		
+
 		// render
 		add_action('show_user_profile', 			array($this, 'edit_user'));
 		add_action('edit_user_profile',				array($this, 'edit_user'));
 		add_action('user_new_form',					array($this, 'user_new_form'));
 		add_action('register_form',					array($this, 'register_user'));
-		
+
 		// save
 		//add_action('edit_user_profile_update',	array($this, 'save_user'));
 		//add_action('personal_options_update',		array($this, 'save_user'));
 		add_action('user_register',					array($this, 'save_user'));
 		add_action('profile_update',				array($this, 'save_user'));
-		
+
 	}
-	
-	
+
+
 	/*
 	*  validate_page
 	*
@@ -63,30 +63,30 @@ class acf_form_user {
 	*  @param	N/A
 	*  @return	(boolean)
 	*/
-	
+
 	function validate_page() {
-		
+
 		// global
 		global $pagenow;
-		
-		
+
+
 		// validate page
 		if( in_array( $pagenow, array('profile.php', 'user-edit.php', 'user-new.php', 'wp-login.php') ) ) {
-			
+
 			return true;
-		
+
 		}
-		
-		
+
+
 		// return
 		return false;
 	}
-	
-	
+
+
 	/*
 	*  admin_enqueue_scripts
 	*
-	*  This action is run after post query but before any admin script / head actions. 
+	*  This action is run after post query but before any admin script / head actions.
 	*  It is a good place to register all actions.
 	*
 	*  @type	action (admin_enqueue_scripts)
@@ -96,27 +96,27 @@ class acf_form_user {
 	*  @param	N/A
 	*  @return	N/A
 	*/
-	
+
 	function admin_enqueue_scripts() {
-		
+
 		// validate page
 		if( ! $this->validate_page() ) {
-		
+
 			return;
-			
+
 		}
-		
-		
+
+
 		// load acf scripts
 		acf_enqueue_scripts();
-		
-		
+
+
 		// actions
 		add_action('acf/input/admin_footer', array($this, 'admin_footer'), 10, 1);
-		
+
 	}
-	
-	
+
+
 	/*
 	*  register_user
 	*
@@ -129,19 +129,19 @@ class acf_form_user {
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
-	
+
 	function register_user() {
-		
+
 		// update vars
 		$this->form = '#registerform';
-		
-		
+
+
 		// render
 		$this->render( 0, 'register', 'div' );
-		
+
 	}
-	
-	
+
+
 	/*
 	*  edit_user
 	*
@@ -154,19 +154,19 @@ class acf_form_user {
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
-	
+
 	function edit_user( $user ) {
-		
+
 		// update vars
 		$this->form = '#your-profile';
-		
-		
+
+
 		// render
 		$this->render( $user->ID, 'edit', 'tr' );
-		
+
 	}
-	
-	
+
+
 	/*
 	*  user_new_form
 	*
@@ -179,19 +179,19 @@ class acf_form_user {
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
-	
+
 	function user_new_form() {
-		
+
 		// update vars
 		$this->form = '#createuser';
-		
-		
+
+
 		// render
 		$this->render( 0, 'add', 'tr' );
-		
+
 	}
-	
-	
+
+
 	/*
 	*  render
 	*
@@ -206,76 +206,77 @@ class acf_form_user {
 	*  @param	$el (string)
 	*  @return	n/a
 	*/
-	
+
 	function render( $user_id, $user_form, $el = 'tr' ) {
-		
+
 		// vars
 		$post_id = "user_{$user_id}";
 		$show_title = true;
-		
-		
+
+
 		// args
 		$args = array(
 			'user_id'	=> 'new',
 			'user_form'	=> $user_form
 		);
-		
+
 		if( $user_id ) $args['user_id'] = $user_id;
-		
-		
+
+
 		// get field groups
 		$field_groups = acf_get_field_groups( $args );
-		
-		
+
+
 		// bail early if no field groups
 		if( empty($field_groups) ) return;
-		
-		
+
+
 		// form data
 		acf_form_data(array(
 			'screen'	=> 'user',
 			'post_id'	=> $post_id,
 		));
-		
-		
+
+
 		// loop
 		foreach( $field_groups as $field_group ) {
-			
+
 			// vars
 			$fields = acf_get_fields( $field_group );
-			
-			
+
+
 			// title
 			if( $show_title && $field_group['style'] === 'default' ) {
 				echo '<h2>' . $field_group['title'] . '</h2>';
 			}
-			
-			
+
+
 			// table start
 			if( $el == 'tr' ) {
 				echo '<table class="form-table"><tbody>';
 			} else {
 				echo '<div class="acf-user-register-fields acf-fields -clear">';
 			}
-			
-			
+
+
 			// render fields
+
 			acf_render_fields( $fields, $post_id, $el, $field_group['instruction_placement'] );
-			
-			
+
+
 			// table end
 			if( $el == 'tr' ) {
 				echo '</tbody></table>';
 			} else {
 				echo '</div>';
 			}
-			
+
 		}
-		
-		
+
+
 	}
-	
-	
+
+
 	/*
 	*  admin_footer
 	*
@@ -288,9 +289,9 @@ class acf_form_user {
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
-	
+
 	function admin_footer() {
-		
+
 ?>
 <style type="text/css">
 
@@ -348,30 +349,30 @@ class acf_form_user {
 </style>
 <script type="text/javascript">
 (function($) {
-	
+
 	// vars
 	var $spinner = $('<?php echo $this->form; ?> p.submit .spinner');
-	
-	
+
+
 	// create spinner if not exists (may exist in future WP versions)
 	if( !$spinner.exists() ) {
-		
+
 		// create spinner (use .acf-spinner becuase .spinner CSS not included on register page)
 		$spinner = $('<span class="acf-spinner"></span>');
-		
-		
+
+
 		// append
 		$('<?php echo $this->form; ?> p.submit').append( $spinner );
-		
+
 	}
-	
-})(jQuery);	
+
+})(jQuery);
 </script>
 <?php
-		
+
 	}
-	
-	
+
+
 	/*
 	*  save_user
 	*
@@ -384,26 +385,26 @@ class acf_form_user {
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
-	
+
 	function save_user( $user_id ) {
-		
+
 		// verify and remove nonce
 		if( ! acf_verify_nonce('user') ) {
-			
+
 			return $user_id;
-		
+
 		}
-		
-	    
+
+
 	    // save data
 	    if( acf_validate_save_post(true) ) {
-	    	
+
 			acf_save_post( "user_{$user_id}" );
-		
+
 		}
-			
+
 	}
-			
+
 }
 
 new acf_form_user();

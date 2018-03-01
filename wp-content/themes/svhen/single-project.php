@@ -42,6 +42,7 @@
 	<!--====  End of Breadcrumb  ====-->
 
 
+<<<<<<< HEAD
 	<!--=======================================================
 	=            Contenido de la columna izquierda            =
 	========================================================-->
@@ -294,7 +295,6 @@
 			</div>
 		<?php endif; ?>
 		<!--====  End of Proyectos Relacionados  ====-->
-
 
 
 <?php get_footer(); ?>

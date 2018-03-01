@@ -38,12 +38,12 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 		$class .= ' optional';
 	}
 
+
 	$atts = array(
 		'class' => trim( $class ),
 	);
 
 	$item_atts = array();
-
 	$item_atts['type'] = 'checkbox';
 	$item_atts['name'] = $tag->name;
 	$item_atts['value'] = '1';
@@ -56,7 +56,6 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 
 	$item_atts['class'] = $tag->get_class_option();
 	$item_atts['id'] = $tag->get_id_option();
-
 	$item_atts = wpcf7_format_atts( $item_atts );
 
 	$content = empty( $tag->content )

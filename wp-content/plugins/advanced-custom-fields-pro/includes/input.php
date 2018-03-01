@@ -86,6 +86,7 @@ class acf_input {
 		
 		// defaults
 		$data = acf_parse_args($data, array(
+<<<<<<< HEAD
 			'screen'		=> 'post',	// Current screen loaded (post, user, taxonomy, etc)
 			'post_id'		=> 0,		// ID of current post being edited
 			'nonce'			=> '',		// nonce used for $_POST validation (defaults to screen)
@@ -110,6 +111,31 @@ class acf_input {
 		
 		// return 
 		return $data;
+=======
+			'post_id'		=> 0,		// ID of current post
+			'nonce'			=> 'post',	// nonce used for $_POST validation
+			'validation'	=> 1,		// runs AJAX validation
+			'ajax'			=> 0,		// fetches new field groups via AJAX
+			'changed'		=> 0,
+		));
+		
+		
+		// update
+		$this->data = $data;
+		
+		
+		// enqueue uploader if page allows AJAX fields to appear
+		if( $data['ajax'] ) {
+			
+			add_action($this->admin_footer, 'acf_enqueue_uploader', 1);
+			
+		}
+		
+		
+		// return 
+		return $data;
+		
+>>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 	}
 	
 	
@@ -240,7 +266,10 @@ class acf_input {
 		
 		// options
 		$o = array(
+<<<<<<< HEAD
 			'screen'		=> acf_get_form_data('screen'),
+=======
+>>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 			'post_id'		=> acf_get_form_data('post_id'),
 			'nonce'			=> wp_create_nonce( 'acf_nonce' ),
 			'admin_url'		=> admin_url(),

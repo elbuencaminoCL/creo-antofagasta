@@ -112,7 +112,11 @@ class acf_location_post_type extends acf_location {
 		// get post types
 		// - removed show_ui to allow 3rd party code to register a post type using a custom admin edit page
 		$post_types = acf_get_post_types(array(
+<<<<<<< HEAD
 			'show_ui'	=> 1, 
+=======
+			//'show_ui'	=> 1, 
+>>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 			'exclude'	=> array('attachment')
 		));
 		

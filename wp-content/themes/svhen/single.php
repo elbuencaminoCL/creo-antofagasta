@@ -9,25 +9,23 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area OOOOOOAAAAAAAAOOOOOO">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) : the_post();
 
-			<div class="container">
-				<div class="row row-xs-1 row-md-2">
-					<div class="col-xs-12 col-md-8">
-						<?php the_content(); ?>
-					</div>
+			get_template_part( 'template-parts/content', get_post_type() );
 
-					<div class="col-xs-12 col-md-4">
-						<p><?php the_field( 'news_desc', 'option' ); ?></p>
-						<a href="<?php the_field( 'news_button_link', 'option' ); ?>" class="button"><?php the_field( 'news_button', 'option' ); ?></a>
-					</div>
-				</div>
-			</div>
+			the_post_navigation();
 
-		<?php endwhile; // End of the loop.?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -35,4 +33,3 @@ get_header(); ?>
 <?php
 get_sidebar();
 get_footer();
-?>

@@ -922,7 +922,7 @@ html[dir="rtl"] .acf-button-group label:last-child {
 /*--------------------------------------------------------------------------
 *
 *	Google Map
-*	
+*
 *-------------------------------------------------------------------------*/
 .acf-google-map {
   position: relative;
@@ -1018,7 +1018,7 @@ html[dir="rtl"] .pac-container .pac-item {
 /*--------------------------------------------------------------------------
 *
 *	Relationship
-*	
+*
 *-------------------------------------------------------------------------*/
 .acf-relationship {
   background: #fff;
@@ -1213,7 +1213,7 @@ html[dir="rtl"] .acf-relationship .selection .values .acf-icon {
 /*--------------------------------------------------------------------------
 *
 *	WYSIWYG
-*	
+*
 *-------------------------------------------------------------------------*/
 .acf-editor-wrap {
   /* delay */
@@ -2046,7 +2046,7 @@ tr.acf-accordion + tr.acf-accordion {
 .menu-item-settings > .field-acf > .acf-field.acf-accordion {
 	border: #dfdfdf solid 1px;
 	margin: 10px -13px 10px -11px;
-	
+
 	+ .acf-field.acf-accordion {
 		margin-top: -11px;
 	}
@@ -2643,7 +2643,7 @@ p.submit .acf-spinner {
 /*--------------------------------------------------------------------------
 *
 *	Conditional Logic
-*	
+*
 *-------------------------------------------------------------------------*/
 /* Hide */
 .hidden-by-conditional-logic {
@@ -2659,7 +2659,7 @@ p.submit .acf-spinner {
 /*--------------------------------------------------------------------------
 *
 *	3rd Party
-*	
+*
 *-------------------------------------------------------------------------*/
 /* Tabify shows hidden postboxes */
 .acf-postbox.acf-hidden {
@@ -2681,3 +2681,4 @@ p.submit .acf-spinner {
 #editor .editor-meta-boxes-area input {
   max-width: none;
 }
+

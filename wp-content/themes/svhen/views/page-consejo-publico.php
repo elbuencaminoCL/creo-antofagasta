@@ -23,6 +23,7 @@
 </section>
 
 
+<<<<<<< HEAD
 <section class="container bg-color-azure pd-30">
 	<div class="center-xs space-bottom">
 		<h3><?php the_field( 'committe_title' ); ?></h3>
@@ -33,10 +34,8 @@
 		<div class="row row-xs-1 row-md-2">
 			<?php if ( have_rows( 'committe_main_repeater' ) ) : ?>
 				<?php while ( have_rows( 'committe_main_repeater' ) ) : the_row(); ?>
-
 					<?php $hex = get_sub_field('integrant_main_color');
   				list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
-
 					<div class="col-xs-12  col-md-6 space-bottom">
 						<div class="row row-xs-2 no-gutter">
 							<div class="col-xs-4">
@@ -73,13 +72,13 @@
 							</div>
 						</figure>
 					</div>
+
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
 	</div>
 
 </section>
-
 
 
 <?php get_footer(); ?>
