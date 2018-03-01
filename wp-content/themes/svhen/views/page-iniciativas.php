@@ -31,119 +31,56 @@
 	</div>
 </section>
 
-<section>
-	<!--==============================
-	=            Ciudades            =
-	===============================-->
-	<div class="bg-purple">
 
-	<?php $args = array(
-		'post_type' => 'project',
-		'posts_per_page' => -1,
-		    'taxonomy' => 'category_projects',
-		    'parent' => 417
-	);
-	$categories = get_categories( $args );
-	foreach($categories as $category) :
-    echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
-    echo '<p> Description:'. $category->description . '</p>';
-    echo '<p> Post Count: '. $category->count . '</p>';
+<ul class="row">
+	<li class="projectCity project-item project-is-active" data-project-select="projectCity">
+		<p>Ciudades</p>
+	</li>
+	<li class="projectAxis project-item" data-project-select="projectAxis">
+		<p>Ejes</p>
+	</li>
+	<li class="projectRandom project-item" data-project-select="projectRandom">
+		<p>Aleatorio</p>
+	</li>
+</ul>
 
-    	$args = array(
-    	'post_type' => 'project',
-    	'posts_per_page' => -1,
-    	'tax_query' => array(
-    	    array(
-    	    'taxonomy' => 'category_projects',
-    	    'field' => 'term_id',
-    	    'terms' => $category->term_id
-    	    )
-    	  )
-    	);
+<ul id="projectWrap">
+	<li class="project-content project-item-is-active" data-project-item="projectCity">
+		<?php $args = array(
+			'post_type' => 'project',
+			'posts_per_page' => -1,
+			    'taxonomy' => 'category_projects',
+			    'parent' => 417
+		);
+		$categories = get_categories( $args );
+		foreach($categories as $category) :
+	    echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
+	    echo '<p> Description:'. $category->description . '</p>';
+	    echo '<p> Post Count: '. $category->count . '</p>';
+	    	$args = array(
+	    	'post_type' => 'project',
+	    	'posts_per_page' => -1,
+	    	'tax_query' => array(
+	    	    array(
+	    	    'taxonomy' => 'category_projects',
+	    	    'field' => 'term_id',
+	    	    'terms' => $category->term_id
+	    	    )
+	    	  )
+	    	);
+	    	$query = new WP_Query( $args );
+	    	if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+	    	<h5><?php the_title(); ?></h5>
 
-    	$query = new WP_Query( $args );
+	    	<?php endwhile; ?>
+	    	<!-- post navigation -->
+	    	<?php else: ?>
+	    	<!-- no posts found -->
+	    	<?php endif; ?>
 
-    	if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-    	<h5><?php the_title(); ?></h5>
-
-    	<?php endwhile; ?>
-    	<!-- post navigation -->
-    	<?php else: ?>
-    	<!-- no posts found -->
-    	<?php endif; ?>
-
-	 <?php endforeach; ?>
-
-
-</div>
-	<!--====  End of Ciudades  ====-->
-
-
-	<!--==============================
-	=            Ejes                =
-	===============================-->
-	<div class=""><?php $args = array(
-		'post_type' => 'project',
-		'posts_per_page' => -1,
-		    'taxonomy' => 'category_projects',
-		    'parent' => 418
-	);
-	$categories = get_categories( $args );
-	foreach($categories as $category) :
-    echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
-    echo '<p> Description:'. $category->description . '</p>';
-    echo '<p> Post Count: '. $category->count . '</p>';
-
-    	$args = array(
-    	'post_type' => 'project',
-    	'posts_per_page' => -1,
-    	'tax_query' => array(
-    	    array(
-    	    'taxonomy' => 'category_projects',
-    	    'field' => 'term_id',
-    	    'terms' => $category->term_id
-    	    )
-    	  )
-    	);
-
-    	$query = new WP_Query( $args );
-
-    	if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-    	<h5><?php the_title(); ?></h5>
-
-    	<?php endwhile; ?>
-    	<!-- post navigation -->
-    	<?php else: ?>
-    	<!-- no posts found -->
-    	<?php endif; ?>
-
-	 <?php endforeach; ?>
-</div>
-	<!--====  End of Ejes      ====-->
-
-
-	<!--==============================
-	=            Aleatorio           =
-	===============================-->
-	<div class="bg-purple"><?php
-	$args = array(
-	'post_type' => 'project',
-	'posts_per_page' => -1,
-	'orderby' => 'rand'
-	);
-
-	$query = new WP_Query( $args );
-
-	if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-	<h5><?php the_title(); ?></h5>
-	<?php endwhile; ?>
-	<!-- post navigation -->
-	<?php else: ?>
-	<!-- no posts found -->
-	<?php endif; ?>
-</div>
-	<!--====  End of Aleatorio  ====-->
-</section>
+		 <?php endforeach; ?>
+	</li>
+</ul>
 
 <?php get_footer(); ?>
 
