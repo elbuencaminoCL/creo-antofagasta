@@ -21,6 +21,7 @@
 			<?php foreach($categories as $category) : ?>
 
 			<h3><?= $category->name; ?></h3>
+			<div class="row row-xs-1 row-sm-2 row-md-4">
 
 			<?php
 				$args = array(
@@ -43,21 +44,27 @@
 
 			?>
 
-					<figure <?= ($color) ? 'style="background-color: ' . $color . '"' : ''; ?> class="figure-project row middle-xs center-xs">
 
-						<?php if( get_field( 'clone_banner_image' ) ) : ?>
-							<img src="<?php the_field( 'clone_banner_image' ); ?>">
-						<?php endif; ?>
+					<div class="col-xs-12 col-sm-6 col-md-3 space-bottom">
+						<a href="<?php the_permalink() ?>">
+							<figure <?= ($color) ? 'style="background-color: ' . $color . '"' : ''; ?> class="figure-project row middle-xs center-xs">
+								<?php if( get_field( 'clone_banner_image' ) ) : ?>
+									<img src="<?php the_field( 'clone_banner_image' ); ?>">
+								<?php endif; ?>
 
-							<div class="<?= ( get_field( 'clone_banner_image' ) ? 'banner-content' : '' ); ?> container">
-								<h2><?php the_title(); ?></h2>
-							</div>
+								<div class="<?= ( get_field( 'clone_banner_image' ) ? 'banner-content' : '' ); ?> container">
+									<h2><?php the_title(); ?></h2>
+								</div>
+							</figure>
+						</a>
+					</div>
 
-					</figure>
-
-					<?php
-						endwhile;
-					endif;
+				<?php
+					endwhile;
+				endif;
+				?>
+			</div>
+			<?php
 				endforeach;
 			?>
 		</li>
