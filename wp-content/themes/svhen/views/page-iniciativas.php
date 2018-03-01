@@ -49,27 +49,40 @@
 		<?php $args = array(
 			'post_type' => 'project',
 			'posts_per_page' => -1,
-			    'taxonomy' => 'category_projects',
-			    'parent' => 417
+			'parent' => 417,
+			'taxonomy' => 'category_projects'
 		);
-		$categories = get_categories( $args );
-		foreach($categories as $category) :
-	    echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
-	    echo '<p> Description:'. $category->description . '</p>';
-	    echo '<p> Post Count: '. $category->count . '</p>';
-	    	$args = array(
-	    	'post_type' => 'project',
-	    	'posts_per_page' => -1,
-	    	'tax_query' => array(
-	    	    array(
-	    	    'taxonomy' => 'category_projects',
-	    	    'field' => 'term_id',
-	    	    'terms' => $category->term_id
-	    	    )
-	    	  )
-	    	);
-	    	$query = new WP_Query( $args );
-	    	if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+			$categories = get_categories( $args );
+
+			foreach($categories as $category) :
+
+        $term = get_term_by( 'id', $category->term_id, 'category_projects' );
+        $image = get_field('category_projects_image', $term);
+        $color = get_field('category_projects_color', $term);
+		?>
+			<div style="background-color: <?= $color; ?>">
+				<figure>
+					<img src="<?= $image; ?>" alt="Image Category" />
+				</figure>
+				<h3><?= $category->name; ?></h3>
+				<p><?= $category->description; ?></p>
+			</div>
+		<?php
+			$args = array(
+			'post_type' => 'project',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+					array(
+						'taxonomy' => 'category_projects',
+						'field' => 'term_id',
+						'terms' => $category->term_id
+					)
+				)
+			);
+			$query = new WP_Query( $args );
+			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+		?>
 	    	<h5><?php the_title(); ?></h5>
 
 	    	<?php endwhile; ?>
