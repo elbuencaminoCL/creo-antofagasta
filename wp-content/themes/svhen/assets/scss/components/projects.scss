@@ -22,3 +22,21 @@
 	.project-content.project-item-is-active {
 		display: inline-block;
 	}
+
+	.project-relation-figure {
+		position: relative;
+		width: 100%;
+		img {
+			width: 100%;
+			max-height: 160px;
+		}
+	}
+
+	.project-relation-link {
+		position: absolute;
+		bottom: 15px;
+		left: 15px;
+		&:visited {
+			color: white;
+		}
+	}
