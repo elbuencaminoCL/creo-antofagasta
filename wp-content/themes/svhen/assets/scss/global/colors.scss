@@ -18,19 +18,31 @@ $salmon: #ed5e5c;
 $sandy-brown: #e6ae71;
 
 
+/*========================================
+=            Colores de Fondo            =
+========================================*/
+	.bg-purple {
+		background-color: $purple;
+	}
 
-.bg-purple {
-	background-color: $purple;
-}
+	.bg-color-mintcream {
+		background-color: $mintcream;
+	}
 
-.white {
-	color: white;
-}
+	.bg-color-azure {
+		background-color: $azure;
+	}
 
-.bg-color-mintcream {
-	background-color: $mintcream;
-}
+	.bg-dark-cyan {
+		background-color: $dark-cyan;
+	}
+/*=====  End of Colores de Fondo  ======*/
 
-.bg-color-azure {
-	background-color: $azure;
-}
+
+/*=========================================
+=            Colores de Fuente            =
+=========================================*/
+	.f-white {
+		color: white;
+	}
+/*=====  End of Colores de Fuente  ======*/
