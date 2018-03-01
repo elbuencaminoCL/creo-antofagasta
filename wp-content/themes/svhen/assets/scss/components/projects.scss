@@ -14,3 +14,11 @@
 	.project-data_content {
 		padding: 1rem;
 	}
+
+	.project-content {
+		display: none;
+	}
+
+	.project-content.project-item-is-active {
+		display: inline-block;
+	}
