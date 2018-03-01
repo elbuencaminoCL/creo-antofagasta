@@ -2749,7 +2749,7 @@ msgstr "Affiche le texte aux côtés de la case à cocher"
 
 #: includes/fields/class-acf-field-true_false.php:155
 msgid "On Text"
-msgstr "Texte côté « Actif »"
+msgstr "Texte côté « Actif »"
 
 #: includes/fields/class-acf-field-true_false.php:156
 msgid "Text shown when active"
@@ -2757,7 +2757,7 @@ msgstr "Text affiché lorsqu’il est actif"
 
 #: includes/fields/class-acf-field-true_false.php:165
 msgid "Off Text"
-msgstr "Texte côté « Inactif »"
+msgstr "Texte côté « Inactif »"
 
 #: includes/fields/class-acf-field-true_false.php:166
 msgid "Text shown when inactive"

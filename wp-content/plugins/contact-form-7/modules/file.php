@@ -409,6 +409,7 @@ function wpcf7_upload_tmp_dir() {
 	}
 }
 
+
 add_action( 'template_redirect', 'wpcf7_cleanup_upload_files', 20, 0 );
 
 function wpcf7_cleanup_upload_files( $seconds = 60, $max = 100 ) {

@@ -1,3 +1,4 @@
+
 <div class="col-xs-12 col-sm-6 col-md-3 pd-10" style="background-color: <?php the_field( 'color_picker' ); ?>;">
 <?php if (! has_post_thumbnail() ); ?>
 <?php

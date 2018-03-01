@@ -286,7 +286,6 @@ function wpcf7_rmdir_p( $dir ) {
 	&& ! array_diff( $files, array( '.', '..' ) ) ) {
 		return rmdir( $dir );
 	}
-
 	return false;
 }
 

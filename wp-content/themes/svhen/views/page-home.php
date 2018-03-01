@@ -6,6 +6,7 @@
   get_header();
 ?>
 
+<<<<<<< HEAD
 
 <!--==============================
 =            Carrusel            =
@@ -39,7 +40,7 @@
 		</div>
 	</div>
 </section>
-<!--====  End of Banner  ====-->
 
+<!--====  End of Banner  ====-->
 
 <?php get_footer(); ?>

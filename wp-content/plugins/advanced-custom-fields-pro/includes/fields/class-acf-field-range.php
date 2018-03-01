@@ -108,8 +108,11 @@ class acf_field_range extends acf_field_number {
 				'id'	=> $atts['id'] . '-alt', 
 				'value'	=> $atts['value'],
 				'step'	=> $atts['step'],
+<<<<<<< HEAD
 				'min'	=> $atts['min'],
 				'max'	=> $atts['max'],
+=======
+>>>>>>> 98eca4b5a44fb3ef73e63f8181b42e7c76afc0a6
 				'style'	=> 'width: ' . (1.8 + $len*0.7) . 'em;'
 			));
 			

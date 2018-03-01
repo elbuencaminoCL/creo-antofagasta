@@ -9,6 +9,7 @@
 	import './scss/global/colors.scss';
 	import './scss/global/fonts.scss';
 	import './scss/global/utilities.scss';
+	import './scss/global/shadows.scss';
 
 
 /*==========================================================
@@ -23,6 +24,7 @@
 	import './scss/components/projects.scss';
 	import './scss/components/carousel.scss';
 	import './scss/components/documents.scss';
+	import './scss/components/accordion.scss';
 
 
 

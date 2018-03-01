@@ -467,6 +467,7 @@ class WPCF7_ConfigValidator {
 				continue;
 			}
 
+
 			if ( ! preg_match( '/^([0-9A-Za-z-]+):(.*)$/', $header, $matches ) ) {
 				$invalid_mail_header_exists = true;
 			} else {
@@ -480,6 +481,7 @@ class WPCF7_ConfigValidator {
 							'message' =>
 								__( "Invalid mailbox syntax is used in the %name% field.", 'contact-form-7' ),
 							'params' => array( 'name' => $header_name ) ) );
+
 				} elseif ( empty( $header_value ) ) {
 					$invalid_mail_header_exists = true;
 				}
