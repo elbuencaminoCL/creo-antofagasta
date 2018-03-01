@@ -1,0 +1,86 @@
+
+.home-banner-container, .home-banner-figure {
+	position: relative;
+}
+
+.home-banner-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.banner-content {
+	left: 0;
+	position: absolute;
+	right: 0;
+	h2 {
+		color: white;
+	}
+}
+
+.banner-figure, {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	img {
+		width: 100%;
+		object-fit: cover;
+		max-height: 300px;
+	}
+}
+
+.believe-banner-image, .home-banner-image {
+	width: 100%;
+	max-height: 300px;
+	object-fit: cover;
+}
+
+
+.expert-figure, .member-figure {
+	position: relative;
+	img {
+		width: 100%;
+	}
+}
+
+.expert-info, .member-info {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 10px;
+	color: white;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+
+
+
+@media only screen and (min-width: 960px) {
+
+	.home_banner_row {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+}
+
+
+
+
+
+
