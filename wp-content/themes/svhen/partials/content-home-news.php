@@ -115,9 +115,9 @@
 															<?= the_category( ' - ' ); ?>
 														</div>
 													</div>
-													<h3 class="card--news--home_title center-xs space-bottom">
+													<h4 class="card--news--home_title center-md">
 														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
-													</h3>
+													</h4>
 													<div class="card--news--home_caption hide-xs show-md space-bottom"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</article>
@@ -187,9 +187,9 @@
 															<?= the_category( ' - ' ); ?>
 														</div>
 													</div>
-													<h3 class="card--news--home_title center-xs space-bottom">
+													<h4 class="card--news--home_title center-md">
 														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
-													</h3>
+													</h4>
 													<div class="card--news--home_caption hide-xs show-md space-bottom"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</article>
