@@ -176,7 +176,7 @@
 
 								<?php if ( have_rows( 'gallery_repeater' ) ) : ?>
 									<?php while ( have_rows( 'gallery_repeater' ) ) : the_row(); ?>
-										<div class="">
+										<div>
 											<p><?php the_sub_field( 'gallery_title' ); ?></p>
 											<img src="<?php the_sub_field( 'gallery_image' ); ?>" class="sponsor-image">
 										</div>

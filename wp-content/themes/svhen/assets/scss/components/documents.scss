@@ -1,4 +1,6 @@
 
+@import './../global/colors.scss';
+
 	.documentContent {
 		display: none;
 	}
@@ -8,5 +10,15 @@
 	}
 
 	.documentItem.document-item-is-active {
-		color: red;
+		color: $pink-dark;
+		.f-all {
+			color: $pink-dark;
+		}
+	}
+
+	.doc-row {
+		background-color: white;
+		border: 1px solid $dark-gray;
+		padding: 15px;
+		margin-bottom: -1px;
 	}
