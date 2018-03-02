@@ -33,7 +33,8 @@
 		=            Breadcrumb            =
 		=================================-->
 		<section class="mg-bottom-15">
-			<p class="space-top f-small">Inicio / Iniciativas / Ciudad de Mar / Parque Metropolitano Borde Costero</p>
+
+			<p class="space-top f-small"><a href="<?= home_url(); ?>">Inicio</a> / <a href="<?= home_url( 'iniciativas' ); ?>">Iniciativas</a> / <?php the_title(); ?></p>
 		</section>
 		<!--====  End of Breadcrumb  ====-->
 
