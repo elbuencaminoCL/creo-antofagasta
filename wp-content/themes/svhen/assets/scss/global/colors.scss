@@ -59,8 +59,26 @@ $dark-gray: #565656;
 		color: white;
 	}
 
+	.f-blue {
+		color: #0269b6;
+		&:focus,
+		&:visited,
+		&:hover {
+			color: #0269b6;
+		}
+	}
+
 	.f-dark-gray {
 		color: $dark-gray;
+	}
+
+	.f-black {
+		color: #333;
+		&:focus,
+		&:visited,
+		&:hover {
+			color: #333;
+		}
 	}
 /*=====  End of Colores de Fuente  ======*/
 

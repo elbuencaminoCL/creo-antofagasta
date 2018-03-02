@@ -43,6 +43,20 @@ a {
   }
 }
 
+.f-link {
+  border-bottom: 1px solid black;
+  color: black;
+  font-weight: bolder;
+  padding-bottom: 3px;
+  transition: all .2s cubic-bezier( .4, 0, .2, 1 );
+  &:hover,
+  &:focus,
+  &:visited {
+    color: black;
+    opacity: .8;
+  }
+}
+
 .f-link-white {
   color: white;
   &:visited {

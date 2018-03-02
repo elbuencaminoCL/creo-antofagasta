@@ -90,7 +90,7 @@
 		</figure>
 		<div class="home_banner_container container">
 			<div class="home_banner_col">
-				<h2 class="f-white space-bottom center-xs start-md"><strong><?php the_field( 'home_banner_title' ); ?></strong></h2>
+				<h2 class="home_banner_col_title f-white space-bottom center-xs start-md"><strong><?php the_field( 'home_banner_title' ); ?></strong></h2>
 				<p class="home_banner_caption space-bottom center-xs start-md"><?php the_field( 'home_banner_desc' ); ?></p>
 				<div class="end-md">
 					<a href="<?= home_url( 'que-es-creo-antofagasta' ); ?>" class="button button-full-xs">Conoce más sobre creo</a>
@@ -109,8 +109,8 @@
 <section class="section">
 	<div class="container">
 		<div class="row row-xs-1 row-md-3">
-			<div class="col-xs-12 col-md-4">
-				<h2>Vídeos</h2>
+			<div class="col-xs-12 col-md-4 space-bottom">
+				<h3>Vídeos</h3>
 				<?php
 					$args = array(
 						'post_type' => 'videos',
@@ -120,10 +120,11 @@
 				?>
 
 				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<div class="space-bottom">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
 					<div class="end-xs">
-						<a href="https://www.youtube.com/user/CreoAntofagasta" target="_blank">Ver todos los vídeos</a>
+						<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
 					</div>
 				<!-- post -->
 				<?php
@@ -132,7 +133,7 @@
 				<?php endif; ?>
 			</div>
 
-			<div class="col-xs-12 col-md-4">
+			<div class="col-xs-12 col-md-4 space-bottom">
 
 				<div class="int-home">
 
@@ -145,18 +146,18 @@
 
 						if( have_posts() ) :
 					?>
-						<h2 class="h3 ver ltz" style="font-size: 38px;">CREO en la Prensa</h2>
+						<h3>CREO en la Prensa</h3>
 					<?php
 						while (have_posts()) : the_post();
 						$cont++;
 					?>
-						<a target="_blank" href="<?php echo get_custom_field('url_antofagagasta_en_la_prensa') ?>" ><p class="ltz prensa_p ver"><?php echo get_the_content(); ?></p>
-							<p class="p14"><?php echo get_the_title(); ?></p>
-						</a>
-						<?php if( $num != $cont ) : ?>
-						   <div class="linea_prensa"></div>
+						<div class="divider mg-bottom-15 pd-bottom-15">
+							<a target="_blank" href="<?php echo get_custom_field('url_antofagagasta_en_la_prensa') ?>">
+								<p class="f-black"><strong><?php echo get_the_content(); ?></strong></p>
+								<p class="f-dark-gray no-space"><?php echo get_the_title(); ?></p>
+							</a>
+						</div>
 						<?php
-							endif;
 						endwhile;
 						endif;
 						wp_reset_query();
@@ -166,10 +167,10 @@
 			</div>
 
 
-			<div class="col-xs-12 col-md-4">
+			<div class="col-xs-12 col-md-4 space-bottom">
 
-				<h2>Biblioteca</h2>
-				<p>Documentación es una sección dónde podrás:</p>
+				<h3>Biblioteca</h3>
+				<p class="space-bottom">Documentación es una sección dónde podrás:</p>
 				<?php $args = array(
 					'post_type' => 'documents',
 					'taxonomy' => 'cat_doc'
@@ -199,13 +200,15 @@
 								while ( $query->have_posts() ) : $query->the_post();
 									if( $countCat <= 5 ) :
 						?>
-								<div class="space-bottom row row-xs-2">
-									<div class="col-xs-8">
-										<h3><?php the_title(); ?></h3>
-										<em><?= $category->name; ?></em>
-									</div>
-									<div class="col-xs-4 end-md">
-										<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
+								<div class="divider mg-bottom-15 pd-bottom-15">
+									<div class="row row-xs-2">
+										<div class="col-xs-6">
+											<p><a href="<?php the_field('document_file'); ?>" target="_blank" class="f-blue"><?php the_title(); ?></a></p>
+											<p class="f-small"><?= $category->name; ?></p>
+										</div>
+										<div class="col-xs-6 end-md">
+											<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
+										</div>
 									</div>
 								</div>
 			  			<?php endif; $countCat++; endwhile; ?>
@@ -216,7 +219,7 @@
 			 	<?php endforeach; ?>
 
 			 	<div class="end-xs">
-			 		<a href="<?= home_url( 'biblioteca' ); ?>">Ir a Biblioteca</a>
+			 		<a href="<?= home_url( 'biblioteca' ); ?>" class="f-link">Ir a Biblioteca</a>
 			 	</div>
 			</div>
 
