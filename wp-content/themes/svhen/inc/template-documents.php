@@ -27,15 +27,15 @@
 				<?php
 						while ( $query->have_posts() ) : $query->the_post();
 				?>
-					<div class="space-bottom row row-xs-2 row-md-3">
+					<div class="row row-xs-2 row-md-3 middle-xs doc-row">
 						<div class="col-xs-4 col-md-3">
 							<figure>
 								<img src="<?= get_the_post_thumbnail_url(); ?>">
 							</figure>
 						</div>
 						<div class="col-xs-8 col-md-6">
-							<h3><?php the_title(); ?></h3>
-							<p><?= get_the_date(); ?></p>
+							<h5><?php the_title(); ?></h5>
+							<p class="f-small"><?= get_the_date(); ?></p>
 							<em><?= $category->name; ?></em>
 						</div>
 						<div class="col-xs-12 col-md-3 end-md">

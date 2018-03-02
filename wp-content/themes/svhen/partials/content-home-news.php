@@ -90,7 +90,7 @@
 				?>
 				<?php if( $firstGreatQuery->have_posts() ): ?>
 					<div class="row row-xs-1 card--news--home_normal card--news--home_great">
-
+							<img src="https://images.pexels.com/photos/62307/air-bubbles-diving-underwater-blow-62307.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" class="home-banner-image">
 						<?php while ( $firstGreatQuery->have_posts() ) : $firstGreatQuery->the_post(); ?>
 
 							<?php if( $counterFirstGreat == 1 ) : ?>

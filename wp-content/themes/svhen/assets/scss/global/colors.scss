@@ -1,7 +1,8 @@
 
 $azure: #d7e8eb;
-$blue: #0095aa;
+$blue: #3b6cbe;
 $brown: #ad6134;
+$cyan: #0095aa;
 $dark-cyan-2: #24798b;
 $dark-cyan: #268499;
 $gold: #fbb602;
@@ -18,6 +19,7 @@ $salmon: #ed5e5c;
 $sandy-brown: #e6ae71;
 $dark-gray: #565656;
 $pink: #ebd8de;
+$pink-dark: #fd5891;
 
 
 /*========================================
@@ -62,6 +64,10 @@ $pink: #ebd8de;
 
 	.f-dark-gray {
 		color: $dark-gray;
+	}
+
+	.f-blue {
+		color: $blue;
 	}
 /*=====  End of Colores de Fuente  ======*/
 
