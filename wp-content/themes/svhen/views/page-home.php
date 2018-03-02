@@ -83,19 +83,16 @@
 <!--============================
 =            Banner            =
 =============================-->
-<section>
-	<div class="home-banner-container">
-		<figure class="home-banner-figure center-xs" >
-			<img src="<?php the_field( 'home_banner_image' ); ?>" class="home-banner-image">
-			<h2 class="home-banner-title hide-md f-white"><?php the_field( 'home_banner_title' ); ?></h2>
+<section class="home_banner">
+	<div class="home_banner_wrap">
+		<figure class="home_banner_figure">
+			<img src="<?php the_field( 'home_banner_image' ); ?>" alt="" />
 		</figure>
-
-
-		<div class="container row row-xs-1 row-md-1 center-xs end-md home_banner_row pd-30">
-			<div class="col-xs-12 col-md-6 start-md">
-				<h2 class="hide-xs show-md f-white"><?php the_field( 'home_banner_title' ); ?></h2>
-				<p class="f-white"><?php the_field( 'home_banner_desc' ); ?></p>
-				<div class="end-xs">
+		<div class="home_banner_container container">
+			<div class="home_banner_col">
+				<h2 class="f-white space-bottom center-xs start-md"><strong><?php the_field( 'home_banner_title' ); ?></strong></h2>
+				<p class="home_banner_caption space-bottom center-xs start-md"><?php the_field( 'home_banner_desc' ); ?></p>
+				<div class="end-md">
 					<a href="<?= home_url( 'que-es-creo-antofagasta' ); ?>" class="button button-full-xs">Conoce más sobre creo</a>
 				</div>
 			</div>
