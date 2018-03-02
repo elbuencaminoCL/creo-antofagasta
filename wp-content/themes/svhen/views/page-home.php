@@ -220,4 +220,72 @@
 </section>
 
 
+<!--====  Participación  ====-->
+
+<section class="section">
+	<div class="container">
+		<div class="row row-xs-1 row-md-2">
+			<div class="col-xs-12 col-md-5">
+				<h2>Eventos</h2>
+
+				<?php
+					$args = array(
+						'post_type' => 'events',
+						'posts_per_page' => 2
+					);
+					$query = new WP_Query( $args );
+				?>
+
+				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+				<div class="row row-xs-2">
+					<div class="col-xs-2">
+						<?php the_field( 'event_date' ); ?>
+					</div>
+
+					<div class="col-xs-10">
+    				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    				<p><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
+
+    				<?php if ( have_rows( 'event_repeater' ) ) : ?>
+    					<ul>
+    						<?php while ( have_rows( 'event_repeater' ) ) : the_row(); ?>
+    							<li><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
+    						<?php endwhile; ?>
+    					</ul>
+    				<?php endif; ?>
+    			</div>
+    		</div>
+				<!-- post -->
+				<?php
+				endwhile; ?>
+
+				<?php endif; ?>
+
+			</div>
+			<div class="col-xs-12 col-md-7">
+				<h2>Participación</h2>
+				<div class="row row-xs-1 row-md-2">
+					<div class="col-xs-12 col-md-6">
+						<p>Encuesta Activa</p>
+						<h3>¿Haz visitado alguna vez el borde costero?</h3>
+						<p>Contesta esta encuesta</p>
+						<div>
+							<a href="" class="button">Responder encuesta</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<p>Buzón de Sugerencias</p>
+						<h3>¿Tienes una idea o sugerencia para mejorar tu barrio?</h3>
+						<p>Contesta esta encuesta</p>
+						<div>
+							<a href="" class="button">Responder encuesta</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <?php get_footer(); ?>
