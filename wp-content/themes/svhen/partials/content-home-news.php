@@ -32,7 +32,7 @@
 								<div class="col-xs-12 col-md-6">
 					        <div class="card card--news card--news--home" style="border-left: 6px solid <?= get_field('color_picker'); ?>;">
 					        	<div class="card--news--home_container">
-											<?php if ( has_post_thumbnail() ) : ?>
+											<?php if ( get_the_post_thumbnail() ) : ?>
 												<figure class="card--news--home_figure hide-xs show-md">
 													<?php the_post_thumbnail(); ?>
 												</figure>
@@ -89,28 +89,40 @@
 				// The Loop
 				?>
 				<?php if( $firstGreatQuery->have_posts() ): ?>
-					<div class="row row-xs-1">
+					<div class="row row-xs-1 card--news--home_normal card--news--home_great">
 
 						<?php while ( $firstGreatQuery->have_posts() ) : $firstGreatQuery->the_post(); ?>
 
 							<?php if( $counterFirstGreat == 1 ) : ?>
 								<div class="col-xs-12">
-					        <div class="card card--news card--news--home" style="background-color: <?= get_field( 'color_picker' ); ?>; border-left: 6px solid <?= get_field('color_picker'); ?>;">
-										<?php if ( has_post_thumbnail() ) : ?>
-											<figure class="card--news--home_figure hide-xs show-md">
-												<?php the_post_thumbnail(); ?>
-											</figure>
-										<?php endif; ?>
-											<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
-											<div class="hide-xs show-md">
-												<div class="card--news--home_category f-small">
-													<?= the_category( ' - ' ); ?>
-												</div>
+					        <div class="card card--news card--news--home" style="border-left: 6px solid <?= get_field('color_picker'); ?>;">
+					        	<div class="card--news--home_container">
+											<?php if ( get_the_post_thumbnail() ) : ?>
+												<figure class="card--news--home_figure hide-xs show-md">
+													<?php the_post_thumbnail(); ?>
+												</figure>
+											<?php endif; ?>
+											<?php
+									      $hex = get_field('color_picker');
+									      list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+									    ?>
+
+											<div class="card--news--home_content row middle-xs" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+												<article>
+													<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+													<div class="hide-xs show-md">
+														<div class="card--news--home_category f-small">
+															<?= the_category( ' - ' ); ?>
+														</div>
+													</div>
+													<h3 class="card--news--home_title center-xs space-bottom">
+														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
+													</h3>
+													<div class="card--news--home_caption hide-xs show-md space-bottom"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+												</article>
 											</div>
-											<h4 class="card--news--home_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-											<p class="entry-meta hide-xs show-md"><?php the_time("F d, Y"); ?></p>
-											<div class="hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
-											<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+										</div>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -149,29 +161,40 @@
 				// The Loop
 				?>
 				<?php if( $SecondGreatQuery->have_posts() ): ?>
-					<div class="row row-xs-1">
+					<div class="row row-xs-1 card--news--home_normal card--news--home_great">
 
 						<?php while ( $SecondGreatQuery->have_posts() ) : $SecondGreatQuery->the_post(); ?>
 
 							<?php if( $counterSecondGreat == 2 ) : ?>
 								<div class="col-xs-12">
-					        <div class="card card--news card--news--home" style="background-color: <?= get_field( 'color_picker' ); ?>;">
-										<?php if ( has_post_thumbnail() ) : ?>
-											<figure class="card--news--home_figure hide-xs show-md">
-												<?php the_post_thumbnail(); ?>
-											</figure>
-										<?php endif; ?>
-											<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
-											<div class="hide-xs show-md">
-												<div class="card--news--home_category f-small">
-													<?= the_category( ' - ' ); ?>
-												</div>
-											</div>
-											<h4 class="card--news--home_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
+					        <div class="card card--news card--news--home" style="border-left: 6px solid <?= get_field('color_picker'); ?>;">
+					        	<div class="card--news--home_container">
+											<?php if ( get_the_post_thumbnail() ) : ?>
+												<figure class="card--news--home_figure hide-xs show-md">
+													<?php the_post_thumbnail(); ?>
+												</figure>
+											<?php endif; ?>
+											<?php
+									      $hex = get_field('color_picker');
+									      list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+									    ?>
 
-											<div><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
-											<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+											<div class="card--news--home_content row middle-xs" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+												<article>
+													<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+													<div class="hide-xs show-md">
+														<div class="card--news--home_category f-small">
+															<?= the_category( ' - ' ); ?>
+														</div>
+													</div>
+													<h3 class="card--news--home_title center-xs space-bottom">
+														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
+													</h3>
+													<div class="card--news--home_caption hide-xs show-md space-bottom"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+												</article>
+											</div>
+										</div>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -204,29 +227,38 @@
 				// The Loop
 				?>
 				<?php if( $secondQuery->have_posts() ): ?>
-					<div class="row row-xs-1 row-md-2">
+					<div class="row row-xs-1 row-md-2 card--news--home_normal">
 
 						<?php while ( $secondQuery->have_posts() ) : $secondQuery->the_post(); ?>
 
 							<?php if( $countSecond > 2 && $countSecond <= 4 ) : ?>
 								<div class="col-xs-12 col-md-6">
-					        <div class="card card--news card--news--home del 6 pa" style="background-color: <?= get_field( 'color_picker' ); ?>;">
+					        <div class="card card--news card--news--home" style="border-left: 6px solid <?= get_field('color_picker'); ?>;">
+					        	<div class="card--news--home_container">
+											<?php if ( get_the_post_thumbnail() ) : ?>
+												<figure class="card--news--home_figure hide-xs show-md">
+													<?php the_post_thumbnail(); ?>
+												</figure>
+											<?php endif; ?>
+												<?php
+										      $hex = get_field('color_picker');
+										      list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+										    ?>
 
-										<?php if ( has_post_thumbnail() ) : ?>
-											<figure class="card--news--home_figure hide-xs show-md">
-												<?php the_post_thumbnail(); ?>
-											</figure>
-										<?php endif; ?>
-											<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
-											<div class="hide-xs show-md">
-												<div class="card--news--home_category f-small">
-													<?= the_category( ' - ' ); ?>
+												<div class="card--news--home_content" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+													<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+													<div class="hide-xs show-md">
+														<div class="card--news--home_category f-small">
+															<?= the_category( ' - ' ); ?>
+														</div>
+													</div>
+													<h4 class="card--news--home_title">
+														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
+													</h4>
+													<div class="card--news--home_caption hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</div>
 											</div>
-											<h4 class="card--news--home_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
-											<div><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
-											<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 									</div>
 								</div>
 							<?php endif; ?>
