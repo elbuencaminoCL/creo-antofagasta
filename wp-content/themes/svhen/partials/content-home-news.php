@@ -5,15 +5,15 @@
 			<div class="col-xs-12 col-md-6">
 
 				<?php $args = array(
-					'numberposts' => 4,
+					'numberposts' => 2,
 					'post_type' => 'post',
 					'meta_query' => array(
 						array(
 							'key' => 'news_great',
 							'value' => 'selected',
-							'compare' => 'NOT EXISTS'
+							'compare' => 'NOT LIKE'
 						)
-				)
+					)
 				);
 
 				// get results
@@ -24,24 +24,33 @@
 				// The Loop
 				?>
 				<?php if( $firstQuery->have_posts() ): ?>
-					<div class="row row-xs-1 row-md-2 mg-bottom-15">
+					<div class="row row-xs-1 row-md-2 card--news--home_normal">
 
 						<?php while ( $firstQuery->have_posts() ) : $firstQuery->the_post(); ?>
 
 							<?php if( $countFirst <= 2 ) : ?>
 								<div class="col-xs-12 col-md-6">
 					        <div class="card card--news card--news--home" style="background-color: <?= get_field( 'color_picker' ); ?>; border-left: 6px solid <?= get_field('color_picker'); ?>;">
-										<?php
-											if ( has_post_thumbnail() ) :
-												the_post_thumbnail();
-											endif;
-										?>
-										<?= the_category( ' - ' ); ?>
-											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
-
-										<?= wp_html_excerpt( get_the_content(), 115, '...' ); ?>
-										<p><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+					        	<div class="card--news--home_container">
+											<?php if ( has_post_thumbnail() ) : ?>
+												<figure class="card--news--home_figure hide-xs show-md">
+													<?php the_post_thumbnail(); ?>
+												</figure>
+											<?php endif; ?>
+												<div class="card--news--home_content">
+													<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+													<div class="hide-xs show-md">
+														<div class="card--news--home_category f-small">
+															<?= the_category( ' - ' ); ?>
+														</div>
+													</div>
+													<h4 class="card--news--home_title">
+														<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+													</h4>
+													<div class="card--news--home_caption hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+												</div>
+											</div>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -56,7 +65,7 @@
 				<!-- NOTICIA DESTACADA COLUMNA IZQUIERDA -->
 
 				<?php $args = array(
-					'numberposts' => 2,
+					'numberposts' => 1,
 					'post_type' => 'post',
 					'meta_query' => array(
 						array(
@@ -81,18 +90,22 @@
 
 							<?php if( $counterFirstGreat == 1 ) : ?>
 								<div class="col-xs-12">
-					        <div style="background-color: <?= get_field( 'color_picker' ); ?>;">
-										<?php
-											if ( has_post_thumbnail() ) :
-												the_post_thumbnail();
-											endif;
-										?>
-										<?= the_category( ' - ' ); ?>
-											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
-
-										<?= wp_html_excerpt( get_the_content(), 115, '...' ); ?>
-										<p><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+					        <div class="card card--news card--news--home" style="background-color: <?= get_field( 'color_picker' ); ?>; border-left: 6px solid <?= get_field('color_picker'); ?>;">
+										<?php if ( has_post_thumbnail() ) : ?>
+											<figure class="card--news--home_figure hide-xs show-md">
+												<?php the_post_thumbnail(); ?>
+											</figure>
+										<?php endif; ?>
+											<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+											<div class="hide-xs show-md">
+												<div class="card--news--home_category f-small">
+													<?= the_category( ' - ' ); ?>
+												</div>
+											</div>
+											<h4 class="card--news--home_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+											<p class="entry-meta hide-xs show-md"><?php the_time("F d, Y"); ?></p>
+											<div class="hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+											<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -107,7 +120,7 @@
 			</div>
 
 
-			<div class="col-xs-12 col-md-6">
+			<div class="col-xs-12 col-md-6 hide-xs show-md">
 
 				<!-- NOTICIA DESTACADA COLUMNA DERECHA -->
 
@@ -137,18 +150,23 @@
 
 							<?php if( $counterSecondGreat == 2 ) : ?>
 								<div class="col-xs-12">
-					        <div style="background-color: <?= get_field( 'color_picker' ); ?>;">
-										<?php
-											if ( has_post_thumbnail() ) :
-												the_post_thumbnail();
-											endif;
-										?>
-										<?= the_category( ' - ' ); ?>
-											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					        <div class="card card--news card--news--home" style="background-color: <?= get_field( 'color_picker' ); ?>;">
+										<?php if ( has_post_thumbnail() ) : ?>
+											<figure class="card--news--home_figure hide-xs show-md">
+												<?php the_post_thumbnail(); ?>
+											</figure>
+										<?php endif; ?>
+											<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+											<div class="hide-xs show-md">
+												<div class="card--news--home_category f-small">
+													<?= the_category( ' - ' ); ?>
+												</div>
+											</div>
+											<h4 class="card--news--home_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
 
-										<?= wp_html_excerpt( get_the_content(), 115, '...' ); ?>
-										<p><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+											<div><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+											<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -168,9 +186,9 @@
 						array(
 							'key' => 'news_great',
 							'value' => 'selected',
-							'compare' => 'NOT EXISTS'
+							'compare' => 'NOT LIKE'
 						)
-				)
+					)
 				);
 
 				// get results
@@ -187,18 +205,23 @@
 
 							<?php if( $countSecond > 2 && $countSecond <= 4 ) : ?>
 								<div class="col-xs-12 col-md-6">
-					        <div style="background-color: <?= get_field( 'color_picker' ); ?>;">
-										<?php
-											if ( has_post_thumbnail() ) :
-												the_post_thumbnail();
-											endif;
-										?>
-										<?= the_category( ' - ' ); ?>
-											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
+					        <div class="card card--news card--news--home del 6 pa" style="background-color: <?= get_field( 'color_picker' ); ?>;">
 
-										<?= wp_html_excerpt( get_the_content(), 115, '...' ); ?>
-										<p><a href="<?php the_permalink(); ?>">Leer más ></a></p>
+										<?php if ( has_post_thumbnail() ) : ?>
+											<figure class="card--news--home_figure hide-xs show-md">
+												<?php the_post_thumbnail(); ?>
+											</figure>
+										<?php endif; ?>
+											<p class="entry-meta f-small hide-md"><?php the_time("j"); ?> de <?php the_time("F Y"); ?></p>
+											<div class="hide-xs show-md">
+												<div class="card--news--home_category f-small">
+													<?= the_category( ' - ' ); ?>
+												</div>
+											</div>
+											<h4 class="card--news--home_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+											<p class="entry-meta"><?php the_time("F d, Y"); ?></p>
+											<div><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+											<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 									</div>
 								</div>
 							<?php endif; ?>
