@@ -216,3 +216,36 @@ require get_template_directory() . '/inc/template-project-random.php';
  * Documents Post
  */
 require get_template_directory() . '/inc/template-documents.php';
+
+function get_custom_field($key, $echo = FALSE) {
+	global $post;
+	$custom_field = get_post_meta($post->ID, $key, true);
+	if ($echo == FALSE) return $custom_field;
+	echo $custom_field;
+}
+
+function videoblog() {
+  register_post_type( 'videoblog',
+    array(
+			'labels' => array(
+				'name' => __( 'VideoBlog' ),
+				'singular_name' => __( 'VideoBlog' )
+	    ),
+	    'public' => true,
+	    'menu_position' => 5,
+	    'taxonomies' => array('category'),
+	    'rewrite' => array('slug' => 'videoblog'),
+			'supports' => array( 'title', 'thumbnail', 'excerpt','editor','custom-fields' )
+    )
+  );
+
+  $set = get_option('post_type_rules_flased_events');
+  if ($set !== true) {
+		flush_rewrite_rules(false);
+		update_option('post_type_rules_flased_events',true);
+  }
+
+}
+add_action( 'init', 'videoblog' );
+
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');

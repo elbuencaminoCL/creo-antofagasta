@@ -92,7 +92,7 @@
 					?>
 
 							<div class="col-xs-12 col-md-4 space-bottom">
-								<a href="<?php the_permalink() ?>">
+								<a href="<?php the_permalink(); ?>">
 									<figure <?= ($color) ? 'style="background-color: ' . $color . '"' : ''; ?> class="figure-project row middle-xs center-xs">
 										<?php if( get_field( 'clone_banner_image' ) ) : ?>
 											<img src="<?php the_field( 'clone_banner_image' ); ?>">
