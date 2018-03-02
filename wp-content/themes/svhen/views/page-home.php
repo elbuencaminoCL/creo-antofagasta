@@ -231,11 +231,11 @@
 
 <!--====  Participación  ====-->
 
-<section class="section">
+<section class="home-events section">
 	<div class="container">
 		<div class="row row-xs-1 row-md-2">
 			<div class="col-xs-12 col-md-5">
-				<h2>Eventos</h2>
+				<h3 class="divider divider--black pd-bottom-15 mg-bottom-15">Eventos</h3>
 
 				<?php
 					$args = array(
@@ -273,7 +273,7 @@
 
 			</div>
 			<div class="col-xs-12 col-md-7">
-				<h2>Participación</h2>
+				<h3 class="divider divider--black pd-bottom-15 mg-bottom-15">Participación</h3>
 				<div class="row row-xs-1 row-md-2">
 					<div class="col-xs-12 col-md-6">
 						<p>Encuesta Activa</p>

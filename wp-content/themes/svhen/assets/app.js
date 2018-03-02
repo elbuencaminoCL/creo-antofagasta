@@ -34,6 +34,7 @@
 	import './scss/components/documents.scss';
 	import './scss/components/accordion.scss';
 	import './scss/components/initial.scss';
+	import './scss/components/events.scss';
 
 
 
