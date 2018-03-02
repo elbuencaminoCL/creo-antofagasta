@@ -1,0 +1,44 @@
+
+.initial-body {
+  border: 1px solid black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 0;
+  padding: 120px 30px 30px;
+}
+
+.initial-head {
+  padding: 15px 30px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid black;
+}
+
+.city-col {
+  position: relative;
+  padding: 60px 15px;
+}
+
+.city-ball-image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.initial-cat-radio {
+	position: relative;
+	&:before {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: 1px solid black;
+		content: '';
+		position: absolute;
+	}
+}

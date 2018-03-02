@@ -1,4 +1,6 @@
 
+@import './../global/colors.scss';
+
 	.figure-project {
 		position: relative;
 	}
@@ -47,4 +49,10 @@
 		&:visited {
 			color: white;
 		}
+	}
+
+	.project-col-left {
+		background-color: white;
+		border-radius: 3px;
+		padding: 1rem;
 	}

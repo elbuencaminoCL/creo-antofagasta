@@ -41,7 +41,7 @@
 		=            Contenido de la columna izquierda            =
 		========================================================-->
 	  <div class="row row-xs-1 row-md-2">
-			<div class="card col-xs-12 col-md-8">
+			<div class="col-xs-12 col-md-8 project-col-left">
 				<section class="space-bottom"><!-- ¿De qué se trata este proyecto? -->
 					<h3><?php the_field( 'clone_project_article_title' ); ?></h3>
 					<?php the_field( 'clone_project_article_desc' ); ?>
@@ -185,24 +185,29 @@
 			=            Contenido de la columna derecha (sidebar)      =
 			==========================================================-->
 			<div class="col-xs-12 col-md-4">
+				<h5>Noticias Relacionadas</h5>
 				<!--  Noticias Relacionadas  -->
 				<?php $posts_news = get_field('news_relation');
 				if( $posts_news ): ?>
 					<?php foreach( $posts_news as $p ): ?>
-						<div class="space-bottom">
-							<p><?= get_the_date( 'd F Y', $p->ID ); ?></p>
-				    	<a href="<?= get_permalink( $p ); ?>"><?= get_the_title( $p ); ?></a>
+						<div class="mg-bottom-15 card card--news card-border">
+							<p class="f-tiny"><?= get_the_date( 'd F Y', $p->ID ); ?></p>
+				    	<a href="<?= get_permalink( $p ); ?>" class="f-news-link">
+				    		<strong><?= get_the_title( $p ); ?></strong>
+				    	</a>
 				    </div>
 					<?php endforeach; ?>
+			    <div class="end-xs space-bottom">
+			    	<a href="#" class="f-news-link"><strong>Ver Todas las Noticias</strong></a>
+			    </div>
 				<?php endif; ?>
 				<!--  /Noticias Relacionadas  -->
 
-
 				<section>
 					<div class="container">
-						<div class="row row-xs-1">
-							<div class="col-xs-12">
-								<h5 class="space-bottom">Participa</h5>
+						<div class="row row-xs-1 space-bottom">
+							<h5>Participa</h5>
+							<div class="col-xs-12 bg-white pd-15 card-border">
 								<?= do_shortcode( '[contact-form-7 id="9514" title="Formulario Participa"]' ); ?>
 							</div>
 						</div>
@@ -213,14 +218,14 @@
 				<?php $posts_events = get_field('events_relation');
 				if( $posts_events ): ?>
 					<?php foreach( $posts_events as $p ): ?>
-						<p>Calendario</p>
-						<div class="row row-xs-2">
-							<div class="col-xs-2">
-								<?php the_field( 'event_date', $p->ID ); ?>
+						<h5>Calendario</h5>
+						<div class="row row-xs-2 no-gutter space-bottom card-border">
+							<div class="col-xs-2 center-xs bg-gold pd-15">
+								<p class="F f-white calendar-date"><strong><?php the_field( 'event_date', $p->ID ); ?></strong></p>
 							</div>
 
-							<div class="col-xs-10">
-		    				<a href="<?= get_permalink( $p ); ?>"><?= get_the_title( $p ); ?></a>
+							<div class="col-xs-10 bg-white pd-15">
+		    				<a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a>
 		    			</div>
 		    		</div>
 					<?php endforeach; ?>
@@ -231,13 +236,13 @@
 				<?php $posts_videos = get_field('videos_relation');
 				if( $posts_videos ): ?>
 					<?php foreach( $posts_videos as $p ): ?>
-						<div class="row row-xs-2">
+						<div class="row row-xs-2 space-bottom bg-white pd-15 card-border">
 							<div class="col-xs-6">
 								<iframe width="100%" height="150" src="https://www.youtube.com/embed/<?php the_field( 'video_id', $p ); ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 							</div>
 
 							<div class="col-xs-6">
-		    				<a href="<?= get_permalink( $p ); ?>"><?= get_the_title( $p ); ?></a>
+		    				<a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a>
 		    			</div>
 		    		</div>
 					<?php endforeach; ?>
@@ -248,18 +253,20 @@
 				<?php $posts_documents = get_field('documents_relation');
 				if( $posts_documents ): ?>
 					<?php foreach( $posts_documents as $p ): ?>
-						<div>
-							<p>Documentos</p>
-								<div><a href="<?= get_permalink( $p ); ?>"><?= get_the_title( $p ); ?></a></div>
-								<div><a href="#">Ver todos los documentos</a></div>
+						<h5>Documentos</h5>
+						<div class="bg-white pd-15 card-border mg-bottom-15">
+							<div><a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a></div>
 		    		</div>
 					<?php endforeach; ?>
+					<div class="end-xs space-bottom">
+						<a href="#" class="f-news-link">Ver todos los documentos</a>
+					</div>
 				<?php endif; ?>
 				<!--  Documentos Relacionados  -->
 
 				<!--  Redes Sociales  -->
 				<div class="col-xs-12 ">
-					<p>Compartir</p>
+					<h5>Compartir</h5>
 					<?= do_shortcode( "[Sassy_Social_Share]" ); ?>
 				</div>
 				<!--  Redes Sociales  -->

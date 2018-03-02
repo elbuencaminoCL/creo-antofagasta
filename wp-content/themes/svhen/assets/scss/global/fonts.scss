@@ -1,4 +1,6 @@
 
+@import './colors.scss';
+
 .F {
   text-transform: uppercase;
 }
@@ -28,3 +30,24 @@
   line-height: 1.2;
 }
 
+.f-news-link {
+  color: $dark-gray;
+  &:hover,
+  &:visited {
+    text-decoration: underline;
+    color: $dark-gray;
+  }
+}
+
+.f-link-white {
+  color: white;
+  &:visited {
+    color: white;
+    text-decoration: underline;
+  }
+  &:hover,
+  &:focus {
+    color: white;
+    text-decoration: underline;
+  }
+}

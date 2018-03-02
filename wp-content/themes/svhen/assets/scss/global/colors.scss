@@ -16,6 +16,7 @@ $purple: #736e9e;
 $red: #e8422d;
 $salmon: #ed5e5c;
 $sandy-brown: #e6ae71;
+$dark-gray: #565656;
 
 
 /*========================================
@@ -26,7 +27,7 @@ $sandy-brown: #e6ae71;
 	}
 
 	.bg-white {
-		color: white;
+		background-color: white;
 	}
 
 	.bg-mintcream {
@@ -44,6 +45,10 @@ $sandy-brown: #e6ae71;
 	.bg-gray-light-2 {
 		background-color: $gray-light-2;
 	}
+
+	.bg-gold {
+		background-color: $gold;
+	}
 /*=====  End of Colores de Fondo  ======*/
 
 
@@ -51,7 +56,11 @@ $sandy-brown: #e6ae71;
 =            Colores de Fuente            =
 =========================================*/
 	.f-white {
-		color: white
+		color: white;
+	}
+
+	.f-dark-gray {
+		color: $dark-gray;
 	}
 /*=====  End of Colores de Fuente  ======*/
 
