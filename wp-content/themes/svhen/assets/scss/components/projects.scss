@@ -1,9 +1,6 @@
 
 @import './../global/colors.scss';
 
-	.figure-project {
-		position: relative;
-	}
 
 	.hslider_width_checker {
 		display: none;
@@ -55,4 +52,31 @@
 		background-color: white;
 		border-radius: 3px;
 		padding: 1rem;
+	}
+
+	.projectCarousel {
+		.slick-dots {
+			justify-content: center;
+			display: flex;
+			width: 100%;
+			li {
+				margin-right: 16px;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				button {
+					background-color: #b7b5cc;
+					border-radius: 50%;
+					font-size: 0;
+					height: 16px;
+					padding: 0;
+					width: 16px;
+				}
+				&.slick-active {
+					button {
+						background-color: white;
+					}
+				}
+			}
+		}
 	}

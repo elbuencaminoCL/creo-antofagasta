@@ -1,4 +1,12 @@
 
+
+/*=============================================
+=           Importación de libs            =
+=============================================*/
+
+	import './../node_modules/slick-carousel/slick/slick.scss';
+
+
 /*=============================================
 =           Importación de estilos globales            =
 =============================================*/
@@ -41,6 +49,7 @@ $(document).foundation();
 =            Importación de archivos javaScript            =
 ==========================================================*/
 
+	import './js/carousel.js';
 	import './js/header.js';
 	import './js/projects.js';
 	import './js/documents.js';

@@ -32,5 +32,30 @@
   }
 }
 
+.card-project {
+  position: relative;
+}
 
+.card-project-figure {
+  height: 160px;
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
 
+.card-project-link {
+  display: block;
+  width: 100%;
+}
+
+.card-project-title {
+  bottom: 0;
+  left: 0;
+  padding: 16px 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
