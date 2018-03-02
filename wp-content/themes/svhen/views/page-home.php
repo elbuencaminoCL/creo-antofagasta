@@ -101,36 +101,123 @@
 
 <!--====  Creo en la Prensa  ====-->
 
-<div class="int-home">
+<section class="section">
+	<div class="container">
+		<div class="row row-xs-1 row-md-3">
+			<div class="col-xs-12 col-md-4">
+				<h2>Vídeos</h2>
+				<?php
+					$args = array(
+						'post_type' => 'videos',
+						'posts_per_page' => 1
+					);
+					$query = new WP_Query( $args );
+				?>
 
-	<?php
-		$cont = 0;
-	 	query_posts( array(
-			'category_name' => 'antofagasta-en-la-prensa',
-			'posts_per_page' => 3,
-		));
+				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<div class="end-xs">
+						<a href="https://www.youtube.com/user/CreoAntofagasta" target="_blank">Ver todos los vídeos</a>
+					</div>
+				<!-- post -->
+				<?php
+				endwhile; ?>
+
+				<?php endif; ?>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+
+				<div class="int-home">
+
+					<?php
+						$cont = 0;
+					 	query_posts( array(
+							'category_name' => 'antofagasta-en-la-prensa',
+							'posts_per_page' => 3,
+						));
+
+						if( have_posts() ) :
+					?>
+						<h2 class="h3 ver ltz" style="font-size: 38px;">CREO en la Prensa</h2>
+					<?php
+						while (have_posts()) : the_post();
+						$cont++;
+					?>
+						<a target="_blank" href="<?php echo get_custom_field('url_antofagagasta_en_la_prensa') ?>" ><p class="ltz prensa_p ver"><?php echo get_the_content(); ?></p>
+							<p class="p14"><?php echo get_the_title(); ?></p>
+						</a>
+						<?php if( $num != $cont ) : ?>
+						   <div class="linea_prensa"></div>
+						<?php
+							endif;
+						endwhile;
+						endif;
+						wp_reset_query();
+					?>
+
+				</div>
+			</div>
 
 
-		if(have_posts()) :
-	?>
-		 	<h2 class="h3 ver ltz" style="font-size: 38px;"> <?php  echo 'En la prensa','Press releases';  ?> </h2>
-	<?php
-		while (have_posts()) : the_post();
-		$cont++;
-	?>
-		<a target="_blank" href="<?php echo get_custom_field('url_antofagagasta_en_la_prensa') ?>" ><p class="ltz prensa_p ver"><?php echo get_the_content(); ?></p>
-			<p class="p14"><?php echo get_the_title(); ?></p>
-	    </a>
-	<?php if($num!=$cont){ ?>
-	    <div class="linea_prensa"></div>
-	<?php
-		}
-		endwhile;
-		endif;
-		wp_reset_query();
-	?>
+			<div class="col-xs-12 col-md-4">
 
-</div>
+				<h2>Biblioteca</h2>
+				<p>Documentación es una sección dónde podrás:</p>
+				<?php $args = array(
+					'post_type' => 'documents',
+					'taxonomy' => 'cat_doc'
+				);
+
+					$categories = get_categories( $args );
+								$countCat = 1;
+
+					foreach($categories as $category) :
+
+		        $term = get_term_by( 'id', $category->term_id, 'category_projects' );
+				?>
+
+						<?php
+							$args = array(
+							'post_type' => 'documents',
+							'tax_query' => array(
+									array(
+										'taxonomy' => 'cat_doc',
+										'field' => 'term_id',
+										'terms' => $category->term_id
+									)
+								)
+							);
+							$query = new WP_Query( $args );
+							if ( $query->have_posts() ) :
+								while ( $query->have_posts() ) : $query->the_post();
+									if( $countCat <= 5 ) :
+						?>
+								<div class="space-bottom row row-xs-2">
+									<div class="col-xs-8">
+										<h3><?php the_title(); ?></h3>
+										<em><?= $category->name; ?></em>
+									</div>
+									<div class="col-xs-4 end-md">
+										<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
+									</div>
+								</div>
+			  			<?php endif; $countCat++; endwhile; ?>
+			  		<?php endif; ?>
+
+
+			 	<?php endforeach; ?>
+
+			 	<div class="end-xs">
+			 		<a href="<?= home_url( 'biblioteca' ); ?>">Ir a Biblioteca</a>
+			 	</div>
+			</div>
+
+
+		</div>
+	</div>
+</section>
 
 
 <?php get_footer(); ?>
