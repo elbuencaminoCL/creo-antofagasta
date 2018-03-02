@@ -248,9 +248,7 @@
 				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<div class="row row-xs-2">
-					<div class="col-xs-2">
-						<?php the_field( 'event_date' ); ?>
-					</div>
+					<div class="col-xs-2"><?php the_field( 'event_date' ); ?></div>
 
 					<div class="col-xs-10">
     				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
