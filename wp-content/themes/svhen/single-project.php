@@ -191,7 +191,7 @@
 				<?php $posts_news = get_field('news_relation');
 				if( $posts_news ): ?>
 					<?php foreach( $posts_news as $p ): ?>
-						<div class="mg-bottom-15 card card--news card-border" style="border-left: 6px solid <?= get_field('clone_image_color'); ?>; ">
+						<div class="mg-bottom-15 card card--news card-border" style="border-left: 6px solid <?= get_field('clone_image_color'); ?>;">
 							<p class="f-tiny"><?= get_the_date( 'd F Y', $p->ID ); ?></p>
 				    	<a href="<?= get_permalink( $p ); ?>" class="f-news-link">
 				    		<strong><?= get_the_title( $p ); ?></strong>

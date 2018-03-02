@@ -24,13 +24,13 @@
 				// The Loop
 				?>
 				<?php if( $firstQuery->have_posts() ): ?>
-					<div class="row row-xs-1 row-md-2">
+					<div class="row row-xs-1 row-md-2 mg-bottom-15">
 
 						<?php while ( $firstQuery->have_posts() ) : $firstQuery->the_post(); ?>
 
 							<?php if( $countFirst <= 2 ) : ?>
 								<div class="col-xs-12 col-md-6">
-					        <div style="background-color: <?= get_field( 'color_picker' ); ?>;">
+					        <div class="card card--news card--news--home" style="background-color: <?= get_field( 'color_picker' ); ?>; border-left: 6px solid <?= get_field('color_picker'); ?>;">
 										<?php
 											if ( has_post_thumbnail() ) :
 												the_post_thumbnail();
