@@ -38,3 +38,16 @@
     color: $dark-gray;
   }
 }
+
+.f-link-white {
+  color: white;
+  &:visited {
+    color: white;
+    text-decoration: underline;
+  }
+  &:hover,
+  &:focus {
+    color: white;
+    text-decoration: underline;
+  }
+}
