@@ -205,6 +205,7 @@
 								</div>
 			  			<?php endif; $countCat++; endwhile; ?>
 			  		<?php endif; ?>
+			  		<?php wp_reset_query(); ?>
 
 
 			 	<?php endforeach; ?>
@@ -260,7 +261,7 @@
 				<?php
 				endwhile; ?>
 
-				<?php endif; ?>
+				<?php endif; ?><?php wp_reset_query(); ?>
 
 			</div>
 			<div class="col-xs-12 col-md-7">
@@ -268,18 +269,18 @@
 				<div class="row row-xs-1 row-md-2">
 					<div class="col-xs-12 col-md-6">
 						<p>Encuesta Activa</p>
-						<h3>¿Haz visitado alguna vez el borde costero?</h3>
-						<p>Contesta esta encuesta</p>
+						<h3><?php the_field( 'home_survey_title' ); ?></h3>
+						<p><?php the_field( 'home_survey_desc' ); ?></p>
 						<div>
-							<a href="" class="button">Responder encuesta</a>
+							<a href="<?php the_field( 'home_survey_button_link' ); ?>" class="button"><?php the_field( 'home_survey_button_text' ); ?></a>
 						</div>
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<p>Buzón de Sugerencias</p>
-						<h3>¿Tienes una idea o sugerencia para mejorar tu barrio?</h3>
-						<p>Contesta esta encuesta</p>
+						<h3><?php the_field( 'home_suggestion_title' ); ?></h3>
+						<p><?php the_field( 'home_suggestion_desc' ); ?></p>
 						<div>
-							<a href="" class="button">Responder encuesta</a>
+							<a href="<?php the_field( 'home_suggestion_button_link' ); ?>" class="button"><?php the_field( 'home_suggestion_button_text' ); ?></a>
 						</div>
 					</div>
 				</div>
