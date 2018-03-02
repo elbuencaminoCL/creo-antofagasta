@@ -1,1 +1,13 @@
 
+.hslider_slide_holder {
+	width: 100% !important;
+	height: 500px !important;
+	transform-origin: left top 0px !important;
+	transform: translate3d(0px, 0px, 0px) !important;
+}
+
+.hslider_misc_holder{
+	&.hslider_fullarrow {
+		width: 100% !important;
+	}
+}

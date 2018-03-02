@@ -33,8 +33,10 @@
 		=            Breadcrumb            =
 		=================================-->
 		<section class="mg-bottom-15">
-
-			<p class="space-top f-small"><a href="<?= home_url(); ?>">Inicio</a> / <a href="<?= home_url( 'iniciativas' ); ?>">Iniciativas</a> / <?php the_title(); ?></p>
+			<p class="space-top f-small">
+				<a href="<?= home_url(); ?>">Inicio</a> /
+				<a href="<?= home_url( 'iniciativas' ); ?>">Iniciativas</a> / <?php the_title(); ?>
+			</p>
 		</section>
 		<!--====  End of Breadcrumb  ====-->
 
@@ -47,6 +49,16 @@
 					<h3><?php the_field( 'clone_project_article_title' ); ?></h3>
 					<?php the_field( 'clone_project_article_desc' ); ?>
 				</section><!-- /¿De qué se trata este proyecto? -->
+
+				<?php if( get_field( 'select_template' ) == 'projectSimple' ) : ?>
+					<section class="space-bottom"><!-- Imagen -->
+						<figure>
+							<img src="<?php the_field( 'project_bus_image' ); ?>" class="project-bus-image">
+						</figure>
+					</section><!-- /Imagen -->
+				<?php else :
+	        endif;
+	      ?>
 
 				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
 					<section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
@@ -70,13 +82,13 @@
 	      ?>
 
 				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
-	      <section><!-- Card proyecto en cifras -->
+	      <section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
 	      	<div><?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
 	      		<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-	      			<h2><?php the_sub_field( 'title' ); ?></h2>
+	      			<h4 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h4>
 
 	      			<?php if ( have_rows( 'content_repeater' ) ) : ?>
-	      				<div class="row row-xs-1 row-md-2">
+	      				<div class="row row-xs-1 row-md-2 project-data_content">
 	      				<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
 	      					<div class="col-xs-12 col-md-6">
 	      						<p><?php the_sub_field( 'content_subtitle' ); ?></p>
@@ -103,7 +115,7 @@
 	      ?>
 
 				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
-					<section><!-- Articulo -->
+					<section class="space-bottom"><!-- Articulo -->
 						<h3><?php the_field( 'clone_project_article_2_title' ); ?></h3>
 						<?php the_field( 'clone_project_article_2_desc' ); ?>
 					</section><!-- Articulo -->
@@ -204,16 +216,21 @@
 				<?php endif; ?>
 				<!--  /Noticias Relacionadas  -->
 
-				<section>
-					<div class="container">
-						<div class="row row-xs-1 space-bottom">
-							<h5>Participa</h5>
-							<div class="col-xs-12 bg-white pd-15 card-border">
-								<?= do_shortcode( '[contact-form-7 id="9514" title="Formulario Participa"]' ); ?>
+				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
+					<section><!-- Formulario Participa -->
+						<div class="container">
+							<div class="row row-xs-1 space-bottom">
+								<h5>Participa</h5>
+								<div class="col-xs-12 bg-white pd-15 card-border">
+									<?= do_shortcode( '[contact-form-7 id="9514" title="Formulario Participa"]' ); ?>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section><!-- /Formulario Participa -->
+				<?php
+					else :// no rows found
+	        endif;
+	      ?>
 
 				<!--  Eventos Relacionados  -->
 				<?php $posts_events = get_field('events_relation');
@@ -253,8 +270,8 @@
 				<!--  Documentos Relacionados  -->
 				<?php $posts_documents = get_field('documents_relation');
 				if( $posts_documents ): ?>
+					<h5>Documentos</h5>
 					<?php foreach( $posts_documents as $p ): ?>
-						<h5>Documentos</h5>
 						<div class="bg-white pd-15 card-border mg-bottom-15">
 							<div><a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a></div>
 		    		</div>
@@ -286,9 +303,9 @@
 				<h4 class="f-white">Otros Proyectos Relacionados</h4>
 				<?php $posts = get_field('project_relation');
 				if( $posts ): ?>
-					<div class="row row-xs-1 row-md-4">
+					<div class="row row-xs-1 row-sm-2 row-md-4">
 						<?php foreach( $posts as $p ): ?>
-					    <div class="col-xs-12 col-md-3">
+					    <div class="col-xs-12 col-sm-6 col-md-3 space-bottom">
 					    	<figure class="project-relation-figure">
 						    	<a href="<?php echo get_permalink( $p ); ?>" class="project-relation-link"><?php echo get_the_title( $p ); ?></a>
 						    	<a href="<?php echo get_permalink( $p ); ?>">

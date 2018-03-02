@@ -9,3 +9,17 @@
 			display: inline-block !important;
 		}
 	}
+
+
+	.wpcf7-list-item-label {
+		position: relative;
+		bottom: 17px;
+	}
+
+	.wpcf7-form-control {
+	  &.wpcf7-text {
+			max-width: 400px;
+			border-radius: 10px;
+			margin: 0 auto;
+	  }
+	}
