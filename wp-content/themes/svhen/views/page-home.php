@@ -248,9 +248,19 @@
 				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<div class="row row-xs-2">
-					<div class="col-xs-2"><?php the_field( 'event_date' ); ?></div>
+					<div class="col-xs-3 center-xs bg-gold pd-15">
+						<?php
+							$date = get_field( 'event_date', false, false );
+							$date = new DateTime($date);
+						?>
 
-					<div class="col-xs-10">
+						<div class="F f-white calendar-date">
+							<p class="calendar-date--day"><?= $date->format('j'); ?></p>
+							<p class="calendar-date--year"><?= $date->format('M · Y'); ?></p>
+						</div>
+					</div>
+
+					<div class="col-xs-9">
     				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     				<p><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
 

@@ -35,6 +35,7 @@
 	import './scss/components/accordion.scss';
 	import './scss/components/initial.scss';
 	import './scss/components/events.scss';
+	import './scss/components/calendar.scss';
 
 
 

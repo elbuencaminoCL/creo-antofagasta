@@ -238,11 +238,19 @@
 					<?php foreach( $posts_events as $p ): ?>
 						<h5>Calendario</h5>
 						<div class="row row-xs-2 no-gutter space-bottom card-border">
-							<div class="col-xs-2 center-xs bg-gold pd-15">
-								<p class="F f-white calendar-date"><strong><?php the_field( 'event_date', $p->ID ); ?></strong></p>
+							<div class="col-xs-3 center-xs bg-gold pd-15">
+								<?php
+									$date = get_field( 'event_date', false, false, $p->ID );
+									$date = new DateTime($date);
+								?>
+
+								<div class="F f-white calendar-date">
+									<p class="calendar-date--day"><?= $date->format('j'); ?></p>
+									<p class="calendar-date--year"><?= $date->format('M · Y'); ?></p>
+								</div>
 							</div>
 
-							<div class="col-xs-10 bg-white pd-15">
+							<div class="col-xs-9 bg-white pd-15">
 		    				<a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a>
 		    			</div>
 		    		</div>
