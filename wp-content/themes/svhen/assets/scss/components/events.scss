@@ -4,3 +4,17 @@
 		background: rgba(255,255,255,1);
 		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(244,244,249,1) 100%);
 	}
+
+	@media screen and ( min-width: 960px ) {
+		.home_participation_col {
+			&:first-of-type {
+				.home_participation_wrap {
+					border-right: 2px solid #9a9ba2;
+					padding-right: 30px;
+				}
+			}
+			&:last-of-type {
+				padding-left: 30px;
+			}
+		}
+	}

@@ -234,7 +234,7 @@
 <section class="home-events section">
 	<div class="container">
 		<div class="row row-xs-1 row-md-2">
-			<div class="col-xs-12 col-md-5">
+			<div class="col-xs-12 col-md-5 space-bottom">
 				<h3 class="divider divider--black pd-bottom-15 mg-bottom-15">Eventos</h3>
 
 				<?php
@@ -248,7 +248,7 @@
 				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<div class="row row-xs-2">
-					<div class="col-xs-3 center-xs bg-gold pd-15">
+					<div class="col-xs-3 center-xs bg-gold pd-15 row middle-xs">
 						<?php
 							$date = get_field( 'event_date', false, false );
 							$date = new DateTime($date);
@@ -261,13 +261,13 @@
 					</div>
 
 					<div class="col-xs-9">
-    				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    				<p><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
+    				<h5 class="mg-bottom-15 mg-top-15"><?php the_title(); ?></h5>
+    				<p class="f-small"><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
 
     				<?php if ( have_rows( 'event_repeater' ) ) : ?>
     					<ul>
     						<?php while ( have_rows( 'event_repeater' ) ) : the_row(); ?>
-    							<li><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
+    							<li class="f-small"><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
     						<?php endwhile; ?>
     					</ul>
     				<?php endif; ?>
@@ -280,21 +280,25 @@
 				<?php endif; ?><?php wp_reset_query(); ?>
 
 			</div>
-			<div class="col-xs-12 col-md-7">
+			<div class="col-xs-12 col-md-7 space-bottom">
 				<h3 class="divider divider--black pd-bottom-15 mg-bottom-15">Participación</h3>
-				<div class="row row-xs-1 row-md-2">
-					<div class="col-xs-12 col-md-6">
-						<p>Encuesta Activa</p>
-						<h3><?php the_field( 'home_survey_title' ); ?></h3>
-						<p><?php the_field( 'home_survey_desc' ); ?></p>
+				<div class="row row-xs-1 row-md-2 no-gutter">
+					<div class="col-xs-12 col-md-6 home_participation_col space-bottom">
+						<div class="home_participation_wrap">
+							<p class="f-small"><strong>Encuesta Activa</strong></p>
+							<h3><?php the_field( 'home_survey_title' ); ?></h3>
+							<p class="space-bottom"><?php the_field( 'home_survey_desc' ); ?></p>
+						</div>
 						<div>
 							<a href="<?php the_field( 'home_survey_button_link' ); ?>" class="button"><?php the_field( 'home_survey_button_text' ); ?></a>
 						</div>
 					</div>
-					<div class="col-xs-12 col-md-6">
-						<p>Buzón de Sugerencias</p>
-						<h3><?php the_field( 'home_suggestion_title' ); ?></h3>
-						<p><?php the_field( 'home_suggestion_desc' ); ?></p>
+					<div class="col-xs-12 col-md-6 home_participation_col space-bottom">
+						<div class="home_participation_wrap">
+							<p class="f-small"><strong>Buzón de Sugerencias</strong></p>
+							<h3><?php the_field( 'home_suggestion_title' ); ?></h3>
+							<p class="space-bottom"><?php the_field( 'home_suggestion_desc' ); ?></p>
+						</div>
 						<div>
 							<a href="<?php the_field( 'home_suggestion_button_link' ); ?>" class="button"><?php the_field( 'home_suggestion_button_text' ); ?></a>
 						</div>

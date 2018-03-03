@@ -251,7 +251,7 @@
 							</div>
 
 							<div class="col-xs-9 bg-white pd-15">
-		    				<a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a>
+		    				<h5><?= get_the_title( $p ); ?></h5>
 		    			</div>
 		    		</div>
 					<?php endforeach; ?>
