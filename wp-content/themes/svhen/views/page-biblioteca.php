@@ -85,19 +85,19 @@
 							if ( $query->have_posts() ) :
 								while ( $query->have_posts() ) : $query->the_post();
 						?>
-								<div class="row row-xs-2 row-md-3 middle-xs doc-row">
-									<div class="col-xs-4 col-md-3">
-										<figure>
+								<div class="row row-xs-2 row-sm-3 row-md-3 middle-xs doc-row">
+									<div class="col-xs-5 col-sm-4 col-md-3">
+										<figure class="doc-figure">
 											<img src="<?= get_the_post_thumbnail_url(); ?>">
 										</figure>
 									</div>
-									<div class="col-xs-8 col-md-6">
+									<div class="col-xs-7 col-sm-5 col-md-6">
 										<h5><?php the_title(); ?></h5>
 										<p class="f-small"><?= get_the_date(); ?></p>
 										<em><?= $category->name; ?></em>
 									</div>
-									<div class="col-xs-12 col-md-3 end-md">
-										<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
+									<div class="col-xs-12 col-sm-3 col-md-3 end-md">
+										<a href="<?php the_field('document_file'); ?>" target="_blank" class="button button-full-xs white">Descargar</a>
 									</div>
 								</div>
 			  			<?php endwhile; ?>

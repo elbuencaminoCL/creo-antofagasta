@@ -16,10 +16,28 @@
 		bottom: 17px;
 	}
 
-	.wpcf7-form-control {
-	  &.wpcf7-text {
-			max-width: 400px;
-			border-radius: 10px;
-			margin: 0 auto;
-	  }
+	.form-contact-join {
+		.wpcf7-form-control {
+		  &.wpcf7-text {
+				max-width: 400px;
+				border-radius: 10px;
+				margin: 0 auto;
+		  }
+		}
+	}
+
+	.form-contact-main {
+		input {
+			width: 100%;
+		}
+	}
+
+
+
+	@media only screen and (min-width: 720px) {
+		.form-contact-main {
+			input {
+				width: auto;
+			}
+		}
 	}
