@@ -53,7 +53,7 @@
                   );
                   wp_nav_menu( $args );
                 ?>
-                <button type="button" class="button hide-md" data-toggle="offCanvas">Open Right</button>
+                <a href="#" class="open--menu hide-md" data-toggle="offCanvas"><i class="fas fa-bars"></i></a>
 
               </div>
             </div>

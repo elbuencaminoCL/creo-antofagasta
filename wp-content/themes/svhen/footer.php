@@ -121,6 +121,7 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 		<script src="<?= get_template_directory_uri(); ?>/dist/bundle.js"></script>
 		<?php wp_footer(); ?>
 
