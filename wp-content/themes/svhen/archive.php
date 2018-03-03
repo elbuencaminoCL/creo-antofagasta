@@ -13,7 +13,8 @@ get_header(); ?>
 		<div class="container">
 
 			<header class="page-header">
-				<h2><?php single_term_title(); ?></h2>
+				<p class="f-small no-space">Categoría</p>
+				<h2 class="space-bottom"><?php single_term_title(); ?></h2>
 				<?php
 					$uri = $_SERVER['REQUEST_URI'];
 					$tmp = explode('/', $uri);
@@ -22,7 +23,9 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<article class="space-bottom">
-				<?= do_shortcode( '[ajax_load_more post_type="post" posts_per_page="4" category="'. $end .'" transition_container_classes="row row-xs-1 row-sm-2 row-md-4"]' ); ?>
+				<div class="card--news--home_normal">
+					<?= do_shortcode( '[ajax_load_more post_type="post" posts_per_page="8" category="'. $end .'" transition_container_classes="row row-xs-1 row-sm-2 row-md-4"]' ); ?>
+				</div>
 			</article>
 
 		</div>
