@@ -206,7 +206,7 @@
 											<p><a href="<?php the_field('document_file'); ?>" target="_blank" class="f-blue"><?php the_title(); ?></a></p>
 											<p class="f-small"><?= $category->name; ?></p>
 										</div>
-										<div class="col-xs-6 end-md">
+										<div class="col-xs-6 end-xs">
 											<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
 										</div>
 									</div>
@@ -262,12 +262,12 @@
 
 					<div class="col-xs-9">
     				<h5 class="mg-bottom-15 mg-top-15"><?php the_title(); ?></h5>
-    				<p class="f-small"><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
+    				<p class="f-small f-black"><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
 
     				<?php if ( have_rows( 'event_repeater' ) ) : ?>
     					<ul>
     						<?php while ( have_rows( 'event_repeater' ) ) : the_row(); ?>
-    							<li class="f-small"><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
+    							<li class="f-small f-black"><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
     						<?php endwhile; ?>
     					</ul>
     				<?php endif; ?>
