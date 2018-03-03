@@ -21,7 +21,7 @@
 </section>
 <!--====  End of Banner  ====-->
 
-<div class="bg-gray-light-2">
+<div class="bg-gray-light-2 pd-bottom-60">
 	<section class="section container">
 		<div class="center-xs">
 			<h1><?php the_field( 'initial_title' ); ?></h1>
@@ -51,7 +51,7 @@
 
 	<div class="container initial-body bg-gray-light">
 		<ul id="projectWrap">
-			<li class="project-content project-content-is-active" data-project-content="projectCity">
+			<li class="project-content project-content-is-active pd-top-60" data-project-content="projectCity">
 				<?php $args = array(
 					'post_type' => 'project',
 					'posts_per_page' => -1,
@@ -69,15 +69,15 @@
 				?>
 
 					<div class="row row-xs-1 row-md-2 mg-bottom-90">
-						<div class="col-xs-12 col-md-4 city-col space-bottom" style="background-color: <?= $color; ?>">
-							<figure>
-								<img src="<?= $image; ?>" alt="Image Category" class="city-ball-image"/>
+						<div class="col-xs-12 col-md-3 city-cat space-bottom center-xs" style="background-color: <?= $color; ?>">
+							<figure class="city-ball-image center-xs">
+								<img src="<?= $image; ?>" alt="Image Category"/>
 							</figure>
-							<p><?= $category->name; ?></p>
-							<p><?= $category->description; ?></p>
+							<h3 class="f-white mg-bottom-15"><?= $category->name; ?></h3>
+							<p class="f-white"><?= $category->description; ?></p>
 						</div>
 
-						<div class="col-xs-12 col-md-8 row row-xs-1 row-md-3">
+						<div class="col-xs-12 col-md-9 row row-xs-1 row-md-3">
 							<?php
 								$args = array(
 								'post_type' => 'project',
@@ -94,18 +94,19 @@
 								if ( $query->have_posts() ) :
 									while ( $query->have_posts() ) : $query->the_post();
 
-									$color = get_field('clone_image_color');
+						      $hex = get_field('clone_image_color');
+						      list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 							?>
 
-									<div class="col-xs-12 col-md-4 space-bottom">
-										<a href="<?php the_permalink() ?>" class="f-link-white">
-											<figure <?= ($color) ? 'style="background-color: ' . $color . '"' : ''; ?> class="figure-project row middle-xs pd-30">
+									<div class="card-project col-xs-12 col-md-4 space-bottom row">
+										<a href="<?php the_permalink(); ?>" class="card-project-link">
+											<figure class="card-project-figure">
 												<?php if( get_field( 'clone_banner_image' ) ) : ?>
 													<img src="<?php the_field( 'clone_banner_image' ); ?>">
 												<?php endif; ?>
 
-												<div class="<?= ( get_field( 'clone_banner_image' ) ? 'banner-content' : '' ); ?> container">
-													<p><?php the_title(); ?></p>
+												<div class="card-project-title" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+													<h5 class="f-white"><strong><?php the_title(); ?></strong></h5>
 												</div>
 											</figure>
 										</a>

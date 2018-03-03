@@ -20,7 +20,7 @@
 
 			<?php foreach($categories as $category) : ?>
 
-			<h3><?= $category->name; ?></h3>
+			<h3 class="mg-bottom-15"><?= $category->name; ?></h3>
 			<div class="row row-xs-1 row-sm-2 row-md-4">
 
 			<?php
@@ -40,20 +40,20 @@
 				if ( $query->have_posts() ) :
 					while ( $query->have_posts() ) : $query->the_post();
 
-					$color = get_field('clone_image_color');
+		      $hex = get_field('clone_image_color');
+		      list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 
 			?>
 
-
-					<div class="col-xs-12 col-sm-6 col-md-3 space-bottom">
-						<a href="<?php the_permalink() ?>">
-							<figure <?= ($color) ? 'style="background-color: ' . $color . '"' : ''; ?> class="figure-project row middle-xs center-xs">
+					<div class="card-project col-xs-12 col-md-3 space-bottom row">
+						<a href="<?php the_permalink(); ?>" class="card-project-link">
+							<figure class="card-project-figure">
 								<?php if( get_field( 'clone_banner_image' ) ) : ?>
 									<img src="<?php the_field( 'clone_banner_image' ); ?>">
 								<?php endif; ?>
 
-								<div class="<?= ( get_field( 'clone_banner_image' ) ? 'banner-content' : '' ); ?> container">
-									<h2><?php the_title(); ?></h2>
+								<div class="card-project-title" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+									<h5 class="f-white"><strong><?php the_title(); ?></strong></h5>
 								</div>
 							</figure>
 						</a>
