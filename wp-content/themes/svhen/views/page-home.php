@@ -17,8 +17,6 @@
 <!--====  End of Carrusel  ====-->
 
 <!--====  Iniciativas  ====-->
-
-
 <section class="section-small bg-purple">
 	<div class="container">
 		<header class="center-xs start-md">

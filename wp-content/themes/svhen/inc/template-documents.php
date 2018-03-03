@@ -29,7 +29,7 @@
 				?>
 					<div class="row row-xs-2 row-md-3 middle-xs doc-row">
 						<div class="col-xs-4 col-md-3">
-							<figure>
+							<figure class="doc-figure">
 								<img src="<?= get_the_post_thumbnail_url(); ?>">
 							</figure>
 						</div>
@@ -39,7 +39,7 @@
 							<em><?= $category->name; ?></em>
 						</div>
 						<div class="col-xs-12 col-md-3 end-md">
-							<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
+							<a href="<?php the_field('document_file'); ?>" target="_blank" class="button button-full-xs white">Descargar</a>
 						</div>
 					</div>
   			<?php endwhile; ?>

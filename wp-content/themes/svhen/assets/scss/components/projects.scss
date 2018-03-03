@@ -27,7 +27,35 @@
 	}
 
 	.project-item.project-item-is-active {
-		color: red;
+		&.initial-cat-radio {
+			&:after {
+			  border-radius: 50%;
+			  border: 5px solid $purple;
+			  content: '';
+			  position: absolute;
+			  top: 4px;
+			  left: 4px;
+			}
+		}
+	}
+
+	.initial-cat-radio {
+		position: relative;
+	  margin-left: 25px;
+	  &:before {
+	    width: 18px;
+	    height: 18px;
+	    border-radius: 50%;
+	    border: 1px solid gray;
+	    content: '';
+	    position: absolute;
+	  }
+	  p {
+	    margin-left: 25px;
+	  }
+	  &:hover {
+	    cursor: pointer;
+	  }
 	}
 
 	.project-relation-figure {

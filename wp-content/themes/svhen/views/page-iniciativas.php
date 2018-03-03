@@ -21,8 +21,8 @@
 </section>
 <!--====  End of Banner  ====-->
 
-<div class="bg-gray-light-2 pd-top-45">
-	<section class="container">
+<div class="bg-gray-light-2">
+	<section class="section container">
 		<div class="center-xs">
 			<h1><?php the_field( 'initial_title' ); ?></h1>
 			<?php the_field( 'initial_desc' ); ?>
@@ -31,22 +31,25 @@
 
 	<div class="container initial-head z-depth-1">
 		<ul class="row">
-			<li class="initial-cat-radio">
-				<p>Ordenar por:</p>
+			<li class="">
+				<p class="mg-bottom-0"><strong>Ordenar por:</strong></p>
 			</li>
-			<li class="projectCity project-item project-item-is-active" data-project-select="projectCity">
-				<p>Ciudades</p>
+
+			<li class="initial-cat-radio projectCity project-item project-item-is-active" data-project-select="projectCity">
+				<p class="mg-bottom-0">Ciudades</p>
 			</li>
-			<li class="projectAxis project-item" data-project-select="projectAxis">
-				<p>Ejes</p>
+
+			<li class="initial-cat-radio projectAxis project-item" data-project-select="projectAxis">
+				<p class="mg-bottom-0">Ejes</p>
 			</li>
-			<li class="projectRandom project-item" data-project-select="projectRandom">
-				<p>Aleatorio</p>
+
+			<li class="initial-cat-radio projectRandom project-item" data-project-select="projectRandom">
+				<p class="mg-bottom-0">Aleatorio</p>
 			</li>
 		</ul>
 	</div>
 
-	<div class="container initial-body">
+	<div class="container initial-body bg-gray-light">
 		<ul id="projectWrap">
 			<li class="project-content project-content-is-active" data-project-content="projectCity">
 				<?php $args = array(
@@ -65,7 +68,7 @@
 		        $color = get_field('category_projects_color', $term);
 				?>
 
-					<div class="row row-xs-1 row-md-2 space-bottom">
+					<div class="row row-xs-1 row-md-2 mg-bottom-90">
 						<div class="col-xs-12 col-md-4 city-col space-bottom" style="background-color: <?= $color; ?>">
 							<figure>
 								<img src="<?= $image; ?>" alt="Image Category" class="city-ball-image"/>

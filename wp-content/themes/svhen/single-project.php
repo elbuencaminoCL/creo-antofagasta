@@ -221,7 +221,7 @@
 						<div class="container">
 							<div class="row row-xs-1 space-bottom">
 								<h5>Participa</h5>
-								<div class="col-xs-12 bg-white pd-15 card-border">
+								<div class="col-xs-12 bg-white pd-15 card-border form-contact-join">
 									<?= do_shortcode( '[contact-form-7 id="9514" title="Formulario Participa"]' ); ?>
 								</div>
 							</div>

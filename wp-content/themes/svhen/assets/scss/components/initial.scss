@@ -1,6 +1,8 @@
 
+@import './../global/colors.scss';
+
 .initial-body {
-  border: 1px solid black;
+  border: 1px solid $dark-gray;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top: 0;
@@ -12,7 +14,7 @@
   background-color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid $dark-gray;
 }
 
 .city-col {
@@ -31,14 +33,3 @@
   margin: 0 auto;
 }
 
-.initial-cat-radio {
-	position: relative;
-	&:before {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		border: 1px solid black;
-		content: '';
-		position: absolute;
-	}
-}
