@@ -46,8 +46,19 @@
 		}
 	}
 
+	.footer-social-logo {
+		max-height: 30px;
+		margin-right: 15px;
+	}
 
-	@media screen and ( min-width: 62em ) {
+	.footer-title {
+		color: white;
+	}
+
+
+
+
+	@media screen and ( min-width: 960px ) {
 		.accordion-content {
 			padding: 0;
 			ul {

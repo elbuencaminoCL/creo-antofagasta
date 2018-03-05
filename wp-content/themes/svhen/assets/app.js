@@ -55,3 +55,4 @@ $(document).foundation();
 	import './js/header.js';
 	import './js/projects.js';
 	import './js/documents.js';
+	import './js/accordion.js';

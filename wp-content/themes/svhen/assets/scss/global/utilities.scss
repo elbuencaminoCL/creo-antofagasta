@@ -71,3 +71,15 @@
 	padding-top: 60px;
 }
 
+.mg-bottom-xs-30 {
+	margin-bottom: 30px;
+}
+
+
+
+@media screen and ( min-width: 960px ) {
+
+	.mg-bottom-xs-30 {
+		margin-bottom: 0;
+	}
+}

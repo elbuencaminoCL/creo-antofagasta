@@ -17,11 +17,11 @@
 				<div class="container">
 					<div class="row row-xs-1 row-md-2">
 						<div class="col-xs-12 col-md-6">
-							<ul class="accordion row row-xs-1 row-md-3" data-accordion>
-							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
-							    <a href="#" class="accordion-title hide-md">Accordion 1</a>
-							    <h5 class="footer-title space-bottom">Nosotros</h5>
-							    <div class="accordion-content" data-tab-content>
+							<ul class="accordion row row-xs-1 row-md-3 mg-bottom-xs-30 accordionDisabled" data-accordion data-accordion data-allow-all-closed="true">
+							  <li class="accordion-item col-xs-12 col-md-4" data-accordion-item>
+							    <a href="#" class="accordion-title hide-md nav">Nosotros</a>
+							    <h5 class="footer-title space-bottom hide-xs show-md">Nosotros</h5>
+							    <div class="accordion-content accordionContent" data-tab-content>
 							      <?php
 							        $args = array(
 							          'theme_location' => 'about',
@@ -34,10 +34,10 @@
 							    </div>
 							  </li>
 
-							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
-							    <a href="#" class="accordion-title hide-md">Accordion 2, you can't open me.</a>
-							    <h5 class="footer-title space-bottom">Iniciativas</h5>
-							    <div class="accordion-content" data-tab-content>
+							  <li class="accordion-item col-xs-12 col-md-4" data-accordion-item>
+							    <a href="#" class="accordion-title hide-md nav">Iniciativas</a>
+							    <h5 class="footer-title space-bottom hide-xs show-md">Iniciativas</h5>
+							    <div class="accordion-content accordionContent" data-tab-content>
 							      <?php
 							        $args = array(
 							          'theme_location' => 'iniciatives',
@@ -50,10 +50,10 @@
 							    </div>
 							  </li>
 
-							  <li class="accordion-item col-xs-12 col-md-4 is-active" data-accordion-item>
-							    <a href="#" class="accordion-title hide-md">Accordion 3, you can't open me.</a>
-							    <h5 class="footer-title space-bottom">Biblioteca</h5>
-							    <div class="accordion-content" data-tab-content>
+							  <li class="accordion-item col-xs-12 col-md-4" data-accordion-item>
+							    <a href="#" class="accordion-title hide-md nav">Biblioteca</a>
+							    <h5 class="footer-title space-bottom hide-xs show-md">Biblioteca</h5>
+							    <div class="accordion-content accordionContent" data-tab-content>
 							      <?php
 							        $args = array(
 							          'theme_location' => 'library',
@@ -80,7 +80,7 @@
 										<?php while ( have_rows( 'footer_social', 'option' ) ) : the_row(); ?>
 											<figure>
 												<a href="<?php the_sub_field( 'footer_social_link', 'option' ); ?>" target="_blank">
-													<img width="200px" src="<?php the_sub_field( 'footer_social_image', 'option' ); ?>">
+													<img src="<?php the_sub_field( 'footer_social_image', 'option' ); ?>" class="footer-social-logo">
 												</a>
 											</figure>
 										<?php endwhile; ?>
@@ -127,3 +127,4 @@
 
 	</body>
 </html>
+
