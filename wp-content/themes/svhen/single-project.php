@@ -21,7 +21,7 @@
 	<figure class="banner-figure row middle-xs center-xs">
 		<img src="<?php the_field( 'clone_banner_image' ); ?>">
 		<div class="banner-content container">
-			<h2><?php the_field( 'clone_banner_title' ); ?></h2>
+			<h1 class="f-white"><?php the_field( 'clone_banner_title' ); ?></h1>
 		</div>
 	</figure>
 </section>
@@ -34,8 +34,8 @@
 		=================================-->
 		<section class="mg-bottom-15">
 			<p class="space-top f-small">
-				<a href="<?= home_url(); ?>">Inicio</a> /
-				<a href="<?= home_url( 'iniciativas' ); ?>">Iniciativas</a> / <?php the_title(); ?>
+				<a href="<?= home_url(); ?>" class="f-link no-border"><strong>Inicio</strong></a> /
+				<a href="<?= home_url( 'iniciativas' ); ?>" class="f-link no-border"><strong>Iniciativas</strong></a> / <?php the_title(); ?>
 			</p>
 		</section>
 		<!--====  End of Breadcrumb  ====-->
@@ -46,7 +46,7 @@
 	  <div class="row row-xs-1 row-md-2">
 			<div class="col-xs-12 col-md-8 project-col-left">
 				<section class="space-bottom"><!-- ¿De qué se trata este proyecto? -->
-					<h3><?php the_field( 'clone_project_article_title' ); ?></h3>
+					<h2 class="space-bottom"><?php the_field( 'clone_project_article_title' ); ?></h2>
 					<?php the_field( 'clone_project_article_desc' ); ?>
 				</section><!-- /¿De qué se trata este proyecto? -->
 
@@ -64,13 +64,13 @@
 					<section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
 						<?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
 							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-								<h4 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h4>
+								<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h3>
 
 								<div class="project-data_content">
 									<?php if ( have_rows( 'content_repeater' ) ) : ?>
 										<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
 											<?php the_sub_field( 'content_subtitle' ); ?>
-											<p><?php the_sub_field( 'content_desc' ); ?></p>
+											<p class="mg-bottom-15"><?php the_sub_field( 'content_desc' ); ?></p>
 										<?php endwhile; ?>
 									<?php endif; ?>
 								</div>
@@ -85,14 +85,14 @@
 	      <section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
 	      	<div><?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
 	      		<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-	      			<h4 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h4>
+	      			<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h3>
 
 	      			<?php if ( have_rows( 'content_repeater' ) ) : ?>
 	      				<div class="row row-xs-1 row-md-2 project-data_content">
 	      				<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
-	      					<div class="col-xs-12 col-md-6">
+	      					<div class="col-xs-12 col-md-6 space-bottom">
 	      						<p><?php the_sub_field( 'content_subtitle' ); ?></p>
-	      						<h5><?php the_sub_field( 'content_desc' ); ?></h5>
+	      						<h2 class="f-salmon"><?php the_sub_field( 'content_desc' ); ?></h2>
 	      					</div>
 	      				<?php endwhile; ?>
 	      				</div>
@@ -116,7 +116,7 @@
 
 				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
 					<section class="space-bottom"><!-- Articulo -->
-						<h3><?php the_field( 'clone_project_article_2_title' ); ?></h3>
+						<h2 class="space-bottom"><?php the_field( 'clone_project_article_2_title' ); ?></h2>
 						<?php the_field( 'clone_project_article_2_desc' ); ?>
 					</section><!-- Articulo -->
 				<?php
@@ -126,7 +126,7 @@
 
 				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
 					<section class="space-bottom"><!-- Acordeón Sectores a Intervenir -->
-						<h4>Sectores a Intervenir</h4>
+						<h2 class="mg-bottom-15">Sectores a Intervenir</h2>
 						<div class="accordion" data-accordion>
 							<?php if ( have_rows( 'clone_accordion' ) ) : ?>
 								<?php $count = 1; ?>
@@ -198,7 +198,7 @@
 			=            Contenido de la columna derecha (sidebar)      =
 			==========================================================-->
 			<div class="col-xs-12 col-md-4">
-				<h5>Noticias Relacionadas</h5>
+				<h2 class="mg-bottom-15">Noticias Relacionadas</h2>
 				<!--  Noticias Relacionadas  -->
 				<?php $posts_news = get_field('news_relation');
 				if( $posts_news ): ?>
@@ -220,7 +220,7 @@
 					<section><!-- Formulario Participa -->
 						<div class="container">
 							<div class="row row-xs-1 space-bottom">
-								<h5>Participa</h5>
+								<h2 class="mg-bottom-15">Participa</h2>
 								<div class="col-xs-12 bg-white pd-15 card-border form-contact-join">
 									<?= do_shortcode( '[contact-form-7 id="9514" title="Formulario Participa"]' ); ?>
 								</div>
@@ -236,7 +236,7 @@
 				<?php $posts_events = get_field('events_relation');
 				if( $posts_events ): ?>
 					<?php foreach( $posts_events as $p ): ?>
-						<h5>Calendario</h5>
+						<h2 class="mg-bottom-15">Calendario</h2>
 						<div class="row row-xs-2 no-gutter space-bottom card-border">
 							<div class="col-xs-3 center-xs bg-gold pd-15">
 								<?php
@@ -262,6 +262,7 @@
 				<?php $posts_videos = get_field('videos_relation');
 				if( $posts_videos ): ?>
 					<?php foreach( $posts_videos as $p ): ?>
+						<h2 class="mg-bottom-15">Videos Relacionados</h2>
 						<div class="row row-xs-2 space-bottom bg-white pd-15 card-border">
 							<div class="col-xs-6">
 								<iframe width="100%" height="150" src="https://www.youtube.com/embed/<?php the_field( 'video_id', $p ); ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -278,21 +279,21 @@
 				<!--  Documentos Relacionados  -->
 				<?php $posts_documents = get_field('documents_relation');
 				if( $posts_documents ): ?>
-					<h5>Documentos</h5>
+					<h2 class="mg-bottom-15">Documentos</h2>
 					<?php foreach( $posts_documents as $p ): ?>
 						<div class="bg-white pd-15 card-border mg-bottom-15">
 							<div><a href="<?= get_permalink( $p ); ?>" class="f-news-link"><?= get_the_title( $p ); ?></a></div>
 		    		</div>
 					<?php endforeach; ?>
 					<div class="end-xs space-bottom">
-						<a href="#" class="f-news-link">Ver todos los documentos</a>
+						<a href="#" class="f-news-link"><strong>Ver todos los documentos</strong></a>
 					</div>
 				<?php endif; ?>
 				<!--  Documentos Relacionados  -->
 
 				<!--  Redes Sociales  -->
 				<div class="col-xs-12 ">
-					<h5>Compartir</h5>
+					<h2 class="mg-bottom-15">Compartir</h2>
 					<?= do_shortcode( "[Sassy_Social_Share]" ); ?>
 				</div>
 				<!--  Redes Sociales  -->
@@ -308,14 +309,17 @@
 		=============================================-->
 		<section class="bg-dark-cyan pd-30-0">
 			<div class="container">
-				<h4 class="f-white">Otros Proyectos Relacionados</h4>
+				<h2 class="f-white space-bottom">Otros Proyectos Relacionados</h2>
 				<?php $posts = get_field('project_relation');
 				if( $posts ): ?>
 					<div class="row row-xs-1 row-sm-2 row-md-4">
 						<?php foreach( $posts as $p ): ?>
 					    <div class="col-xs-12 col-sm-6 col-md-3 space-bottom">
 					    	<figure class="project-relation-figure">
-						    	<a href="<?php echo get_permalink( $p ); ?>" class="project-relation-link"><?php echo get_the_title( $p ); ?></a>
+						    	<a href="<?php echo get_permalink( $p ); ?>" class="project-relation-link">
+						    		<h3 class="f-white"><?php echo get_the_title( $p ); ?></h3>
+						    	</a>
+
 						    	<a href="<?php echo get_permalink( $p ); ?>">
 						    		<img src="<?= get_the_post_thumbnail_url( $p ); ?>">
 						    	</a>

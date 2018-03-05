@@ -14,7 +14,7 @@
 	<figure class="banner-figure row middle-xs center-xs">
 		<img src="<?php the_field( 'initial_banner_image' ); ?>">
 		<div class="banner-content container">
-			<h2><?php the_field( 'initial_banner_title' ); ?></h2>
+			<h1 class="f-white space-bottom"><?php the_field( 'initial_banner_title' ); ?></h1>
 			<p class="f-white"><?php the_field( 'initial_banner_subtitle' ); ?>
 		</div>
 	</figure>
@@ -24,7 +24,7 @@
 <div class="bg-gray-light-2 pd-bottom-60">
 	<section class="section container">
 		<div class="center-xs">
-			<h1><?php the_field( 'initial_title' ); ?></h1>
+			<h1 class="space-bottom"><?php the_field( 'initial_title' ); ?></h1>
 			<?php the_field( 'initial_desc' ); ?>
 		</div>
 	</section>
@@ -32,7 +32,7 @@
 	<div class="container initial-head z-depth-1">
 		<ul class="row">
 			<li class="">
-				<p class="mg-bottom-0"><strong>Ordenar por:</strong></p>
+				<h3 class="mg-bottom-0"><strong>Ordenar por:</strong></h3>
 			</li>
 
 			<li class="initial-cat-radio projectCity project-item project-item-is-active" data-project-select="projectCity">
@@ -73,7 +73,7 @@
 							<figure class="city-ball-image center-xs">
 								<img src="<?= $image; ?>" alt="Image Category"/>
 							</figure>
-							<h3 class="f-white mg-bottom-15"><?= $category->name; ?></h3>
+							<h2 class="f-white mg-bottom-15"><?= $category->name; ?></h2>
 							<p class="f-white"><?= $category->description; ?></p>
 						</div>
 
@@ -106,7 +106,7 @@
 												<?php endif; ?>
 
 												<div class="card-project-title" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-													<h5 class="f-white"><strong><?php the_title(); ?></strong></h5>
+													<h3 class="f-white"><?php the_title(); ?></h3>
 												</div>
 											</figure>
 										</a>

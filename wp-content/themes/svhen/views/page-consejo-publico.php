@@ -11,7 +11,7 @@
 	<figure class="row middle-xs center-xs">
 		<img src="<?php the_field( 'committe_banner_image' ); ?>" class="believe-banner-image">
 		<div class="banner-content container">
-			<h2><?php the_field( 'committe_banner_title' ); ?></h2>
+			<h1 class="f-white"><?php the_field( 'committe_banner_title' ); ?></h1>
 		</div>
 	</figure>
 
@@ -26,7 +26,7 @@
 <section class="bg-azure pd-30">
 	<div class="container">
 		<div class="center-xs space-bottom">
-			<h3><?php the_field( 'committe_title' ); ?></h3>
+			<h2 class="space-bottom"><?php the_field( 'committe_title' ); ?></h2>
 			<p><?php the_field( 'committe_desc' ); ?></p>
 		</div>
 
@@ -44,10 +44,12 @@
 									</figure>
 								</div>
 
-								<div class="col-xs-8 f-white pd-15" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-									<p><?php the_sub_field( 'integrant_main_desc' ); ?></p>
-									<p class="f-bigger"><?php the_sub_field( 'integrant_main_title' ); ?></p>
-									<p><?php the_sub_field( 'integrant_main_subtitle' ); ?></p>
+								<div class="col-xs-8 f-white committe-col" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+									<p class="f-small mg-bottom-15"><?php the_sub_field( 'integrant_main_desc' ); ?></p>
+									<div class="name-down">
+										<h3><?php the_sub_field( 'integrant_main_title' ); ?></h3>
+										<p class="f-small"><?php the_sub_field( 'integrant_main_subtitle' ); ?></p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -62,13 +64,15 @@
 						<?php $hex = get_sub_field('integrant_color');
 	  				list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
 
-						<div class="col-xs-6 col-md-3 space-bottom">
+						<div class="col-xs-6 col-md-3 space-bottom committe-col">
 							<figure class="row middle-xs expert-figure">
 								<img src="<?php the_sub_field( 'integrant_image' ); ?>" />
 								<div class="expert-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-									<p><?php the_sub_field( 'integrant_desc' ); ?></p>
-									<p><?php the_sub_field( 'integrant_title' ); ?></p>
-									<p><?php the_sub_field( 'integrant_subtitle' ); ?></p>
+									<p class="f-small"><?php the_sub_field( 'integrant_desc' ); ?></p>
+									<div class="name-down">
+										<h3><?php the_sub_field( 'integrant_title' ); ?></h3>
+										<p class="f-small"><?php the_sub_field( 'integrant_subtitle' ); ?></p>
+									</div>
 								</div>
 							</figure>
 						</div>

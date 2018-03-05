@@ -20,7 +20,7 @@
 <section class="section-small bg-purple">
 	<div class="container">
 		<header class="center-xs start-md">
-			<h3 class="f-subtitle f-white"><?php the_field( 'home_projects_title' ); ?></h3>
+			<h2 class="f-bold f-white mg-bottom-15"><?php the_field( 'home_projects_title' ); ?></h2>
 			<div class="f-white space-bottom">
 				<?php the_field( 'home_projects_description' ); ?>
 			</div>
@@ -49,7 +49,7 @@
 									<?php endif; ?>
 
 									<div class="card-project-title" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-										<h5 class="f-white"><strong><?php the_title(); ?></strong></h5>
+										<h3 class="f-white"><strong><?php the_title(); ?></strong></h3>
 									</div>
 								</figure>
 							</a>
@@ -64,18 +64,14 @@
 		</div>
 	</div>
 </section>
-
 <!--====  End Iniciativas  ====-->
+
 
 <!--============================
 =            Noticias            =
 =============================-->
-
 <?php get_template_part( 'partials/content', 'home-news' ); ?>
-
 <!--====  End of Noticias  ====-->
-
-
 
 
 <!--============================
@@ -88,7 +84,7 @@
 		</figure>
 		<div class="home_banner_container container">
 			<div class="home_banner_col">
-				<h2 class="home_banner_col_title f-white space-bottom center-xs start-md"><strong><?php the_field( 'home_banner_title' ); ?></strong></h2>
+				<h1 class="home_banner_col_title f-white space-bottom center-xs start-md"><?php the_field( 'home_banner_title' ); ?></h1>
 				<p class="home_banner_caption space-bottom center-xs start-md"><?php the_field( 'home_banner_desc' ); ?></p>
 				<div class="end-md">
 					<a href="<?= home_url( 'que-es-creo-antofagasta' ); ?>" class="button button-full-xs">Conoce más sobre creo</a>
@@ -97,9 +93,7 @@
 		</div>
 	</div>
 </section>
-
 <!--====  End of Banner  ====-->
-
 
 
 <!--====  Creo en la Prensa  ====-->
@@ -108,7 +102,7 @@
 	<div class="container">
 		<div class="row row-xs-1 row-md-3">
 			<div class="col-xs-12 col-md-4 space-bottom">
-				<h3>Vídeos</h3>
+				<h2 class="f-bold mg-bottom-15">Vídeos</h2>
 				<?php
 					$args = array(
 						'post_type' => 'videos',
@@ -144,7 +138,7 @@
 
 						if( have_posts() ) :
 					?>
-						<h3>CREO en la Prensa</h3>
+						<h2 class="f-bold mg-bottom-15">CREO en la Prensa</h2>
 					<?php
 						while (have_posts()) : the_post();
 						$cont++;
@@ -167,7 +161,7 @@
 
 			<div class="col-xs-12 col-md-4 space-bottom">
 
-				<h3>Biblioteca</h3>
+				<h2 class="f-bold mg-bottom-15">Biblioteca</h2>
 				<p class="space-bottom">Documentación es una sección dónde podrás:</p>
 				<?php $args = array(
 					'post_type' => 'documents',
@@ -233,7 +227,7 @@
 	<div class="container">
 		<div class="row row-xs-1 row-md-2">
 			<div class="col-xs-12 col-md-5 space-bottom">
-				<h3 class="divider divider--black pd-bottom-15 mg-bottom-15">Eventos</h3>
+				<h2 class="divider divider--black pd-bottom-15 mg-bottom-15">Eventos</h2>
 
 				<?php
 					$args = array(
@@ -279,22 +273,23 @@
 
 			</div>
 			<div class="col-xs-12 col-md-7 space-bottom">
-				<h3 class="divider divider--black pd-bottom-15 mg-bottom-15">Participación</h3>
+				<h2 class="divider divider--black pd-bottom-15 mg-bottom-15">Participación</h2>
 				<div class="row row-xs-1 row-md-2 no-gutter">
 					<div class="col-xs-12 col-md-6 home_participation_col space-bottom">
 						<div class="home_participation_wrap">
 							<p class="f-small"><strong>Encuesta Activa</strong></p>
-							<h3><?php the_field( 'home_survey_title' ); ?></h3>
+							<h1 class="mg-bottom-15"><?php the_field( 'home_survey_title' ); ?></h1>
 							<p class="space-bottom"><?php the_field( 'home_survey_desc' ); ?></p>
 						</div>
 						<div>
 							<a href="<?php the_field( 'home_survey_button_link' ); ?>" class="button"><?php the_field( 'home_survey_button_text' ); ?></a>
 						</div>
 					</div>
+
 					<div class="col-xs-12 col-md-6 home_participation_col space-bottom">
 						<div class="home_participation_wrap">
 							<p class="f-small"><strong>Buzón de Sugerencias</strong></p>
-							<h3><?php the_field( 'home_suggestion_title' ); ?></h3>
+							<h1 class="mg-bottom-15"><?php the_field( 'home_suggestion_title' ); ?></h1>
 							<p class="space-bottom"><?php the_field( 'home_suggestion_desc' ); ?></p>
 						</div>
 						<div>

@@ -15,7 +15,7 @@
 		<figure class="banner-figure row middle-xs center-xs">
 			<img src="<?php the_field( 'library_banner_image' ); ?>">
 			<div class="banner-content container">
-				<h2><?php the_field( 'library_banner_title' ); ?></h2>
+				<h1 class="f-white space-bottom"><?php the_field( 'library_banner_title' ); ?></h1>
 				<p class="f-big f-white"><?php the_field( 'library_banner_subtitle' ); ?>
 			</div>
 		</figure>
@@ -37,7 +37,7 @@
 			?>
 
 			<li class="document-all documentItem document-item-is-active" data-document-select="document-all">
-				<p class="F f-blue f-all"><strong>Todos</strong></p>
+				<h3 class="F f-blue f-all cursor">Todos</h3>
 			</li>
 
 			<?php
@@ -47,7 +47,7 @@
 			?>
 
 				<li class="f-blue F document-<?= $category->term_id; ?> documentItem" data-document-id="<?= $category->term_id; ?>" data-document-load="false" data-document-select="document-<?= $category->term_id; ?>">
-					<p><strong><?= $category->name; ?></strong></p>
+					<h3 class="cursor"><?= $category->name; ?></h3>
 				</li>
 
 			<?php endforeach; ?>
@@ -91,11 +91,13 @@
 											<img src="<?= get_the_post_thumbnail_url(); ?>">
 										</figure>
 									</div>
+
 									<div class="col-xs-7 col-sm-5 col-md-6">
-										<h5><?php the_title(); ?></h5>
+										<h2><?php the_title(); ?></h2>
 										<p class="f-small"><?= get_the_date(); ?></p>
 										<em><?= $category->name; ?></em>
 									</div>
+
 									<div class="col-xs-12 col-sm-3 col-md-3 end-md">
 										<a href="<?php the_field('document_file'); ?>" target="_blank" class="button button-full-xs white">Descargar</a>
 									</div>

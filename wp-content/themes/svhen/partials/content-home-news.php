@@ -1,6 +1,6 @@
 <section class="section">
 	<div class="container">
-		<h3>Noticias</h3>
+		<h2 class="f-bold">Noticias</h2>
 		<div class="row row-xs-1 row-md-2">
 			<div class="col-xs-12 col-md-6">
 
@@ -49,9 +49,9 @@
 														<?= the_category( ' - ' ); ?>
 													</div>
 												</div>
-												<h4 class="card--news--home_title">
-													<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
-												</h4>
+												<a href="<?php the_permalink(); ?>">
+													<h3 class="card--news--home_title"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
+												</a>
 												<div class="card--news--home_caption hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 												<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 											</div>
@@ -114,9 +114,9 @@
 															<?= the_category( ' - ' ); ?>
 														</div>
 													</div>
-													<h4 class="card--news--home_title center-md">
-														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
-													</h4>
+														<a href="<?php the_permalink(); ?>">
+															<h3 class="card--news--home_title center-md"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
+														</a>
 													<div class="card--news--home_caption hide-xs show-md space-bottom"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</article>
@@ -186,9 +186,9 @@
 															<?= the_category( ' - ' ); ?>
 														</div>
 													</div>
-													<h4 class="card--news--home_title center-md">
-														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
-													</h4>
+													<a href="<?php the_permalink(); ?>">
+														<h3 class="card--news--home_title center-md"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
+													</a>
 													<div class="card--news--home_caption hide-xs show-md space-bottom"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</article>
@@ -251,9 +251,9 @@
 															<?= the_category( ' - ' ); ?>
 														</div>
 													</div>
-													<h4 class="card--news--home_title">
-														<a href="<?php the_permalink(); ?>"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></a>
-													</h4>
+														<a href="<?php the_permalink(); ?>">
+															<h3 class="card--news--home_title"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
+														</a>
 													<div class="card--news--home_caption hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</div>

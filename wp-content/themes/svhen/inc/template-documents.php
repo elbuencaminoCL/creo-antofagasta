@@ -33,11 +33,13 @@
 								<img src="<?= get_the_post_thumbnail_url(); ?>">
 							</figure>
 						</div>
+
 						<div class="col-xs-8 col-md-6">
-							<h5><?php the_title(); ?></h5>
+							<h2><?php the_title(); ?></h2>
 							<p class="f-small"><?= get_the_date(); ?></p>
 							<em><?= $category->name; ?></em>
 						</div>
+
 						<div class="col-xs-12 col-md-3 end-md">
 							<a href="<?php the_field('document_file'); ?>" target="_blank" class="button button-full-xs white">Descargar</a>
 						</div>

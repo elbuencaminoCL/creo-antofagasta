@@ -20,7 +20,7 @@
 							<ul class="accordion row row-xs-1 row-md-3 mg-bottom-xs-30 accordionDisabled" data-accordion data-accordion data-allow-all-closed="true">
 							  <li class="accordion-item col-xs-12 col-md-4" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md nav">Nosotros</a>
-							    <h5 class="footer-title space-bottom hide-xs show-md">Nosotros</h5>
+							    <h3 class="footer-title space-bottom hide-xs show-md">Nosotros</h3>
 							    <div class="accordion-content accordionContent" data-tab-content>
 							      <?php
 							        $args = array(
@@ -36,7 +36,7 @@
 
 							  <li class="accordion-item col-xs-12 col-md-4" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md nav">Iniciativas</a>
-							    <h5 class="footer-title space-bottom hide-xs show-md">Iniciativas</h5>
+							    <h3 class="footer-title space-bottom hide-xs show-md">Iniciativas</h3>
 							    <div class="accordion-content accordionContent" data-tab-content>
 							      <?php
 							        $args = array(
@@ -52,7 +52,7 @@
 
 							  <li class="accordion-item col-xs-12 col-md-4" data-accordion-item>
 							    <a href="#" class="accordion-title hide-md nav">Biblioteca</a>
-							    <h5 class="footer-title space-bottom hide-xs show-md">Biblioteca</h5>
+							    <h3 class="footer-title space-bottom hide-xs show-md">Biblioteca</h3>
 							    <div class="accordion-content accordionContent" data-tab-content>
 							      <?php
 							        $args = array(
@@ -70,11 +70,11 @@
 
 						<div class="col-xs-12 col-md-6">
 							<div class="footer-newsletter space-bottom">
-								<h5 class="footer-title space-bottom">Mantente Enterado con las últimas noticias</h5>
+								<h3 class="footer-title space-bottom">Mantente Enterado con las últimas noticias</h3>
 								<?= do_shortcode( '[contact-form-7 id="4" title="Newsletter"]' ); ?>
 							</div>
 							<div>
-								<h5 class="footer-title space-bottom">Encuentranos también en:</h5>
+								<h3 class="footer-title space-bottom">Encuentranos también en:</h3>
 								<?php if ( have_rows( 'footer_social', 'option' ) ) : ?>
 									<div class="row">
 										<?php while ( have_rows( 'footer_social', 'option' ) ) : the_row(); ?>
@@ -95,7 +95,7 @@
 
 			<section class="section footer-partners">
 				<div class="container">
-					<p class="center-xs">Una Iniciativa de:</p>
+					<h3 class="center-xs space-bottom">Una Iniciativa de:</h3>
 					<?php if ( have_rows( 'footer_partners', 'option' ) ) : ?>
 						<div class="row middle-xs center-xs">
 							<?php while ( have_rows( 'footer_partners', 'option' ) ) : the_row(); ?>

@@ -33,7 +33,7 @@
 									<?php endif; ?>
 
 									<div class="card-project-title" style="background-color: rgba( <?= ( $hex ) ? $hexAlpha : '237, 94, 92, .8'; ?> );">
-										<h5 class="f-white"><strong><?php the_title(); ?></strong></h5>
+										<h3 class="f-white"><?php the_title(); ?></h3>
 									</div>
 								</figure>
 							</a>
