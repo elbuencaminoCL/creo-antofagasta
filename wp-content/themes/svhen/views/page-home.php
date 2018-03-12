@@ -102,7 +102,7 @@
 <section class="section">
 	<div class="container">
 		<div class="row row-xs-1 row-md-3">
-			<div class="col-xs-12 col-md-4 space-bottom">
+			<div class="col-xs-12 col-md-4 space-bottom"><!-- Videos -->
 				<h2 class="f-bold mg-bottom-15">Vídeos</h2>
 				<?php
 					$args = array(
@@ -124,10 +124,9 @@
 				</div>
 
 				<?php endif; ?>
-			</div>
+			</div><!-- /Videos -->
 
-			<div class="col-xs-12 col-md-4 space-bottom">
-
+			<div class="col-xs-12 col-md-4 space-bottom hide-xs show-md"><!-- CREO en la prensa -->
 				<div class="int-home">
 
 					<?php
@@ -155,13 +154,10 @@
 						endif;
 						wp_reset_query();
 					?>
-
 				</div>
-			</div>
+			</div><!-- /CREO en la prensa -->
 
-
-			<div class="col-xs-12 col-md-4 space-bottom">
-
+			<div class="col-xs-12 col-md-4 space-bottom"><!-- Biblioteca -->
 				<h2 class="f-bold mg-bottom-15">Biblioteca</h2>
 				<p class="space-bottom f-normal">Documentación es una sección dónde podrás:</p>
 				<?php $args = array(
@@ -200,7 +196,9 @@
 											<p class="f-small"><?= $category->name; ?></p>
 										</div>
 										<div class="col-xs-6 end-xs">
-											<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">Descargar</a>
+											<a href="<?php the_field('document_file'); ?>" target="_blank" class="button white">
+												<i class="fas fa-download hide-md f-big"></i><span class="hide-xs show-md">Descargar</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -214,8 +212,7 @@
 			 	<div class="end-xs">
 			 		<a href="<?= home_url( 'biblioteca' ); ?>" class="f-link">Ir a Biblioteca</a>
 			 	</div>
-			</div>
-
+			</div><!-- /Biblioteca -->
 
 		</div>
 	</div>
@@ -283,7 +280,7 @@
 							<p class="space-bottom"><?php the_field( 'home_survey_desc' ); ?></p>
 						</div>
 						<div>
-							<a href="<?php the_field( 'home_survey_button_link' ); ?>" class="button"><?php the_field( 'home_survey_button_text' ); ?></a>
+							<a href="<?php the_field( 'home_survey_button_link' ); ?>" class="button button-full-xs"><?php the_field( 'home_survey_button_text' ); ?></a>
 						</div>
 					</div>
 
@@ -294,7 +291,7 @@
 							<p class="space-bottom"><?php the_field( 'home_suggestion_desc' ); ?></p>
 						</div>
 						<div>
-							<a href="<?php the_field( 'home_suggestion_button_link' ); ?>" class="button"><?php the_field( 'home_suggestion_button_text' ); ?></a>
+							<a href="<?php the_field( 'home_suggestion_button_link' ); ?>" class="button button-full-xs"><?php the_field( 'home_suggestion_button_text' ); ?></a>
 						</div>
 					</div>
 				</div>

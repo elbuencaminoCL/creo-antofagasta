@@ -1,6 +1,6 @@
 <section class="section">
 	<div class="container">
-		<h2 class="f-bold">Noticias</h2>
+		<h2 class="f-bold center-xs start-md mg-bottom-xs-30 mg-bottom-md-15">Noticias</h2>
 		<div class="row row-xs-1 row-md-2">
 			<div class="col-xs-12 col-md-6">
 

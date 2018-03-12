@@ -45,6 +45,10 @@
 
 // Padding
 
+.pd-xs-10 {
+	padding: 10px;
+}
+
 .pd-10 {
 	padding: 10px;
 }
@@ -95,13 +99,22 @@
 
 
 
-
-
-
-
 @media screen and ( min-width: 960px ) {
+
+	.pd-xs-10 {
+		padding: initial;
+	}
 
 	.mg-bottom-xs-30 {
 		margin-bottom: 0;
 	}
+
+	.mg-bottom-md-15 {
+		margin-bottom: 15px;
+	}
+
+	.mg-bottom-md-30 {
+		margin-bottom: 30px;
+	}
+
 }

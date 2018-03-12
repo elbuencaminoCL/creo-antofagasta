@@ -30,14 +30,14 @@
 			<p><?php the_field( 'believe_about-us_desc' ); ?></p>
 		</div>
 
-		<div class="row row-sm-4 row-md-6 bg-mintcream about-us-member-row">
+		<div class="row row-xs-2 row-md-6 bg-mintcream about-us-member-row">
 			<?php if ( have_rows( 'about-us_repeater' ) ) : ?>
 				<?php while ( have_rows( 'about-us_repeater' ) ) : the_row(); ?>
 
 					<?php $hex = get_sub_field('about-us_member_color');
 					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
 
-					<div class="col-xs-6 col-sm-3 col-md-2 space-bottom">
+					<div class="col-xs-6 col-md-2 space-bottom">
 						<figure class="row middle-xs member-figure">
 							<img src="<?php the_sub_field( 'about-us_member_image' ); ?>" />
 							<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
