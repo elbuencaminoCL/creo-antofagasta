@@ -1,10 +1,17 @@
 
+// Línea divisoria
 .divider {
 	border-bottom: 2px solid #d1d2d5;
 }
 
 .divider--black {
 	border-color: #9b9ba2;
+}
+
+// Margin
+
+.mg-bottom-0 {
+	margin-bottom: 0px;
 }
 
 .mg-0-auto {
@@ -15,10 +22,6 @@
 	margin: 0 auto !important;
 }
 
-.mg-bottom-0 {
-	margin-bottom: 0px;
-}
-
 .mg-bottom-15 {
 	margin-bottom: 15px;
 }
@@ -27,9 +30,16 @@
 	margin-top: 15px;
 }
 
+.mg-bottom-xs-30 {
+	margin-bottom: 30px;
+}
+
 .mg-bottom-90 {
 	margin-bottom: 90px;
 }
+
+
+// Padding
 
 .pd-10 {
 	padding: 10px;
@@ -71,9 +81,7 @@
 	padding-top: 60px;
 }
 
-.mg-bottom-xs-30 {
-	margin-bottom: 30px;
-}
+
 
 
 
