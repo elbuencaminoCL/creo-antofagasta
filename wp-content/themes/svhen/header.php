@@ -35,7 +35,7 @@
       <div class="off-canvas-content" data-off-canvas-content>
         <section id="header">
           <div class="container">
-            <div class="row row-xs-2 row-md-2 middle-xs bottom-md">
+            <div class="row row-xs-2 row-md-2 middle-xs bottom-md header-row">
               <div class="col-xs-6 col-md-2 center-md">
                 <figure>
                   <a href="<?= home_url(); ?>">
@@ -50,7 +50,7 @@
                     'theme_location' => 'header',
                     'container' => 'nav',
                     'container_class' => 'header-nav hide-xs show-md',
-                    'menu_class' => 'header-nav-items row dropdown menu around-md'
+                    'menu_class' => 'header-nav-items row dropdown menu'
                   );
                   wp_nav_menu( $args );
                 ?>

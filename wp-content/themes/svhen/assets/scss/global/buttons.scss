@@ -29,7 +29,11 @@ input[type="submit"] {
 
 @media only screen and (min-width: 960px) {
 
-	.button {
+	.button,
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
 		&.button-full-xs {
 			width: auto;
 		}

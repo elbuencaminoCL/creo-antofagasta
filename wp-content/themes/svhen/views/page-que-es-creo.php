@@ -23,21 +23,21 @@
 </section>
 
 
-<section class="bg-azure pd-30">
-	<div class="container">
+<section class="">
+	<div class="container bg-azure pd-30">
 		<div class="center-xs bg-azure pd-30">
 			<h2 class="space-bottom"><?php the_field( 'believe_about-us_title' ); ?></h2>
 			<p><?php the_field( 'believe_about-us_desc' ); ?></p>
 		</div>
 
-		<div class="row row-sm-4 row-md-6 bg-mintcream pd-30">
+		<div class="row row-sm-4 row-md-6 bg-mintcream about-us-member-row">
 			<?php if ( have_rows( 'about-us_repeater' ) ) : ?>
 				<?php while ( have_rows( 'about-us_repeater' ) ) : the_row(); ?>
 
 					<?php $hex = get_sub_field('about-us_member_color');
 					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
 
-					<div class="col-xs-6 col-sm-3 col-md-2">
+					<div class="col-xs-6 col-sm-3 col-md-2 space-bottom">
 						<figure class="row middle-xs member-figure">
 							<img src="<?php the_sub_field( 'about-us_member_image' ); ?>" />
 							<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">

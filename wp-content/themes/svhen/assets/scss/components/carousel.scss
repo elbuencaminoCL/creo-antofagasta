@@ -11,3 +11,8 @@
 		width: 100% !important;
 	}
 }
+
+.hslider_fullarrow .hslider_left:before, .hslider_fullarrow .hslider_right:before {
+	font-size: 120px !important;
+	left: -35px;
+}

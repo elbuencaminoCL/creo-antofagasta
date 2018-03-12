@@ -10,15 +10,12 @@
 
 .home_banner_col {
 	position: relative;
-	margin-top: -70px;
 	z-index: 1;
-	.home_banner_col_title {
-		font-size: 2.5rem;
-	}
 }
 
 .home_banner_figure {
 	position: relative;
+	margin-bottom: 30px;
 	&:before {
 		background-color: rgba(114, 119, 123, .7);
 		border-top-left-radius: 4px;
@@ -29,6 +26,13 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+	}
+	.home_banner_col_title {
+		font-size: 2.5rem;
+		position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 	}
 }
 
@@ -98,6 +102,7 @@
 	color: white;
 	&:hover {
 		opacity: 1;
+		transition: opacity .1s ease-out;
 	}
 }
 
@@ -130,12 +135,24 @@
 }
 
 
+
 @media only screen and (min-width: 960px) {
+
+	.home_banner_figure {
+		.home_banner_col_title {
+			font-size: 2.5rem;
+			position: initial;
+		}
+	}
 
 	.home_banner_col {
 		margin: 0 0 0 auto;
-		max-width: 800px;
+		max-width: 700px;
 		width: 100%;
+		.home_banner_col_title {
+			font-size: 2.5rem;
+			position: initial;
+		}
 	}
 
 	.home_banner_caption {

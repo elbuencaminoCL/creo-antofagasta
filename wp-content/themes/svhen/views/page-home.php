@@ -17,8 +17,8 @@
 <!--====  End of Carrusel  ====-->
 
 <!--====  Iniciativas  ====-->
-<section class="section-small bg-purple">
-	<div class="container">
+<section class="bg-purple">
+	<div class="container pd-30-0">
 		<header class="center-xs start-md">
 			<h2 class="f-bold f-white mg-bottom-15"><?php the_field( 'home_projects_title' ); ?></h2>
 			<div class="f-white space-bottom">
@@ -41,7 +41,7 @@
 
 		        <?php setup_postdata($post); ?>
 
-						<div class="card-project col-xs-12 col-md-3 space-bottom row">
+						<div class="card-project col-xs-12 col-md-3">
 							<a href="<?php the_permalink(); ?>" class="card-project-link">
 								<figure class="card-project-figure">
 									<?php if( get_field( 'clone_banner_image' ) ) : ?>
@@ -49,7 +49,7 @@
 									<?php endif; ?>
 
 									<div class="card-project-title" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-										<h3 class="f-white"><strong><?php the_title(); ?></strong></h3>
+										<h2 class="f-white"><?php the_title(); ?></h2>
 									</div>
 								</figure>
 							</a>
@@ -77,14 +77,16 @@
 <!--============================
 =            Banner            =
 =============================-->
-<section class="home_banner">
+<section>
 	<div class="home_banner_wrap">
 		<figure class="home_banner_figure">
 			<img src="<?php the_field( 'home_banner_image' ); ?>" alt="" />
+			<h1 class="home_banner_col_title f-white space-bottom center-xs start-md hide-md"><?php the_field( 'home_banner_title' ); ?></h1>
 		</figure>
+
 		<div class="home_banner_container container">
 			<div class="home_banner_col">
-				<h1 class="home_banner_col_title f-white space-bottom center-xs start-md"><?php the_field( 'home_banner_title' ); ?></h1>
+				<h1 class="home_banner_col_title f-white space-bottom center-xs start-md hide-xs show-md"><?php the_field( 'home_banner_title' ); ?></h1>
 				<p class="home_banner_caption space-bottom center-xs start-md"><?php the_field( 'home_banner_desc' ); ?></p>
 				<div class="end-md">
 					<a href="<?= home_url( 'que-es-creo-antofagasta' ); ?>" class="button button-full-xs">Conoce más sobre creo</a>
@@ -97,7 +99,6 @@
 
 
 <!--====  Creo en la Prensa  ====-->
-
 <section class="section">
 	<div class="container">
 		<div class="row row-xs-1 row-md-3">
@@ -106,7 +107,7 @@
 				<?php
 					$args = array(
 						'post_type' => 'videos',
-						'posts_per_page' => 1
+						'posts_per_page' => 2
 					);
 					$query = new WP_Query( $args );
 				?>
@@ -115,12 +116,12 @@
 					<div class="space-bottom">
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					</div>
-					<div class="end-xs">
-						<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
-					</div>
 				<!-- post -->
 				<?php
-				endwhile; ?>
+				endwhile; ?><div class="end-xs">
+					<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
+
+				</div>
 
 				<?php endif; ?>
 			</div>
@@ -143,10 +144,10 @@
 						while (have_posts()) : the_post();
 						$cont++;
 					?>
-						<div class="divider mg-bottom-15 pd-bottom-15">
+						<div class="divider mg-bottom-16 pd-bottom-32">
 							<a target="_blank" href="<?php echo get_custom_field('url_antofagagasta_en_la_prensa') ?>">
-								<p class="f-black"><strong><?php echo get_the_content(); ?></strong></p>
-								<p class="f-dark-gray no-space"><?php echo get_the_title(); ?></p>
+								<p class="f-black f-small"><strong><?php echo get_the_content(); ?></strong></p>
+								<p class="f-dark-gray no-space f-normal"><?php echo get_the_title(); ?></p>
 							</a>
 						</div>
 						<?php
@@ -162,7 +163,7 @@
 			<div class="col-xs-12 col-md-4 space-bottom">
 
 				<h2 class="f-bold mg-bottom-15">Biblioteca</h2>
-				<p class="space-bottom">Documentación es una sección dónde podrás:</p>
+				<p class="space-bottom f-normal">Documentación es una sección dónde podrás:</p>
 				<?php $args = array(
 					'post_type' => 'documents',
 					'taxonomy' => 'cat_doc'
@@ -190,7 +191,7 @@
 							$query = new WP_Query( $args );
 							if ( $query->have_posts() ) :
 								while ( $query->have_posts() ) : $query->the_post();
-									if( $countCat <= 5 ) :
+									if( $countCat <= 4 ) :
 						?>
 								<div class="divider mg-bottom-15 pd-bottom-15">
 									<div class="row row-xs-2">
@@ -278,7 +279,7 @@
 					<div class="col-xs-12 col-md-6 home_participation_col space-bottom">
 						<div class="home_participation_wrap">
 							<p class="f-small"><strong>Encuesta Activa</strong></p>
-							<h1 class="mg-bottom-15"><?php the_field( 'home_survey_title' ); ?></h1>
+							<h2 class="pd-25-0"><?php the_field( 'home_survey_title' ); ?></h2>
 							<p class="space-bottom"><?php the_field( 'home_survey_desc' ); ?></p>
 						</div>
 						<div>
@@ -289,7 +290,7 @@
 					<div class="col-xs-12 col-md-6 home_participation_col space-bottom">
 						<div class="home_participation_wrap">
 							<p class="f-small"><strong>Buzón de Sugerencias</strong></p>
-							<h1 class="mg-bottom-15"><?php the_field( 'home_suggestion_title' ); ?></h1>
+							<h2 class="pd-25-0"><?php the_field( 'home_suggestion_title' ); ?></h2>
 							<p class="space-bottom"><?php the_field( 'home_suggestion_desc' ); ?></p>
 						</div>
 						<div>

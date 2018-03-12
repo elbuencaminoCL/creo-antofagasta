@@ -36,6 +36,7 @@
 	import './scss/components/initial.scss';
 	import './scss/components/events.scss';
 	import './scss/components/calendar.scss';
+	import './scss/components/que-es-creo.scss';
 
 
 
