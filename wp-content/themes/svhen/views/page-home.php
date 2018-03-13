@@ -101,8 +101,9 @@
 <!--====  Creo en la Prensa  ====-->
 <section class="section">
 	<div class="container">
-		<div class="row row-xs-1 row-md-3">
-			<div class="col-xs-12 col-md-4 space-bottom"><!-- Videos -->
+		<div class="row row-xs-1 row-md-3 gutter-md">
+
+			<div class="col-xs-12 col-md-4 space-bottom hide-xs show-md"><!-- Videos-MD -->
 				<h2 class="f-bold mg-bottom-15">Vídeos</h2>
 				<?php
 					$args = array(
@@ -122,7 +123,7 @@
 
 					<div class="believe-video-desc">
 						<p class="f-tiny"><strong>Video Informativo</strong></p>
-						<p class="jump-line"><?= get_the_title(); ?></p>
+						<p class="jump-line f-normal"><?= get_the_title(); ?></p>
 					</div>
 
 					<?php endif; ?>
@@ -131,9 +132,39 @@
 				<div class="end-xs">
 					<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
 				</div>
-			</div><!-- /Videos -->
+			</div><!-- /Videos-MD -->
 
-			<div class="col-xs-12 col-md-4 space-bottom hide-xs show-md"><!-- CREO en la prensa -->
+			<div class="col-xs-12 col-md-4 space-bottom hide-md"><!-- Videos-XS -->
+				<h2 class="f-bold mg-bottom-15">Vídeos</h2>
+				<?php
+					$args = array(
+						'post_type' => 'videos',
+						'posts_per_page' => 2
+					);
+					$query = new WP_Query( $args );
+				?>
+
+				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+				<div class="row row-xs-2 row-md-2">
+					<div class="space-bottom believe-video-xs">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+
+					<div class="believe-video-desc">
+						<p class="f-tiny"><strong>Video Informativo</strong></p>
+						<p class="jump-line f-normal"><?= get_the_title(); ?></p>
+					</div>
+				</div>
+				<!-- post -->
+				<?php endwhile; ?>
+				<?php endif; ?>
+
+				<div class="end-xs">
+					<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
+				</div>
+			</div><!-- /Videos-XS -->
+
+			<div class="col-xs-12 col-md-4 space-bottom hide-xs show-md mg-right-15-i"><!-- CREO en la prensa -->
 				<div class="int-home">
 
 					<?php
@@ -164,7 +195,7 @@
 				</div>
 			</div><!-- /CREO en la prensa -->
 
-			<div class="col-xs-12 col-md-4 space-bottom"><!-- Biblioteca -->
+			<div class="col-xs-12 col-md-4 space-bottom mg-right-0-i"><!-- Biblioteca -->
 				<h2 class="f-bold mg-bottom-15">Biblioteca</h2>
 				<p class="space-bottom f-normal">Documentación es una sección dónde podrás:</p>
 				<?php $args = array(
@@ -244,7 +275,7 @@
 
 				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-				<div class="row row-xs-2">
+				<div class="row row-xs-2 no-gutter card-border-xs">
 					<div class="col-xs-3 center-xs bg-gold pd-15 row middle-xs">
 						<?php
 							$date = get_field( 'event_date', false, false );
@@ -253,18 +284,19 @@
 
 						<div class="F f-white calendar-date">
 							<p class="calendar-date--day"><?= $date->format('j'); ?></p>
-							<p class="calendar-date--year"><?= $date->format('M · Y'); ?></p>
+							<p class="calendar-date--year f-small hide-xs show-md"><?= $date->format('M · Y'); ?></p>
+							<p class="calendar-date--year hide-md"><?= $date->format('M'); ?></p>
 						</div>
 					</div>
 
-					<div class="col-xs-9">
-    				<h5 class="mg-bottom-15 mg-top-15"><?php the_title(); ?></h5>
-    				<p class="f-small f-black"><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
+					<div class="col-xs-9 pd-10">
+    				<a href="#" class="f-news-link"><?php the_title(); ?></a>
+    				<p class="f-small f-black mg-top-15 hide-xs show-md"><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
 
     				<?php if ( have_rows( 'event_repeater' ) ) : ?>
     					<ul>
     						<?php while ( have_rows( 'event_repeater' ) ) : the_row(); ?>
-    							<li class="f-small f-black"><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
+    							<li class="f-small f-black hide-xs show-md"><strong>Horario: </strong><?php the_sub_field( 'event_since' ); ?> a <?php the_sub_field( 'event_until' ); ?></li>
     						<?php endwhile; ?>
     					</ul>
     				<?php endif; ?>

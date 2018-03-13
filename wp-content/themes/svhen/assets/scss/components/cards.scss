@@ -5,6 +5,11 @@
   border-radius: 5px;
 }
 
+.card-border-xs {
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
 .card {
   border-radius: 4px;
   margin-bottom: 30px;
@@ -71,6 +76,8 @@
 
 @media screen and ( max-width: 959px ) {
 
+
+
   .card {
     .card--news--home_content {
       background-color: white !important;
@@ -80,6 +87,10 @@
 }
 
 @media screen and ( min-width: 960px ) {
+
+  .card-border-xs {
+    border: 0;
+  }
 
   .card {
     &.card--news--home {

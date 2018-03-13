@@ -5,6 +5,12 @@
 		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(244,244,249,1) 100%);
 	}
 
+	.event-calendar-title {
+		&:hover {
+
+		}
+	}
+
 	@media screen and ( min-width: 960px ) {
 		.home_participation_col {
 			&:first-of-type {
