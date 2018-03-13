@@ -15,11 +15,15 @@
 		</div>
 	</figure>
 
-	<div class="row-xs-1 row-sm-1 row-md-1 bg-mintcream pd-30">
-		<div class="col-xs-10 col-sm-8 col-md-6 mg-0-auto-i">
-			<p><?php the_field( 'committe_banner_desc' ); ?></p>
+	<section class="bg-mintcream pd-30">
+		<div class="container">
+			<div class="row-xs-1 row-sm-1">
+				<div class="col-xs-10 col-sm-8 center-xs mg-0-auto-i">
+					<p><?php the_field( 'committe_banner_desc' ); ?></p>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
 </section>
 
 
@@ -30,25 +34,27 @@
 			<p><?php the_field( 'committe_desc' ); ?></p>
 		</div>
 
-		<div class="bg-mintcream pd-30">
+		<div class="bg-mintcream commite-main-row">
 			<div class="row row-xs-1 row-md-2">
 				<?php if ( have_rows( 'committe_main_repeater' ) ) : ?>
 					<?php while ( have_rows( 'committe_main_repeater' ) ) : the_row(); ?>
 						<?php $hex = get_sub_field('integrant_main_color');
 	  				list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
-						<div class="col-xs-12  col-md-6 space-bottom">
-							<div class="row row-xs-2 no-gutter">
-								<div class="col-xs-4">
+						<div class="col-xs-12 col-md-6 space-bottom">
+							<div class="row row-xs-1 row-sm-2 no-gutter member-main-row">
+								<div class="col-xs-12 col-sm-4">
 									<figure class="row middle-xs member-figure">
 										<img src="<?php the_sub_field( 'integrant_main_image' ); ?>" />
 									</figure>
 								</div>
 
-								<div class="col-xs-8 f-white committe-col" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+								<div class="col-xs-12 col-sm-8 f-white committe-col member-main member-main-col" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
 									<p class="f-small mg-bottom-15"><?php the_sub_field( 'integrant_main_desc' ); ?></p>
-									<div class="name-down">
-										<h3><?php the_sub_field( 'integrant_main_title' ); ?></h3>
-										<p class="f-small"><?php the_sub_field( 'integrant_main_subtitle' ); ?></p>
+									<div class="mg-top-60">
+										<div class="name-down">
+											<h3><?php the_sub_field( 'integrant_main_title' ); ?></h3>
+											<p class="f-small"><?php the_sub_field( 'integrant_main_subtitle' ); ?></p>
+										</div>
 									</div>
 								</div>
 							</div>

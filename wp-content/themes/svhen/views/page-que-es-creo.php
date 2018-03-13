@@ -15,16 +15,20 @@
 		</div>
 	</figure>
 
-	<div class="row-xs-1 row-sm-1 row-md-1 bg-mintcream pd-30">
-		<div class="col-xs-10 col-sm-8 col-md-6 mg-0-auto-i">
-			<p><?php the_field( 'believe_banner_desc' ); ?></p>
+	<section class="bg-mintcream pd-30">
+		<div class="container">
+			<div class="row-xs-1 row-sm-1">
+				<div class="col-xs-10 col-sm-8 mg-0-auto-i center-xs">
+					<p><?php the_field( 'believe_banner_desc' ); ?></p>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
 </section>
 
 
-<section class="">
-	<div class="container bg-azure pd-30">
+<section class="bg-azure pd-30">
+	<div class="container ">
 		<div class="center-xs bg-azure pd-30">
 			<h2 class="space-bottom"><?php the_field( 'believe_about-us_title' ); ?></h2>
 			<p><?php the_field( 'believe_about-us_desc' ); ?></p>

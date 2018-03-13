@@ -93,7 +93,7 @@
 									</div>
 
 									<div class="col-xs-7 col-sm-5 col-md-6">
-										<h2><?php the_title(); ?></h2>
+										<h3><?php the_title(); ?></h3>
 										<p class="f-small"><?= get_the_date(); ?></p>
 										<em><?= $category->name; ?></em>
 									</div>

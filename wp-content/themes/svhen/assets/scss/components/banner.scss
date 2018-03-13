@@ -107,8 +107,10 @@
 }
 
 .committe-col {
-	position: relative;
-	padding: 30px 15px;
+	&.member-main {
+		position: relative;
+		padding: 30px 15px;
+	}
 }
 
 .name-down {
