@@ -41,7 +41,12 @@ h6 {
   font-size: 12px;
 }
 
-
+p {
+  &.jump-line {
+    line-height: 1.2;
+    margin-bottom:3px;
+  }
+}
 
 a {
   outline: none;

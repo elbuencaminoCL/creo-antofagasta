@@ -107,23 +107,30 @@
 				<?php
 					$args = array(
 						'post_type' => 'videos',
-						'posts_per_page' => 1
+						'posts_per_page' => 2
 					);
 					$query = new WP_Query( $args );
 				?>
 
-				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-					<div class="space-bottom">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-				<!-- post -->
-				<?php
-				endwhile; ?><div class="end-xs">
-					<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
+				<div class="row row-xs-2">
+					<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+						<div class="space-bottom believe-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+					<!-- post -->
+					<?php endwhile; ?>
 
+					<div class="believe-video-desc">
+						<p class="f-tiny"><strong>Video Informativo</strong></p>
+						<p class="jump-line"><?= get_the_title(); ?></p>
+					</div>
+
+					<?php endif; ?>
 				</div>
 
-				<?php endif; ?>
+				<div class="end-xs">
+					<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
+				</div>
 			</div><!-- /Videos -->
 
 			<div class="col-xs-12 col-md-4 space-bottom hide-xs show-md"><!-- CREO en la prensa -->
