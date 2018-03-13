@@ -70,11 +70,12 @@
 
 						<div class="col-xs-12 col-md-6">
 							<div class="footer-newsletter space-bottom">
-								<h3 class="footer-title space-bottom">Mantente Enterado con las últimas noticias</h3>
+								<h3 class="footer-title space-bottom hide-xs show-md">Mantente Enterado con las últimas noticias</h3>
 								<?= do_shortcode( '[contact-form-7 id="4" title="Newsletter"]' ); ?>
 							</div>
 							<div>
-								<h3 class="footer-title space-bottom">Encuentranos también en:</h3>
+								<h3 class="footer-title space-bottom hide-md">Síguenos</h3>
+								<h3 class="footer-title space-bottom hide-xs show-md">Encuentranos también en:</h3>
 								<?php if ( have_rows( 'footer_social', 'option' ) ) : ?>
 									<div class="row">
 										<?php while ( have_rows( 'footer_social', 'option' ) ) : the_row(); ?>
