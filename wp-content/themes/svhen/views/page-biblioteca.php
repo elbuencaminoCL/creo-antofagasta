@@ -25,7 +25,7 @@
 
 <section class="section">
 	<div class="container">
-		<ul class="row between-xs space-bottom">
+		<ul class="hide-xs show-md row-i between-xs space-bottom">
 			<?php $args = array(
 				'post_type' => 'documents',
 				'posts_per_page' => -1,
@@ -37,7 +37,7 @@
 			?>
 
 			<li class="document-all documentItem document-item-is-active" data-document-select="document-all">
-				<h3 class="F f-blue f-all cursor">Todos</h3>
+				<h3 class="F f-blue f-all cursor ">Todos</h3>
 			</li>
 
 			<?php
@@ -46,12 +46,53 @@
 	        $term = get_term_by( 'id', $category->term_id, 'category_projects' );
 			?>
 
-				<li class="f-blue F document-<?= $category->term_id; ?> documentItem" data-document-id="<?= $category->term_id; ?>" data-document-load="false" data-document-select="document-<?= $category->term_id; ?>">
-					<h3 class="cursor"><?= $category->name; ?></h3>
+				<li class="f-blue F document-<?= $category->term_id; ?> documentItem" data-document-id="<?= $category->term_id; ?>"  data-document-load="false" data-document-select="document-<?= $category->term_id; ?>">
+					<h3 class="F f-blue cursor"><?= $category->name; ?></h3>
 				</li>
 
 			<?php endforeach; ?>
 		</ul>
+
+
+
+		<ul class="hide-md row-md between-xs space-bottom">
+			<?php $args = array(
+				'post_type' => 'documents',
+				'posts_per_page' => -1,
+				'taxonomy' => 'cat_doc'
+			);
+
+				$categories = get_categories( $args );
+
+			?>
+
+			<div class="selectbox">
+			  <h3 class="selectbox__selected f-pink-dark F" data-value="value 0">Todos</h3>
+				<div class="selectbox__values">
+
+					<li class="hide-xs show-md document-all documentItem document-item-is-active" data-document-select="document-all">
+						<h3 class="F f-blue f-all cursor">Todos</h3>
+					</li>
+
+					<?php
+						foreach($categories as $category) :
+
+			        $term = get_term_by( 'id', $category->term_id, 'category_projects' );
+					?>
+
+						<li class="selectbox__item f-blue F document-<?= $category->term_id; ?> documentItem" data-document-id="<?= $category->term_id; ?>"  data-document-load="false" data-document-select="document-<?= $category->term_id; ?>">
+							<h3 class="F f-blue"><?= $category->name; ?></h3>
+						</li>
+
+					<?php endforeach; ?>
+
+					<li class="selectbox__item document-all documentItem document-item" data-document-select="document-all">
+						<h3 class="F f-blue">Todos</h3>
+					</li>
+				</div>
+			</div>
+		</ul>
+
 
 		<ul id="documentWrap">
 			<li class="documentContent document-content-is-active" data-document-content="document-all">

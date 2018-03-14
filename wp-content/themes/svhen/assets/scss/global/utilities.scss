@@ -117,6 +117,10 @@
 
 @media screen and ( min-width: 960px ) {
 
+	.row-i {
+		display: flex !important;
+	}
+
 	.pd-xs-10 {
 		padding: initial;
 	}

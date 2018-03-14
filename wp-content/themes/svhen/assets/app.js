@@ -1,5 +1,4 @@
 
-
 /*=============================================
 =           Importación de libs            =
 =============================================*/
@@ -39,15 +38,6 @@
 	import './scss/components/believe.scss';
 
 
-
-/*Librerías*/
-import $ from 'jquery';
-import 'foundation-sites';
-
-
-$(document).foundation();
-
-
 /*==========================================================
 =            Importación de archivos javaScript            =
 ==========================================================*/
@@ -57,3 +47,13 @@ $(document).foundation();
 	import './js/projects.js';
 	import './js/documents.js';
 	import './js/accordion.js';
+	import './js/select-box.js';
+
+
+/*Librerías*/
+import $ from 'jquery';
+import 'foundation-sites';
+
+
+$(document).foundation();
+

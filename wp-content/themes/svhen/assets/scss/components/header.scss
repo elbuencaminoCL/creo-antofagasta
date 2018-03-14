@@ -1,4 +1,27 @@
 
+.off-canvas-menu-nav {
+	li {
+		a {
+			text-transform: uppercase;
+			font-weight: bolder;
+			&:focus {
+				outline: none;
+			}
+		}
+		ul {
+			margin-bottom: 15px;
+			li {
+				a {
+					text-transform: capitalize;
+					font-weight: 600;
+					padding: 0 0 0 20px;
+				}
+			}
+		}
+	}
+}
+
+
 #header {
 	background-color: white;
 	.header-nav-items {

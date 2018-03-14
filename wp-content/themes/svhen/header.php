@@ -26,7 +26,7 @@
               'theme_location' => 'header',
               'container' => 'nav',
               'container_class' => 'hide-md',
-              'menu_class' => ''
+              'menu_class' => 'off-canvas-menu-nav'
             );
             wp_nav_menu( $args );
           ?>

@@ -339,6 +339,14 @@ $space-bottom-small-lg: 15px;
     }
   }
 
+  .row-md {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   @for $n from 1 through 12 {
     .row-xs-#{$n},
     .row-sm-#{$n} {
