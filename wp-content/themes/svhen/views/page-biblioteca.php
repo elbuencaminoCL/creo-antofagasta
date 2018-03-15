@@ -39,10 +39,10 @@
 
 			<div class="selectbox">
 			  <h3 class="hide-md selectbox__selected f-pink-dark F">Todos</h3>
-				<div class="selectbox__values row-md">
+				<div class="selectbox__values row-md between-xs">
 
 					<li class="selectbox__item document-all documentItem document-item-is-active" data-document-select="document-all">
-						<h3 class="F f-blue f-all">Todos</h3>
+						<h3 class="f-pink-hover F f-blue f-all">Todos</h3>
 					</li>
 
 					<?php
@@ -52,7 +52,7 @@
 					?>
 
 						<li class="col-xs-12 col-md-6 selectbox__item f-blue F document-<?= $category->term_id; ?> documentItem" data-document-id="<?= $category->term_id; ?>"  data-document-load="false" data-document-select="document-<?= $category->term_id; ?>">
-							<h3 class="F f-blue"><?= $category->name; ?></h3>
+							<h3 class="f-pink-hover F f-blue"><?= $category->name; ?></h3>
 						</li>
 
 					<?php endforeach; ?>

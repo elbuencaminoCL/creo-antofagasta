@@ -52,6 +52,9 @@
 	  width: 100%;
 	  padding: 15px;
 	  text-align: left;
+	  &.lh {
+	  	line-height: 1.2;
+	  }
 	  &:before {
 	  	content: '\025bc';
 	  	position: absolute;
@@ -63,13 +66,9 @@
 	}
 
 	.selectbox__values {
-	  position: absolute;
-	  top: 48px;
-	  left: -1px;
-	  width: 100.5%;
+	  width: 100%;
 	  display: none;
 	  text-align: left;
-	  border: 1px solid $dark-gray;
 	  background-color: white;
 	  z-index: 2;
 	}
@@ -78,27 +77,11 @@
 	  padding: 10px;
 	  &:hover {
 	  	background-color: #0269b6;
-			.f-blue {
+			.f-pink-hover,
+			.f-white-hover {
 				color: white;
 			}
 	  }
-	}
-
-
-	@media screen and ( min-width: 490px ) {
-		.selectbox__values {
-		  width: 100.35%;
-		}
-	}
-
-
-
-	@media screen and ( min-width: 660px ) {
-
-		.selectbox__values {
-		  width: 100.25%;
-		}
-
 	}
 
 
@@ -145,14 +128,12 @@
 		}
 
 		.selectbox__values {
-		  position: initial;
 		  width: auto;
 		  display: flex !important;
 		  text-align: initial;
 		  border: 0;
 		  background-color: transparent;
 		  z-index: 2;
-		  justify-content: space-between;
 		}
 
 		.selectbox__item {
@@ -160,8 +141,14 @@
 		  cursor: pointer;
 		  &:hover {
 		  	background-color: transparent;
-				.f-blue {
+				.f-pink-hover {
 					color: $pink-dark;
+				}
+				.f-pink-hover {
+					color: $pink-dark;
+				}
+				.f-white-hover {
+					color: inherit;
 				}
 		  }
 		}
