@@ -1,5 +1,5 @@
 
-	import $ from 'jquery'
+import $ from 'jquery'
 
 	let $documentItem = $('.documentItem')
 	,		$documentWrap = $('#documentWrap')
@@ -10,9 +10,14 @@
 
 		let documentID = $(e.currentTarget).data('document-id')
 		,		$documentLoad = $(e.currentTarget).data('document-load')
-		console.log($documentLoad, '$documentLoad')
 
-		if( $documentLoad == true || $documentLoad === undefined ) {
+		let value = $(e.currentTarget).text();
+
+	  $('.selectbox__selected').html(value);
+
+	  $('.selectbox__values').toggle();
+
+		if( $documentLoad == true || $documentLoad === undefined ) {
 			documentActiveFn( e.currentTarget )
 		}
 		else {

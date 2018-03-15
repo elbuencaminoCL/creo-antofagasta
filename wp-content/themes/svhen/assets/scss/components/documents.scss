@@ -10,7 +10,9 @@
 	}
 
 	.documentItem.document-item-is-active {
-		color: $pink-dark;
+		.f-blue {
+			color: $pink-dark;
+		}
 		.f-all {
 			color: $pink-dark;
 		}
@@ -120,6 +122,48 @@
 				height: auto;
 				object-fit: unset;
 			}
+		}
+
+		.selectbox {
+		  position: initial;
+		  width: 100%;
+		  cursor: initial;
+		  background-color: transparent;
+		  border: 0;
+		}
+
+		.selectbox__selected {
+		  width: auto;
+		  padding: 0;
+		  text-align: initial;
+		  &:before {
+		  	content: '';
+		  	position: initial;
+		  	color: transparent;
+		  	font-size: 0;
+		  }
+		}
+
+		.selectbox__values {
+		  position: initial;
+		  width: auto;
+		  display: flex !important;
+		  text-align: initial;
+		  border: 0;
+		  background-color: transparent;
+		  z-index: 2;
+		  justify-content: space-between;
+		}
+
+		.selectbox__item {
+		  padding: 0;
+		  cursor: pointer;
+		  &:hover {
+		  	background-color: transparent;
+				.f-blue {
+					color: $pink-dark;
+				}
+		  }
 		}
 
 	}
