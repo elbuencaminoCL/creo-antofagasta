@@ -126,7 +126,6 @@
 
 				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
 					<section class="space-bottom"><!-- Acordeón Sectores a Intervenir -->
-						<h2 class="mg-bottom-15">Sectores a Intervenir</h2>
 						<div class="accordion" data-accordion>
 							<?php if ( have_rows( 'clone_accordion' ) ) : ?>
 								<?php $count = 1; ?>
@@ -170,7 +169,7 @@
 
 
 				<section><!-- Logotipo patrocinadores -->
-					<div class="row">
+					<div class="row bottom-xs">
 						<?php if ( have_rows( 'clone_sponsor' ) ) : ?>
 							<?php while ( have_rows( 'clone_sponsor' ) ) : the_row(); ?>
 
@@ -198,10 +197,10 @@
 			=            Contenido de la columna derecha (sidebar)      =
 			==========================================================-->
 			<div class="col-xs-12 col-md-4">
-				<h2 class="mg-bottom-15">Noticias Relacionadas</h2>
 				<!--  Noticias Relacionadas  -->
 				<?php $posts_news = get_field('news_relation');
 				if( $posts_news ): ?>
+				<h2 class="mg-bottom-15">Noticias Relacionadas</h2>
 					<?php foreach( $posts_news as $p ): ?>
 						<div class="mg-bottom-15 card card--news card-border" style="border-left: 6px solid <?= get_field('clone_image_color'); ?>;">
 							<p class="f-tiny"><?= get_the_date( 'd F Y', $p->ID ); ?></p>
