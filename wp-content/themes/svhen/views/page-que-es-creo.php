@@ -35,30 +35,32 @@
 		</div>
 
 		<?php
-		$customer_reviews = get_field('about-us_repeater');
-		shuffle($customer_reviews); // magic happens here :)?>
+			$customer_reviews = get_field('about-us_repeater');
+			shuffle($customer_reviews); // magic happens here :)
+		?>
 
 		<div class="row row-xs-2 row-md-6 bg-mintcream about-us-member-row">
 			<?php if( have_rows('about-us_repeater') ):
 
-			foreach( $customer_reviews as $customer_review ):
-				$review_title = $customer_review['about-us_member_title'];
-				$review_description = $customer_review['about-us_member_subtitle'];
-				$review_img = $customer_review['about-us_member_image'];
-				$hex = $customer_review['about-us_member_color'];
-				list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
+				foreach( $customer_reviews as $customer_review ):
+					$review_title = $customer_review['about-us_member_title'];
+					$review_description = $customer_review['about-us_member_subtitle'];
+					$review_img = $customer_review['about-us_member_image'];
+					$hex = $customer_review['about-us_member_color'];
+					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+			?>
 
-				<div class="col-xs-6 col-md-2 space-bottom">
-					<figure class="row middle-xs member-figure">
-						<img src="<?php echo $review_img; ?>"/>
-						<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-							<div class="name-down">
-								<h3><?php echo $review_title; ?></h3>
-								<p class="f-small"><?php echo $review_description; ?></p>
-							</div>
+			<div class="col-xs-6 col-md-2 space-bottom">
+				<figure class="row middle-xs member-figure">
+					<img src="<?php echo $review_img; ?>"/>
+					<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+						<div class="name-down">
+							<h3><?php echo $review_title; ?></h3>
+							<p class="f-small"><?php echo $review_description; ?></p>
 						</div>
-					</figure>
-				</div>
+					</div>
+				</figure>
+			</div>
 
 			<?php
 				endforeach;
