@@ -306,7 +306,10 @@
 		<!--============================================
 		=            Proyectos Relacionados            =
 		=============================================-->
-		<section class="bg-dark-cyan pd-30-0">
+		<?php
+			if( get_field('project_relation') ) :
+		?>
+		<section class="pd-30-0" style="background-color: <?= $hex; ?>">
 			<div class="container">
 				<h2 class="f-white space-bottom">Otros Proyectos Relacionados</h2>
 				<?php $posts = get_field('project_relation');
@@ -329,7 +332,17 @@
 				<?php endif; ?>
 			</div>
 		</section>
+
+		<?php endif; ?>
 		<!--====  End of Proyectos Relacionados  ====-->
 
+<?php
+if( get_field('NOMBRE-DEL-FIELD') ) :
+?>
+
+	CONTENEDOR PARA EL FIELD
+<?php
+endif;
+?>
 
 <?php get_footer(); ?>
