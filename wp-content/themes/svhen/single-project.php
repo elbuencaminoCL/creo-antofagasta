@@ -60,74 +60,36 @@
 	        endif;
 	      ?>
 
-	      <?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
-	      <section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
-							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-								<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h3>
+				<!-- Card proyecto en cifras ( Una Columna ) -->
+				<?php if( get_field( 'number_cols' )['value'] == 'colDoce') : ?>
+					<?php if( get_field( 'title_col_12' ) && get_field( 'desc_col_12' ) ) : ?>
+			      <section class="space-bottom z-depth-1">
+							<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'title_col_12' ); ?></h3>
+							<div class="project-data_content"><?php the_field( 'desc_col_12' ); ?></div>
+						</section>
+					<?php endif; ?>
+					<!-- /Card proyecto en cifras ( Una Columna ) -->
 
-								<div class="project-data_content">
-									<?php if ( have_rows( 'content_repeater' ) ) : ?>
-										<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
-											<?php the_sub_field( 'content_subtitle' ); ?>
-											<p class="mg-bottom-15"><?php the_sub_field( 'content_desc' ); ?></p>
-										<?php endwhile; ?>
-									<?php endif; ?>
-								</div>
-							<?php endwhile; ?>
-					</section>
+					<!-- Card proyecto en cifras ( Dos Columnas ) -->
+					<?php elseif ( get_field( 'number_cols' )['value'] == 'colSeis' ) : ?>
+						<?php if( get_field( 'title_col_6' ) ) : ?>
+				      <section class="space-bottom z-depth-1">
+								<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'title_col_6' ); ?></h3>
+
+								<?php if ( have_rows( 'content_col_6_repeater' ) ) : ?>
+									<div class="row row-xs-1 row-md-2 project-data_content">
+									<?php while ( have_rows( 'content_col_6_repeater' ) ) : the_row(); ?>
+										<div class="col-xs-12 col-md-6 space-bottom">
+											<p><?php the_sub_field( 'content_subtitle_col_6' ); ?></p>
+											<h2 class="f-salmon"><?php the_sub_field( 'content_desc_col_6' ); ?></h2>
+										</div>
+									<?php endwhile; ?>
+									</div>
+								<?php endif; ?>
+
+							</section>
 						<?php endif; ?>
-
-
-
-				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
-					<section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
-						<?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
-							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-								<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h3>
-
-								<div class="project-data_content">
-									<?php if ( have_rows( 'content_repeater' ) ) : ?>
-										<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
-											<?php the_sub_field( 'content_subtitle' ); ?>
-											<p class="mg-bottom-15"><?php the_sub_field( 'content_desc' ); ?></p>
-										<?php endwhile; ?>
-									<?php endif; ?>
-								</div>
-							<?php endwhile; ?>
-						<?php endif; ?>
-					</section><!-- /Card proyecto en cifras -->
-				<?php else :
-	        endif;
-	      ?>
-
-
-
-				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
-	      <section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
-	      	<div><?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
-	      		<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
-	      			<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h3>
-
-	      			<?php if ( have_rows( 'content_repeater' ) ) : ?>
-	      				<div class="row row-xs-1 row-md-2 project-data_content">
-	      				<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
-	      					<div class="col-xs-12 col-md-6 space-bottom">
-	      						<p><?php the_sub_field( 'content_subtitle' ); ?></p>
-	      						<h2 class="f-salmon"><?php the_sub_field( 'content_desc' ); ?></h2>
-	      					</div>
-	      				<?php endwhile; ?>
-	      				</div>
-	      			<?php endif; ?>
-
-	      		<?php endwhile; ?>
-	      	<?php endif; ?></div>
-	      </section><!-- /Card proyecto en cifras -->
-				<?php
-					else :
-	        endif;
-	      ?>
-
-
+				<?php endif; ?><!-- /Card proyecto en cifras ( Dos Columnas ) -->
 
 
 				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
@@ -137,6 +99,7 @@
 				<?php else :
 	        endif;
 	      ?>
+
 
 				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
 					<section class="space-bottom"><!-- Articulo -->
