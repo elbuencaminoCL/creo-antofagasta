@@ -60,6 +60,25 @@
 	        endif;
 	      ?>
 
+	      <?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
+	      <section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
+							<?php while ( have_rows( 'clone_project_cypher' ) ) : the_row(); ?>
+								<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_sub_field( 'title' ); ?></h3>
+
+								<div class="project-data_content">
+									<?php if ( have_rows( 'content_repeater' ) ) : ?>
+										<?php while ( have_rows( 'content_repeater' ) ) : the_row(); ?>
+											<?php the_sub_field( 'content_subtitle' ); ?>
+											<p class="mg-bottom-15"><?php the_sub_field( 'content_desc' ); ?></p>
+										<?php endwhile; ?>
+									<?php endif; ?>
+								</div>
+							<?php endwhile; ?>
+					</section>
+						<?php endif; ?>
+
+
+
 				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
 					<section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
 						<?php if ( have_rows( 'clone_project_cypher' ) ) : ?>
@@ -80,6 +99,8 @@
 				<?php else :
 	        endif;
 	      ?>
+
+
 
 				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
 	      <section class="space-bottom z-depth-1"><!-- Card proyecto en cifras -->
@@ -105,6 +126,9 @@
 					else :
 	        endif;
 	      ?>
+
+
+
 
 				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
 					<section class="space-bottom"><!-- Carrusel -->
@@ -215,19 +239,22 @@
 				<?php endif; ?>
 				<!--  /Noticias Relacionadas  -->
 
-				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
+				<?php
+					if( get_field( 'poll_form' ) ) :
+					if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
 					<section><!-- Formulario Participa -->
 						<div class="container">
 							<div class="row row-xs-1 space-bottom">
 								<h2 class="mg-bottom-15">Participa</h2>
 								<div class="col-xs-12 bg-white pd-15 card-border form-contact-join">
-									<?= do_shortcode( '[contact-form-7 id="9514" title="Formulario Participa"]' ); ?>
+									<?= do_shortcode( get_field( 'poll_form' ) ); ?>
 								</div>
 							</div>
 						</div>
 					</section><!-- /Formulario Participa -->
 				<?php
 					else :// no rows found
+	        endif;
 	        endif;
 	      ?>
 
@@ -245,7 +272,7 @@
 
 								<div class="F f-white calendar-date">
 									<p class="calendar-date--day"><?= $date->format('j'); ?></p>
-									<p class="calendar-date--year"><?= $date->format('M · Y'); ?></p>
+									<p class="calendar-date--year"><?= $date->format('M'); ?></p>
 								</div>
 							</div>
 
@@ -335,14 +362,5 @@
 
 		<?php endif; ?>
 		<!--====  End of Proyectos Relacionados  ====-->
-
-<?php
-if( get_field('NOMBRE-DEL-FIELD') ) :
-?>
-
-	CONTENEDOR PARA EL FIELD
-<?php
-endif;
-?>
 
 <?php get_footer(); ?>
