@@ -45,17 +45,17 @@
 		========================================================-->
 	  <div class="row row-xs-1 row-md-2">
 			<div class="col-xs-12 col-md-8 project-col-left">
-				<section class="space-bottom"><!-- ¿De qué se trata este proyecto? -->
+				<section class="space-bottom">
 					<h2 class="space-bottom"><?php the_field( 'clone_project_article_title' ); ?></h2>
 					<?php the_field( 'clone_project_article_desc' ); ?>
-				</section><!-- /¿De qué se trata este proyecto? -->
+				</section>
 
 				<?php if( get_field( 'select_template' ) == 'projectSimple' ) : ?>
-					<section class="space-bottom"><!-- Imagen -->
+					<section class="space-bottom">
 						<figure>
 							<img src="<?php the_field( 'project_bus_image' ); ?>" class="project-bus-image">
 						</figure>
-					</section><!-- /Imagen -->
+					</section>
 				<?php else :
 	        endif;
 	      ?>
@@ -68,51 +68,47 @@
 							<div class="project-data_content"><?php the_field( 'desc_col_12' ); ?></div>
 						</section>
 					<?php endif; ?>
-					<!-- /Card proyecto en cifras ( Una Columna ) -->
 
 					<!-- Card proyecto en cifras ( Dos Columnas ) -->
 					<?php elseif ( get_field( 'number_cols' )['value'] == 'colSeis' ) : ?>
-						<?php if( get_field( 'title_col_6' ) ) : ?>
-				      <section class="space-bottom z-depth-1">
-								<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'title_col_6' ); ?></h3>
+					<?php if( get_field( 'title_col_6' ) ) : ?>
+			      <section class="space-bottom z-depth-1">
+							<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'title_col_6' ); ?></h3>
 
-								<?php if ( have_rows( 'content_col_6_repeater' ) ) : ?>
-									<div class="row row-xs-1 row-md-2 project-data_content">
-									<?php while ( have_rows( 'content_col_6_repeater' ) ) : the_row(); ?>
-										<div class="col-xs-12 col-md-6 space-bottom">
-											<p><?php the_sub_field( 'content_subtitle_col_6' ); ?></p>
-											<h2 class="f-salmon"><?php the_sub_field( 'content_desc_col_6' ); ?></h2>
-										</div>
-									<?php endwhile; ?>
+							<?php if ( have_rows( 'content_col_6_repeater' ) ) : ?>
+								<div class="row row-xs-1 row-md-2 project-data_content">
+								<?php while ( have_rows( 'content_col_6_repeater' ) ) : the_row(); ?>
+									<div class="col-xs-12 col-md-6 space-bottom">
+										<p><?php the_sub_field( 'content_subtitle_col_6' ); ?></p>
+										<h2 class="f-salmon"><?php the_sub_field( 'content_desc_col_6' ); ?></h2>
 									</div>
-								<?php endif; ?>
+								<?php endwhile; ?>
+								</div>
+							<?php endif; ?>
 
-							</section>
-						<?php endif; ?>
-				<?php endif; ?><!-- /Card proyecto en cifras ( Dos Columnas ) -->
+						</section>
+					<?php endif; ?>
+				<?php endif; ?>
 
-
+				<!-- Carrusel -->
 				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
-					<section class="space-bottom"><!-- Carrusel -->
+					<section class="space-bottom">
 						<?php echo do_shortcode( get_field( 'carousel_short_code' ) ); ?>
-					</section><!--====  End of Carrusel  ====-->
-				<?php else :
-	        endif;
-	      ?>
+					</section>
+				<?php else : endif; ?>
 
-
+				<!-- Articulo -->
 				<?php if( get_field( 'select_template' ) == 'multiProject' ) : ?>
-					<section class="space-bottom"><!-- Articulo -->
+					<section class="space-bottom">
 						<h2 class="space-bottom"><?php the_field( 'clone_project_article_2_title' ); ?></h2>
 						<?php the_field( 'clone_project_article_2_desc' ); ?>
-					</section><!-- Articulo -->
-				<?php
-					else :
-	        endif;
-	      ?>
+					</section>
+				<?php else : endif; ?>
 
+				<!-- Acordeón Sectores a Intervenir -->
 				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
-					<section class="space-bottom"><!-- Acordeón Sectores a Intervenir -->
+
+					<section class="space-bottom">
 						<div class="accordion" data-accordion>
 							<?php if ( have_rows( 'clone_accordion' ) ) : ?>
 								<?php $count = 1; ?>
@@ -148,11 +144,9 @@
 								<?php endwhile; ?>
 							<?php endif; ?>
 						</div>
-					</section><!-- /Acordeón Sectores a Intervenir -->
-				<?php
-					else :// no rows found
-	        endif;
-	      ?>
+					</section>
+
+				<?php else : endif; ?>
 
 
 				<section><!-- Logotipo patrocinadores -->

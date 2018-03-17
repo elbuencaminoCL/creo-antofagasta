@@ -47,25 +47,21 @@
 					$review_description = $customer_review['about-us_member_subtitle'];
 					$review_img = $customer_review['about-us_member_image'];
 					$hex = $customer_review['about-us_member_color'];
-					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
-			?>
+					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
 
-			<div class="col-xs-6 col-md-2 space-bottom">
-				<figure class="row middle-xs member-figure">
-					<img src="<?php echo $review_img; ?>"/>
-					<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-						<div class="name-down">
-							<h3><?php echo $review_title; ?></h3>
-							<p class="f-small"><?php echo $review_description; ?></p>
+				<div class="col-xs-6 col-md-2 space-bottom">
+					<figure class="row middle-xs member-figure">
+						<img src="<?php echo $review_img; ?>"/>
+						<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
+							<div class="name-down">
+								<h3><?php echo $review_title; ?></h3>
+								<p class="f-small"><?php echo $review_description; ?></p>
+							</div>
 						</div>
-					</div>
-				</figure>
-			</div>
+					</figure>
+				</div>
 
-			<?php
-				endforeach;
-				endif;
-			?>
+			<?php endforeach; endif; ?>
 		</div>
 
 
