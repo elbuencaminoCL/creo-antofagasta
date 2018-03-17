@@ -30,6 +30,10 @@
 	height: 160px;
 	border-radius: 160% / 75%;
 	cursor: pointer;
+	&:hover {
+		background-color: #736e9e;
+		transition: background-color .5s ease-out;
+	}
 	&:before {
 		position: absolute;
 		top: 15px;
