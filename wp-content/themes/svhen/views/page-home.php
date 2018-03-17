@@ -309,21 +309,21 @@
 
 				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-				<div class="row row-xs-2 no-gutter card-border-xs">
-					<div class="col-xs-3 center-xs bg-gold pd-15 row middle-xs">
+				<div class="row row-xs-2 no-gutter">
+					<div class="col-xs-3 center-xs calendar-date calendar-date--xs pd-15 row middle-xs">
 						<?php
 							$date = get_field( 'event_date', false, false );
 							$date = new DateTime($date);
 						?>
 
-						<div class="F f-white calendar-date">
+						<div class="F f-white">
 							<p class="calendar-date--day"><?= $date->format('j'); ?></p>
 							<p class="calendar-date--year f-small hide-xs show-md"><?= $date->format('M · Y'); ?></p>
 							<p class="calendar-date--year hide-md"><?= $date->format('M'); ?></p>
 						</div>
 					</div>
 
-					<div class="col-xs-9 pd-10">
+					<div class="col-xs-9 pd-10 calendar-event calendar-event--xs">
     				<a href="#" class="f-news-link"><?php the_title(); ?></a>
     				<p class="f-small f-black mg-top-15 hide-xs show-md"><strong>Lugar: </strong><?php the_field( 'event_place' ); ?></p>
 

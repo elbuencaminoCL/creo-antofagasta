@@ -92,8 +92,17 @@
 
 				<!-- Carrusel -->
 				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
-					<section class="space-bottom">
-						<?php echo do_shortcode( get_field( 'carousel_short_code' ) ); ?>
+					<section class="project-carousel space-bottom">
+
+						<?php if ( have_rows( 'project_carousel_repeater' ) ) : ?>
+						  <?php while ( have_rows( 'project_carousel_repeater' ) ) : the_row(); ?>
+						  	<figure>
+							    <img src="<?php the_sub_field( 'carousel_image' ); ?>"/>
+							    <p><?php the_sub_field( 'carousel_desc' ); ?></p>
+							  </figure>
+						  <?php endwhile; ?>
+						<?php endif; ?>
+
 					</section>
 				<?php else : endif; ?>
 
@@ -220,20 +229,20 @@
 				if( $posts_events ): ?>
 					<?php foreach( $posts_events as $p ): ?>
 						<h2 class="mg-bottom-15">Calendario</h2>
-						<div class="row row-xs-2 no-gutter space-bottom card-border">
-							<div class="col-xs-3 center-xs bg-gold pd-15">
+						<div class="row row-xs-2 no-gutter space-bottom">
+							<div class="col-xs-3 center-xs calendar-date pd-15">
 								<?php
 									$date = get_field( 'event_date', false, false, $p->ID );
 									$date = new DateTime($date);
 								?>
 
-								<div class="F f-white calendar-date">
-									<p class="calendar-date--day"><?= $date->format('j'); ?></p>
-									<p class="calendar-date--year"><?= $date->format('M'); ?></p>
+								<div class="F f-white">
+									<p class="f-big"><strong><?= $date->format('j'); ?></strong></p>
+									<p><?= $date->format('M'); ?></p>
 								</div>
 							</div>
 
-							<div class="col-xs-9 bg-white pd-15">
+							<div class="col-xs-9 calendar-event pd-15">
 		    				<h5><?= get_the_title( $p ); ?></h5>
 		    			</div>
 		    		</div>

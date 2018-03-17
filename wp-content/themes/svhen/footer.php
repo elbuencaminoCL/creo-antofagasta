@@ -126,6 +126,31 @@
 		<script src="<?= get_template_directory_uri(); ?>/dist/bundle.js"></script>
 		<?php wp_footer(); ?>
 
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+		<script type="text/javascript">
+		  $(document).ready(function(){
+		    $('.project-carousel').slick({
+		      infinite: true,
+		      slidesToShow: 1,
+		      autoplay: true,
+		      autoplaySpeed: 3000,
+		      fade: true,
+		      cssEase: 'linear',
+		      prevArrow: '<span class="slick-prev"></span>',
+		      nextArrow: '<span class="slick-next"></span>',
+		      arrows: true,
+		      settings: {
+            arrows: true,
+            centerMode: false,
+          }
+		    });
+		  });
+		</script>
+
+
 	</body>
 </html>
 

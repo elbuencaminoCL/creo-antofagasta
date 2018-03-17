@@ -36,3 +36,62 @@
   }
 }
 
+
+.calendar-date {
+  background-color: $gold;
+  border: 1px solid #ddd;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 0;
+  &.calendar-date--xs {
+    background-color: $gold;
+    border: 1px solid #999;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 0;
+  }
+}
+
+.calendar-event {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 0;
+  &.calendar-event--xs {
+    background-color: white;
+    border: 1px solid #999;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0;
+  }
+}
+
+
+
+@media only screen and ( min-width: 960px ) {
+
+  .calendar-date {
+    background-color: $gold;
+    border: 1px solid #ddd;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 0;
+    &.calendar-date--xs {
+      border: 0;
+    }
+  }
+
+  .calendar-event {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0;
+    &.calendar-event--xs {
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+}

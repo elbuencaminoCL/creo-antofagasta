@@ -50,9 +50,9 @@
 													</div>
 												</div>
 												<a href="<?php the_permalink(); ?>">
-													<h3 class="card--news--home_title"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
+													<h3 class="card--news--home_title mg-bottom-10"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
 												</a>
-												<div class="card--news--home_caption hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+												<div class="card--news--home_caption hide-xs show-md f-normal"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 												<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 											</div>
 										</div>
@@ -252,9 +252,9 @@
 														</div>
 													</div>
 														<a href="<?php the_permalink(); ?>">
-															<h3 class="card--news--home_title"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
+															<h3 class="card--news--home_title mg-bottom-10"><?= wp_html_excerpt( get_the_title(), 100, '...' ); ?></h3>
 														</a>
-													<div class="card--news--home_caption hide-xs show-md"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
+													<div class="card--news--home_caption hide-xs show-md f-normal"><?= wp_html_excerpt( get_the_content(), 115, '...' ); ?></div>
 													<p class="f-small"><a href="<?php the_permalink(); ?>">Leer más ></a></p>
 												</div>
 											</div>
