@@ -136,9 +136,36 @@
 	object-fit: cover;
 }
 
+.news-banner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.news-banner-title {
+	position: relative;
+	top: 80px;
+}
+
+
+
+@media only screen and (min-width: 720px) {
+	.news-banner-title {
+		position: relative;
+		top: 100px;
+	}
+}
+
 
 
 @media only screen and (min-width: 960px) {
+
+	.news-banner-title {
+		position: relative;
+		top: 120px;
+	}
 
 	.home_banner_figure {
 		.home_banner_col_title {

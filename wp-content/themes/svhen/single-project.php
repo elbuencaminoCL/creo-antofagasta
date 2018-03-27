@@ -61,33 +61,11 @@
 	      ?>
 
 				<!-- Card proyecto en cifras ( Una Columna ) -->
-				<?php if( get_field( 'number_cols' )['value'] == 'colDoce') : ?>
-					<?php if( get_field( 'title_col_12' ) && get_field( 'desc_col_12' ) ) : ?>
-			      <section class="space-bottom z-depth-1">
-							<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'title_col_12' ); ?></h3>
-							<div class="project-data_content"><?php the_field( 'desc_col_12' ); ?></div>
-						</section>
-					<?php endif; ?>
-
-					<!-- Card proyecto en cifras ( Dos Columnas ) -->
-					<?php elseif ( get_field( 'number_cols' )['value'] == 'colSeis' ) : ?>
-					<?php if( get_field( 'title_col_6' ) ) : ?>
-			      <section class="space-bottom z-depth-1">
-							<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'title_col_6' ); ?></h3>
-
-							<?php if ( have_rows( 'content_col_6_repeater' ) ) : ?>
-								<div class="row row-xs-1 row-md-2 project-data_content">
-								<?php while ( have_rows( 'content_col_6_repeater' ) ) : the_row(); ?>
-									<div class="col-xs-12 col-md-6 space-bottom">
-										<p><?php the_sub_field( 'content_subtitle_col_6' ); ?></p>
-										<h2 class="f-salmon"><?php the_sub_field( 'content_desc_col_6' ); ?></h2>
-									</div>
-								<?php endwhile; ?>
-								</div>
-							<?php endif; ?>
-
-						</section>
-					<?php endif; ?>
+				<?php if( get_field( 'project_cypher_title' ) && get_field( 'project_cypher_desc' ) ) : ?>
+		      <section class="space-bottom z-depth-1">
+						<h3 class="project-data_title f-white" style="background-color: <?= $hex; ?>"><?php the_field( 'project_cypher_title' ); ?></h3>
+						<div class="project-data_content"><?php the_field( 'project_cypher_desc' ); ?></div>
+					</section>
 				<?php endif; ?>
 
 				<!-- Carrusel -->
@@ -96,8 +74,8 @@
 
 						<?php if ( have_rows( 'project_carousel_repeater' ) ) : ?>
 						  <?php while ( have_rows( 'project_carousel_repeater' ) ) : the_row(); ?>
-						  	<figure>
-							    <img src="<?php the_sub_field( 'carousel_image' ); ?>"/>
+						  	<figure class="project-carousel-figure">
+							    <img class="mg-bottom-15" src="<?php the_sub_field( 'carousel_image' ); ?>"/>
 							    <p><?php the_sub_field( 'carousel_desc' ); ?></p>
 							  </figure>
 						  <?php endwhile; ?>
@@ -113,6 +91,16 @@
 						<?php the_field( 'clone_project_article_2_desc' ); ?>
 					</section>
 				<?php else : endif; ?>
+
+				<section>
+					<?php if ( have_rows( 'iframe_repeater' ) ) : ?>
+						<?php while ( have_rows( 'iframe_repeater' ) ) : the_row(); ?>
+							<div class="space-bottom">
+								<iframe src="<?php the_sub_field( 'iframe_link' ); ?>" height="<?php the_sub_field( 'iframe_height' ); ?>" width="100%" frameborder="0"></iframe>
+							</div>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</section>
 
 				<!-- Acordeón Sectores a Intervenir -->
 				<?php if( get_field( 'select_template' ) == 'project' ) : ?>
@@ -134,14 +122,12 @@
 											  	<div class="row row-xs-1 row-sm-2">
 												  	<div class="col-xs-12 col-sm-6">
 															<p><?php the_sub_field( 'accordion_desc' ); ?></p>
-															<p><?php the_sub_field( 'accordion_desc' ); ?></p>
-															<p><?php the_sub_field( 'accordion_desc' ); ?></p>
 														</div>
 
 												  	<div class="col-xs-12 col-sm-6">
-															<p><?php the_sub_field( 'accordion_desc' ); ?></p>
-															<p><?php the_sub_field( 'accordion_desc' ); ?></p>
-															<p><?php the_sub_field( 'accordion_desc' ); ?></p>
+															<figure>
+																<img src="<?php the_sub_field( 'accordion_image' ); ?>">
+															</figure>
 														</div>
 													</div>
 											  </div>

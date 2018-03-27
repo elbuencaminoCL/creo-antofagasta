@@ -16,6 +16,15 @@
 
 	.project-data_content {
 		padding: 1rem;
+		ul {
+			padding-left: 10px;
+			list-style: unset;
+			li {
+				list-style: unset;
+				line-height: 1.2;
+				margin-bottom: 10px;
+			}
+		}
 	}
 
 	.project-content {
@@ -48,6 +57,14 @@
 		background-color: white;
 		border-radius: 3px;
 		padding: 1rem;
+	}
+
+	.news-container {
+		.col-md-9 {
+			background-color: white;
+			border-radius: 3px;
+			padding: 1rem;
+		}
 	}
 
 	.projectCarousel {
