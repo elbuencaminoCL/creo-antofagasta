@@ -1,5 +1,4 @@
 
-
 /*=============================================
 =           Importación de libs            =
 =============================================*/
@@ -35,16 +34,7 @@
 	import './scss/components/accordion.scss';
 	import './scss/components/initial.scss';
 	import './scss/components/events.scss';
-	import './scss/components/calendar.scss';
-
-
-
-/*Librerías*/
-import $ from 'jquery';
-import 'foundation-sites';
-
-
-$(document).foundation();
+	import './scss/components/believe.scss';
 
 
 /*==========================================================
@@ -55,3 +45,14 @@ $(document).foundation();
 	import './js/header.js';
 	import './js/projects.js';
 	import './js/documents.js';
+	import './js/accordion.js';
+	import './js/select-box.js';
+
+
+/*Librerías*/
+import $ from 'jquery';
+import 'foundation-sites';
+
+
+$(document).foundation();
+

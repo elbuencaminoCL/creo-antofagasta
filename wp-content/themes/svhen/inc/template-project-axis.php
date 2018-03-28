@@ -20,7 +20,7 @@
 
 			<?php foreach($categories as $category) : ?>
 
-			<h3 class="mg-bottom-15"><?= $category->name; ?></h3>
+			<h2 class="mg-bottom-15"><?= $category->name; ?></h2>
 			<div class="row row-xs-1 row-sm-2 row-md-4">
 
 			<?php
@@ -53,7 +53,7 @@
 								<?php endif; ?>
 
 								<div class="card-project-title" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
-									<h5 class="f-white"><strong><?php the_title(); ?></strong></h5>
+									<h3 class="f-white"><?php the_title(); ?></h3>
 								</div>
 							</figure>
 						</a>

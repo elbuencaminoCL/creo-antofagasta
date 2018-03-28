@@ -1,0 +1,51 @@
+
+.about-us-member-row {
+	padding: 30px 30px 0;
+}
+
+.commite-main-row {
+	padding: 30px 30px 0;
+}
+
+.member-main-row,
+.member-main-col {
+	min-height: 160px;
+	figure,
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.believe-video-xs {
+	flex-basis: calc(100% * 5/12 - ( 30px - 30px * 5/12));
+  max-width: calc(100% * 5/12 - ( 30px - 30px * 5/12));
+  margin-right: 15px;
+	iframe {
+		height: 150px;
+	}
+}
+
+.believe-video-desc {
+	flex-basis: calc(100% * 7/12 - ( 30px - 30px * 7/12));
+  max-width: calc(100% * 7/12 - ( 30px - 30px * 7/12));
+  margin-right: 15px;
+}
+
+
+
+@media only screen and (min-width: 960px) {
+
+	.believe-video {
+		&:nth-child(2) {
+			flex-basis: calc(100% * 5/12 - ( 30px - 30px * 5/12));
+	    max-width: calc(100% * 5/12 - ( 30px - 30px * 5/12));
+	    margin-right: 15px;
+			iframe {
+				height: 100px;
+			}
+		}
+	}
+
+}
+

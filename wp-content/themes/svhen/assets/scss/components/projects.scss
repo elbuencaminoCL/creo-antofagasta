@@ -16,6 +16,15 @@
 
 	.project-data_content {
 		padding: 1rem;
+		ul {
+			padding-left: 10px;
+			list-style: unset;
+			li {
+				list-style: unset;
+				line-height: 1.2;
+				margin-bottom: 10px;
+			}
+		}
 	}
 
 	.project-content {
@@ -24,38 +33,6 @@
 
 	.project-content.project-content-is-active {
 		display: block;
-	}
-
-	.project-item.project-item-is-active {
-		&.initial-cat-radio {
-			&:after {
-			  border-radius: 50%;
-			  border: 5px solid $purple;
-			  content: '';
-			  position: absolute;
-			  top: 4px;
-			  left: 4px;
-			}
-		}
-	}
-
-	.initial-cat-radio {
-		position: relative;
-	  margin-left: 25px;
-	  &:before {
-	    width: 18px;
-	    height: 18px;
-	    border-radius: 50%;
-	    border: 1px solid gray;
-	    content: '';
-	    position: absolute;
-	  }
-	  p {
-	    margin-left: 25px;
-	  }
-	  &:hover {
-	    cursor: pointer;
-	  }
 	}
 
 	.project-relation-figure {
@@ -80,6 +57,14 @@
 		background-color: white;
 		border-radius: 3px;
 		padding: 1rem;
+	}
+
+	.news-container {
+		.col-md-9 {
+			background-color: white;
+			border-radius: 3px;
+			padding: 1rem;
+		}
 	}
 
 	.projectCarousel {
@@ -107,4 +92,41 @@
 				}
 			}
 		}
+	}
+
+	@media only screen and (min-width: 960px) {
+
+		.project-item.project-item-is-active {
+			&.initial-cat-radio {
+				&:after {
+				  border-radius: 50%;
+				  border: 5px solid $purple;
+				  content: '';
+				  position: absolute;
+				  top: 9px;
+				  left: 4px;
+				}
+			}
+		}
+
+		.initial-cat-radio {
+			position: relative;
+		  margin-left: 25px;
+		  &:before {
+		    width: 18px;
+		    height: 18px;
+		    border-radius: 50%;
+		    border: 1px solid gray;
+		    content: '';
+		    position: absolute;
+		    top: 5px;
+		  }
+		  p {
+		    margin-left: 25px;
+		  }
+		  &:hover {
+		    cursor: pointer;
+		  }
+		}
+
 	}

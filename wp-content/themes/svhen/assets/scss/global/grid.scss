@@ -1,5 +1,5 @@
 
-$grid: 1440px;
+$grid: 1170px;
 
 $gutter-xs: 15px;
 $gutter-sm: 30px;
@@ -337,6 +337,14 @@ $space-bottom-small-lg: 15px;
     .container {
       padding: 0;
     }
+  }
+
+  .row-md {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   @for $n from 1 through 12 {

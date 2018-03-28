@@ -27,4 +27,21 @@
 			color: white;
 		}
 	}
+	&.nav {
+		color: white;
+		font-size: 22px;
+		border: 0;
+		border-bottom: 1px solid white;
+		&:hover,
+		&:focus {
+			background-color: #736d9d;
+			color: white;
+			border: 0;
+			border-bottom: 1px solid white;
+			outline: none;
+		}
+		&:before {
+			display: none;
+		}
+	}
 }

@@ -1,6 +1,53 @@
 
 @import './colors.scss';
 
+body,
+a {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Signika", sans-serif;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  &.jump-line {
+    line-height: 1.2;
+    margin-bottom:3px;
+  }
+}
+
 a {
   outline: none;
 }
@@ -20,7 +67,7 @@ a {
 }
 
 .f-normal {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
@@ -55,6 +102,13 @@ a {
     color: black;
     opacity: .8;
   }
+  &.no-border {
+    border: 0;
+    &:hover {
+      border-bottom: 1px solid black;
+      transition: all .2s cubic-bezier( .4, 0, .2, 1 );
+    }
+  }
 }
 
 .f-link-white {
@@ -70,6 +124,7 @@ a {
   }
 }
 
-.f-subtitle {
-  font-weight: bolder;
+.f-bold {
+  font-weight: bold;
 }
+
