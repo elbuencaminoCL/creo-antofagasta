@@ -10,7 +10,6 @@
 
 		let documentID = $(e.currentTarget).data('document-id')
 		,		$documentLoad = $(e.currentTarget).data('document-load')
-		console.log($documentLoad, '$documentLoad')
 
 		if( $documentLoad == true || $documentLoad === undefined ) {
 			documentActiveFn( e.currentTarget )
