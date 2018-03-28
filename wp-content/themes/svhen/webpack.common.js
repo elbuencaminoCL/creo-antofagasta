@@ -1,12 +1,18 @@
-
+const webpack = require('webpack')
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './assets/app.js',
 
   plugins: [
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
+    new ExtractTextPlugin('style.css')
   ],
 
   output: {
@@ -35,7 +41,10 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        use: [ 'style-loader', "css-loader", "sass-loader" ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       }
     ]
   }
