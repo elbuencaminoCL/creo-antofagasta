@@ -9,15 +9,20 @@
 <!--==============================
 =            Carrusel            =
 ===============================-->
-<section>
+<section class="intro_content">
 	<div>
-		<?php echo do_shortcode("[hslide id=3]"); ?>
+		<figure class="hide-md intro_content_figure">
+			<img src="<?php the_field( 'home_banner_image_movil' ); ?>" alt="Banner Creo Antofagasta" class="image-cover" />
+		</figure>
+		<div class="hide-xs show-md">
+			<?php echo do_shortcode("[hslide id=3]"); ?>
+		</div>
 	</div>
 </section>
 <!--====  End of Carrusel  ====-->
 
 <!--====  Iniciativas  ====-->
-<section class="bg-purple">
+<section class="bg-purple section">
 	<div class="container pd-30-0">
 		<header class="center-xs start-md">
 			<h2 class="f-bold f-white mg-bottom-15"><?php the_field( 'home_projects_title' ); ?></h2>

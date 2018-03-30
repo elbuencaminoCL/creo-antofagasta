@@ -51,6 +51,10 @@
 	}
 }
 
+.intro_content_figure {
+	min-height: 450px;
+}
+
 .banner-content {
 	left: 0;
 	position: absolute;
@@ -60,7 +64,7 @@
 	}
 }
 
-.banner-figure, {
+.banner-figure {
 	position: relative;
 	&:before {
 		content: '';

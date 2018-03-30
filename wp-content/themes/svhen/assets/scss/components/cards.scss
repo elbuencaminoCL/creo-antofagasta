@@ -33,6 +33,7 @@
 }
 
 .card--news--home_title {
+  font-size: 16px;
   font-weight: bolder;
   text-transform: uppercase;
 }
@@ -71,8 +72,6 @@
 
 
 @media screen and ( max-width: 959px ) {
-
-
 
   .card {
     .card--news--home_content {
@@ -136,15 +135,13 @@
     }
   }
 
+  .card--news--home_normal {
+    .card--news--home_title {
+      font-size: 18px;
+    }
+  }
+
 }
-
-
-@media screen and ( min-width: 1110px ) {
-
-
-
-}
-
 
 @media screen and ( min-width: 1210px ) {
 
