@@ -29,11 +29,15 @@
 
 <section class="bg-azure pd-30">
 	<div class="container">
-		<div class="center-xs space-bottom">
-			<h2 class="space-bottom"><?php the_field( 'committe_title' ); ?></h2>
-			<p><?php the_field( 'committe_desc' ); ?></p>
+		<div class="center-xs">
+			<h2><?php the_field( 'committe_title' ); ?></h2>
+			<p class="no-space"><?php the_field( 'committe_desc' ); ?></p>
 		</div>
+	</div>
+</section>
 
+<section class="bg-azure">
+	<div class="container pd-0">
 		<div class="bg-mintcream commite-main-row">
 			<div class="row row-xs-1 row-md-2">
 				<?php if ( have_rows( 'committe_main_repeater' ) ) : ?>
