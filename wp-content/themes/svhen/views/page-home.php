@@ -173,36 +173,6 @@
 				</div>
 			</div><!-- /Videos-MD -->
 
-			<div class="col-xs-12 col-md-4 space-bottom hide-md"><!-- Videos-XS -->
-				<h2 class="f-bold mg-bottom-15">Vídeos</h2>
-				<?php
-					$args = array(
-						'post_type' => 'videos',
-						'posts_per_page' => 2
-					);
-					$query = new WP_Query( $args );
-				?>
-
-				<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-				<div class="row row-xs-2 row-md-2">
-					<div class="space-bottom believe-video-xs">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-
-					<div class="believe-video-desc">
-						<p class="f-tiny"><strong>Video Informativo</strong></p>
-						<p class="jump-line f-normal"><?= get_the_title(); ?></p>
-					</div>
-				</div>
-				<!-- post -->
-				<?php endwhile; ?>
-				<?php endif; ?>
-
-				<div class="end-xs">
-					<a href="https://www.youtube.com/user/CreoAntofagasta" class="f-link" target="_blank">Ver todos los vídeos</a>
-				</div>
-			</div><!-- /Videos-XS -->
-
 			<div class="col-xs-12 col-md-4 space-bottom hide-xs show-md mg-right-15-i"><!-- CREO en la prensa -->
 				<div class="int-home">
 
@@ -301,7 +271,7 @@
 <section class="home-events section">
 	<div class="container">
 		<div class="row row-xs-1 row-md-2">
-			<div class="col-xs-12 col-md-5 space-bottom">
+			<div class="col-xs-12 col-md-5 space-bottom hide-xs show-md">
 				<h2 class="divider divider--black pd-bottom-15 mg-bottom-15">Eventos</h2>
 
 				<?php
