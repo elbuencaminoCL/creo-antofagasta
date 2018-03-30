@@ -114,6 +114,24 @@
 
 
 
+@media only screen and (max-width: 959px) {
+
+	.menu-item .sub-menu {
+		display: block;
+		position: relative;
+		.menu-item {
+			margin-bottom: 16px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+			a {
+				padding: 0;
+			}
+		}
+	}
+
+}
+
 @media only screen and (min-width: 960px) {
 
 	.header-row,

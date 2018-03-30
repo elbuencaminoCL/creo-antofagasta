@@ -15,11 +15,11 @@
 		</div>
 	</figure>
 
-	<section class="bg-mintcream pd-30">
+	<section class="bg-mintcream section">
 		<div class="container">
 			<div class="row-xs-1 row-sm-1">
-				<div class="col-xs-10 col-sm-8 mg-0-auto-i center-xs">
-					<p><?php the_field( 'believe_banner_desc' ); ?></p>
+				<div class="col-xs-12 col-sm-8 mg-0-auto-i center-xs">
+					<p class="no-space"><?php the_field( 'believe_banner_desc' ); ?></p>
 				</div>
 			</div>
 		</div>
@@ -27,19 +27,23 @@
 </section>
 
 
-<section class="bg-azure pd-30">
-	<div class="container ">
+<section class="bg-azure section">
+	<div class="container">
 		<div class="center-xs bg-azure pd-30">
 			<h2 class="space-bottom"><?php the_field( 'believe_about-us_title' ); ?></h2>
-			<p><?php the_field( 'believe_about-us_desc' ); ?></p>
+			<p class="no-space"><?php the_field( 'believe_about-us_desc' ); ?></p>
 		</div>
 
 		<?php
 			$customer_reviews = get_field('about-us_repeater');
 			shuffle($customer_reviews); // magic happens here :)
 		?>
+	</div>
+</section>
 
-		<div class="row row-xs-2 row-md-6 bg-mintcream about-us-member-row">
+<section class="bg-azure">
+	<div class="container pd-0">
+		<div class="row row-xs-3 row-md-6 bg-mintcream about-us-member-row">
 			<?php if( have_rows('about-us_repeater') ):
 
 				foreach( $customer_reviews as $customer_review ):
@@ -49,7 +53,7 @@
 					$hex = $customer_review['about-us_member_color'];
 					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
 
-				<div class="col-xs-6 col-md-2 space-bottom">
+				<div class="col-xs-4 col-md-2 space-bottom">
 					<figure class="row middle-xs member-figure">
 						<img src="<?php echo $review_img; ?>"/>
 						<div class="member-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
@@ -80,7 +84,7 @@
 					<?php $hex = get_sub_field('experts_member_color');
 					list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x"); ?>
 
-					<div class="col-xs-6 col-md-3">
+					<div class="col-xs-6 col-md-3 SAMPLE">
 						<figure class="row middle-xs expert-figure">
 							<img src="<?php the_sub_field( 'experts_member_image' ); ?>" />
 							<div class="expert-info" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">

@@ -59,6 +59,10 @@
 	left: 0;
 	position: absolute;
 	right: 0;
+	h1,
+	h2 {
+		font-size: 26px;
+	}
 	h2 {
 		color: white;
 	}
@@ -91,6 +95,8 @@
 .expert-figure, .member-figure {
 	position: relative;
 	img {
+		min-height: 190px;
+		object-fit: cover;
 		width: 100%;
 	}
 }
@@ -110,6 +116,10 @@
 	}
 }
 
+.believe-banner-image {
+	min-height: 200px;
+}
+
 .committe-col {
 	&.member-main {
 		position: relative;
@@ -117,12 +127,16 @@
 	}
 }
 
-.name-down {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 30px 15px;
+
+.member-info {
+	.name-down {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		padding: 30px 15px;
+	}
 }
 
 .sponsor-image {
@@ -213,6 +227,13 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
+	}
+
+	.banner-content {
+		h1,
+		h2 {
+			font-size: 2em;
+		}
 	}
 
 }

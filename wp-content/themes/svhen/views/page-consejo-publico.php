@@ -15,11 +15,11 @@
 		</div>
 	</figure>
 
-	<section class="bg-mintcream pd-30">
+	<section class="bg-mintcream section">
 		<div class="container">
 			<div class="row-xs-1 row-sm-1">
-				<div class="col-xs-10 col-sm-8 center-xs mg-0-auto-i">
-					<p><?php the_field( 'committe_banner_desc' ); ?></p>
+				<div class="col-xs-12 col-sm-8 center-xs mg-0-auto-i">
+					<p class="no-space"><?php the_field( 'committe_banner_desc' ); ?></p>
 				</div>
 			</div>
 		</div>
