@@ -26,7 +26,9 @@
 				<?php the_content(); ?>
 			</div><!-- .entry-content -->
 		</article><!-- #post-<?php the_ID(); ?> -->
-		<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
+		<div class="hide-xs show-md">
+			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
+		</div>
 	</div>
 
 	<div class="col-xs-12 col-md-3">
@@ -34,6 +36,8 @@
 			<h5 class="space-bottom">¿Quieres compartir tus actividades a la comunidad de Antofagasta?</h5>
 			<a href="<?= home_url( 'contacto' ); ?>" class="button button-full-xs">Envíanos tu actividad</a>
 		</div>
-		<?= do_shortcode( '[Sassy_Social_Share]' ); ?>
+		<div class="hide-xs show-md">
+			<?= do_shortcode( '[Sassy_Social_Share]' ); ?>
+		</div>
 	</div>
 </div>

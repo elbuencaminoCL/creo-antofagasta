@@ -16,7 +16,7 @@
 			<img src="<?php the_field( 'library_banner_image' ); ?>">
 			<div class="banner-content container">
 				<h1 class="f-white space-bottom"><?php the_field( 'library_banner_title' ); ?></h1>
-				<p class="f-big f-white"><?php the_field( 'library_banner_subtitle' ); ?>
+				<p class="f-big f-white hide-xs show-md"><?php the_field( 'library_banner_subtitle' ); ?>
 			</div>
 		</figure>
 	</div>

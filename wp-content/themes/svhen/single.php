@@ -14,7 +14,7 @@ get_header(); ?>
 		<section>
 			<figure class="banner-figure row middle-xs center-xs">
 				<img src="<?php the_field( 'news_banner_image', 'options' ); ?>">
-				<div class="news-banner" style="background-color: <?php the_field( 'news_banner_color', 'options' ); ?>">
+				<div class="news-banner row middle-xs" style="background-color: <?php the_field( 'news_banner_color', 'options' ); ?>">
 					<div class="container">
 						<div class="news-banner-title">
 							<h1 class="f-white">Noticias</h1>
@@ -24,7 +24,7 @@ get_header(); ?>
 			</figure>
 		</section>
 
-		<section class="section">
+		<section class="section pd-left-0 pd-right-0">
 			<div class="container news-container">
 				<?php get_template_part( 'content', get_post_type() ); ?>
 			</div>
