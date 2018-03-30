@@ -44,7 +44,7 @@
 		=            Contenido de la columna izquierda            =
 		========================================================-->
 	  <div class="row row-xs-1 row-md-2">
-			<div class="col-xs-12 col-md-8 project-col-left">
+			<div class="col-xs-12 col-md-8 project-col-left space-bottom">
 				<section class="space-bottom">
 					<h2 class="space-bottom"><?php the_field( 'clone_project_article_title' ); ?></h2>
 					<?php the_field( 'clone_project_article_desc' ); ?>
@@ -70,7 +70,7 @@
 
 				<!-- Carrusel -->
 				<?php if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
-					<section class="project-carousel space-bottom">
+					<section class="project-carousel space-bottom hide-xs show-md">
 
 						<?php if ( have_rows( 'project_carousel_repeater' ) ) : ?>
 						  <?php while ( have_rows( 'project_carousel_repeater' ) ) : the_row(); ?>
@@ -92,7 +92,7 @@
 					</section>
 				<?php else : endif; ?>
 
-				<section>
+				<section class="hide-xs show-md">
 					<?php if ( have_rows( 'iframe_repeater' ) ) : ?>
 						<?php while ( have_rows( 'iframe_repeater' ) ) : the_row(); ?>
 							<div class="space-bottom">
@@ -145,13 +145,13 @@
 
 
 				<section><!-- Logotipo patrocinadores -->
-					<div class="row bottom-xs">
+					<div class="row row-xs-3 row-md-4 bottom-xs">
 						<?php if ( have_rows( 'clone_sponsor' ) ) : ?>
 							<?php while ( have_rows( 'clone_sponsor' ) ) : the_row(); ?>
 
 								<?php if ( have_rows( 'gallery_repeater' ) ) : ?>
 									<?php while ( have_rows( 'gallery_repeater' ) ) : the_row(); ?>
-										<div>
+										<div class="col-xs-4 col-md-3">
 											<p><?php the_sub_field( 'gallery_title' ); ?></p>
 											<img src="<?php the_sub_field( 'gallery_image' ); ?>" class="sponsor-image">
 										</div>
@@ -195,7 +195,7 @@
 					if( get_field( 'poll_form' ) ) :
 					if( get_field( 'select_template' ) == 'project' || get_field( 'select_template' ) == 'multiProject' ) : ?>
 					<section><!-- Formulario Participa -->
-						<div class="container">
+						<div class="container pd-0">
 							<div class="row row-xs-1 space-bottom">
 								<h2 class="mg-bottom-15">Participa</h2>
 								<div class="col-xs-12 bg-white pd-15 card-border form-contact-join">
