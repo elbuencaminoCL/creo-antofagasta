@@ -45,7 +45,7 @@
         <section id="header">
           <div class="container">
             <div class="row row-xs-2 row-md-2 middle-xs bottom-md header-row">
-              <div class="col-xs-6 col-md-2 center-md header-col">
+              <div class="col-xs-6 col-md-2 center-xs start-md header-col">
                 <figure class="header-figure">
                   <a href="<?= home_url(); ?>">
                     <img width="100" src="<?php the_field( 'header_logo', 'option' ); ?>" alt="Logo Creo Antofagasta" class="header-logo-image">

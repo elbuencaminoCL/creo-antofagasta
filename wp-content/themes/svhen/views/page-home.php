@@ -10,7 +10,7 @@
 =            Carrusel            =
 ===============================-->
 <section>
-	<div class="container">
+	<div>
 		<?php echo do_shortcode("[hslide id=3]"); ?>
 	</div>
 </section>

@@ -1,20 +1,14 @@
 
 @import './../global/colors.scss';
 
-.initial-body {
-  border: 1px solid $dark-gray;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top: 0;
-  padding: 30px;
+.calendar-date--day,
+.calendar-date--year {
+  margin-bottom: 0;
 }
 
-.initial-head {
-  padding: 15px 30px;
-  background-color: white;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border: 1px solid $dark-gray;
+.calendar-date--day {
+  font-family: "Signika", sans-serif;
+  font-size: 30px;
 }
 
 .city-cat {
@@ -67,6 +61,21 @@
   }
 }
 
+.initial-body {
+  border: 1px solid $dark-gray;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 0;
+  padding: 30px;
+}
+
+.initial-head {
+  padding: 15px 30px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid $dark-gray;
+}
 
 
 @media only screen and ( min-width: 960px ) {

@@ -17,7 +17,7 @@ get_header(); ?>
 				<div class="news-banner" style="background-color: <?php the_field( 'news_banner_color', 'options' ); ?>">
 					<div class="container">
 						<div class="news-banner-title">
-							<h1 class="f-white"><?= get_the_title(); ?></h1>
+							<h1 class="f-white">Noticias</h1>
 						</div>
 					</div>
 				</div>
