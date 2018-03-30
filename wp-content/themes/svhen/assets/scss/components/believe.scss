@@ -9,7 +9,6 @@
 
 .member-main-row,
 .member-main-col {
-	min-height: 160px;
 	figure,
 	img {
 		height: 100%;
@@ -35,6 +34,11 @@
 
 
 @media only screen and (min-width: 960px) {
+
+	.member-main-row,
+	.member-main-col {
+		min-height: 250px;
+	}
 
 	.believe-video {
 		&:nth-child(2) {

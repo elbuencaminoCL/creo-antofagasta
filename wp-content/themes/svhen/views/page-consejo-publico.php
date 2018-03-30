@@ -50,7 +50,7 @@
 
 								<div class="col-xs-12 col-sm-8 f-white committe-col member-main member-main-col" style="background-color: rgba( <?= "$r, $g, $b"; ?>, .8 );">
 									<p class="f-small mg-bottom-15"><?php the_sub_field( 'integrant_main_desc' ); ?></p>
-									<div class="mg-top-60">
+									<div class="<?= ( get_sub_field( 'integrant_main_desc' ) ? 'mg-top-60' : '' ) ?>">
 										<div class="name-down">
 											<h3><?php the_sub_field( 'integrant_main_title' ); ?></h3>
 											<p class="f-small"><?php the_sub_field( 'integrant_main_subtitle' ); ?></p>
