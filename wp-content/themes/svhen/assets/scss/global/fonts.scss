@@ -18,7 +18,7 @@ h6 {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
 }
 
 h2 {
@@ -130,6 +130,10 @@ a {
 }
 
 @media screen and (min-width: 960px) {
+
+  h1 {
+    font-size: 32px;
+  }
   p {
     font-size: 16px;
   }

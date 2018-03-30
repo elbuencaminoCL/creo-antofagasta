@@ -25,7 +25,7 @@
 	<section class="section container">
 		<div class="center-xs">
 			<h1 class="space-bottom"><?php the_field( 'initial_title' ); ?></h1>
-			<?php the_field( 'initial_desc' ); ?>
+			<div><?php the_field( 'initial_desc' ); ?></div>
 		</div>
 	</section>
 
